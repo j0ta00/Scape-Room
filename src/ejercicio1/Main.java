@@ -22,7 +22,7 @@ public class Main {
 		//MostrarResultado
 		System.out.println("Tu nombres es: "+nombre);
 
-		teclado.close();
+
 	}
 
 }
