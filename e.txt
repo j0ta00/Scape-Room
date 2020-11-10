@@ -1,1 +1,14 @@
-Hola pon algo
+.Personaje 
+ -Atributos
+  --Nombre
+  --Vida
+  --Ataque
+ -Metodos
+  --realizarAtaque
+  --recibirDanho
+.Objeto 
+ -Atributos
+  --Nombre
+  --Danho
+  --Descripcion
+ 
