@@ -1,5 +1,6 @@
 package personajes;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import objetos.Objeto;
 
@@ -12,14 +13,14 @@ public class Jugador extends Personaje {
 	//Constructor por defecto
 	public Jugador() {
 		super();
-		mochila = new ArrayList<Objeto>(5);
+		mochila = new ArrayList<Objeto>(Arrays.asList(null,null,null,null,null));
 		movimientos = 0;
 	}
 	
 	//Constructor con parametros
 	public Jugador(String nombre, int vida, int danho, int movimientos) {
 		super(nombre,vida,danho);
-		mochila = new ArrayList<Objeto>(5);
+		mochila = new ArrayList<Objeto>(Arrays.asList(null,null,null,null,null));
 		this.movimientos = movimientos;
 	}
 	
