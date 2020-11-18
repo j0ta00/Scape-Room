@@ -37,7 +37,7 @@ public class Jugador extends Personaje {
 		public void setMovimientos(int movimientos) {
 			this.movimientos = movimientos;
 		}
-	//Metodos añadidos
+	//Metodos aÃ±adidos
 		
 		/*
 		 * Prototipo: public void mirarContenidoMochila()
@@ -121,8 +121,32 @@ public class Jugador extends Personaje {
 			}
 			return guardado;
 		}
+		/*
+		 * Prototipo: 
+		 * 
+		 * Comentario: 
+		 * 
+		 * Entradas:  
+		 * 
+		 * Salidas:  
+		 * 
+		 * Precondiciones: 
+		 * 
+		 * Postcondiciones: 
+		 * 
+		 */
+		public int realizarAtaque(int posicionObjeto) {
+			final int BONIFICACION = 2; //Valor que se multiplicara al ataque que realiza un Personaje cuando se produzca un critico
+			int danhoFinal = getDanho()+mochila.get(posicionObjeto).getDanho();
+			int critico = (int)(Math.random()*10+1);
+			
+			if(critico < 4){
+				danhoFinal *= BONIFICACION;
+			}
+			return danhoFinal;
+		}
 	
-	//Metodos
+
 }
 
 
@@ -133,18 +157,4 @@ public class Jugador extends Personaje {
 
 
 
-	/*
-			ArrayList<String> as;
-	
-	//Ejemplo
-	Jugador a = new Jugador();
-	
-	as = a.getMochila();
-	
-	System.out.println(a.getMochila().isEmpty());
-	System.out.println(as.isEmpty());
-	
-	as.add("asas");
-	System.out.println(as.isEmpty());
-	System.out.println(a.getMochila().isEmpty());
-*/
+
