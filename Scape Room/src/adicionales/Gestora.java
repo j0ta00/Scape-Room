@@ -35,13 +35,23 @@ public class Gestora {
 			
 			oos = new ObjectOutputStream(new FileOutputStream(path));
 
-			oos.writeObject(new Objeto("Llave", 0, "Puede abrir algo interesante"));
-			oos.writeObject(new Objeto("Llave", 0, "Puede abrir algo interesante"));
-			oos.writeObject(new Objeto("Llave", 0, "Puede abrir algo interesante"));
-			oos.writeObject(new Objeto("Llave", 0, "Puede abrir algo interesante"));
-			oos.writeObject(new Objeto("Llave", 0, "Puede abrir algo interesante"));
-			oos.writeObject(new Objeto("Llave", 0, "Puede abrir algo interesante"));
-						
+			//Creacion de los objetos, que van ha salir en el juego
+			oos.writeObject(new Objeto("Llave Puerta", 0, "Puede abrir algo interesante"));
+			oos.writeObject(new Objeto("Pala", 15, "Quizás puedas desenterrar algo con ella o defenderte"));
+			oos.writeObject(new Objeto("Gasolina", 0, "Igual puede servir como combustible"));
+			oos.writeObject(new Objeto("Llave Coche", 0, "Vinculado con Audi R8"));
+			oos.writeObject(new Objeto("Bateria", 0, "Tiene el tamaño perfecto para encajar en un automóvil"));
+			oos.writeObject(new Objeto("Pistola", 50, "Ideal para defenderte en medio de un apocalipsis"));
+			oos.writeObject(new Objeto("Navaja", 20, "A pesar de estar en malas condiciones aún conserva su filo"));
+			oos.writeObject(new Objeto("Hacha", 30, "Te permitirá cotar y despedazar"));
+			oos.writeObject(new Objeto("Regadera", 0, "Aún contiene agua"));
+			oos.writeObject(new Objeto("Maceta", 5, "No esta en la mejor de las condiciones"));
+			oos.writeObject(new Objeto("Dolares", 0, "La moneda de cambio mas popular, aunque no te serviara de mucho en un apocalipsis"));
+			oos.writeObject(new Objeto("Llave laboratorio", 0, "Te permitira acceder al laboratorio"));
+			oos.writeObject(new Objeto("Llave vieja", 0, "Esta vieja pero todavia funciona"));
+			oos.writeObject(new Objeto("Mando TV", 0, "Ni siquiera tiene pilas"));
+			oos.writeObject(new Objeto("Taza", 1, "Perfecta para hacerte un ColaCao"));
+		
 		}catch(IOException i) {
 			i.printStackTrace();
 		}finally {
