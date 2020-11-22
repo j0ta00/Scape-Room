@@ -14,7 +14,7 @@ public class TestObjeto {
 		System.out.println("sinParametros: Nombre: "+sinParametros.getNombre()+" Daño: "+sinParametros.getDanho()+" Descripcion: "+sinParametros.getDescripcion()+" Cogido: "+sinParametros.getEquipado());
 		System.out.println("conParametros: Nombre: "+conParametros.getNombre()+" Daño: "+conParametros.getDanho()+" Descripcion: "+conParametros.getDescripcion()+" Cogido: "+conParametros.getEquipado());
 		System.out.println("		SETTERS			");
-		conParametros.setCogido(true);
+		conParametros.setEquipado(true);
 		System.out.println("conParametros: atributo codigo, cambio de false a true: "+conParametros.getEquipado());
 		System.out.println("\n--- Metodos Heredados ---");
 		System.out.println("		toString	");
