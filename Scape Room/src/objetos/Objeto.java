@@ -1,23 +1,23 @@
 package objetos;
 
-import java.io.Serializable;
 
-public class Objeto implements Serializable{
 
-	private static final long serialVersionUID = 1L; //Id para control de versiones
+public class Objeto {
+
+	
 	
 	//Atributos 
 	private String nombre;
 	private int danho;
 	private String descripcion;
-	private boolean cogido;
+	private boolean equipado;
 	
 	//Constructor por defecto
 	public Objeto() {
 		nombre = "";
 		danho = 0;
 		descripcion = "";
-		cogido = false;
+		equipado = false;
 	}
 	
 	//Constructor con parametros
@@ -25,7 +25,7 @@ public class Objeto implements Serializable{
 		this.nombre = nombre;
 		this.danho = danho;
 		this.descripcion = descripcion;
-		cogido = false;
+		equipado = false;
 	}
 	
 	//Metodos fundamentales
@@ -43,16 +43,16 @@ public class Objeto implements Serializable{
 			return descripcion;
 		}
 		//cogido
-		public boolean getCogido() { 
-			return cogido;
+		public boolean getEquipado() { 
+			return equipado;
 		}
-		public void setCogido(boolean cogido) {
-			this.cogido = cogido;
+		public void setEquipado(boolean equipado) {
+			this.equipado = equipado;
 		}
 	//Metodos Heredados
 	@Override
 	public String toString() {
-		return "Nombre: "+nombre+" DaÃ±o: "+danho+" Descripcion: "+descripcion+" Cogido: "+cogido;
-	}		
+		return "Nombre: "+nombre+" - Daño: "+danho+" - Descripcion: "+descripcion+" - Equipado: "+equipado;
+	}
+		
 }
-
