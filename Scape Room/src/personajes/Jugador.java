@@ -27,7 +27,8 @@ public class Jugador extends Personaje {
 	//Metodos fundamentales
 		//mochila
 		public ArrayList<Objeto> getMochila(){
-			ArrayList<Objeto> copia = (ArrayList<Objeto>) mochila.clone();
+			@SuppressWarnings("unchecked")
+			ArrayList<Objeto> copia = (ArrayList<Objeto>) mochila.clone(); //El compilador marca como Type safety: Unchecked cast from Object to ArrayList<Objeto> poque cree que puede se puede llegar a producir un error por ello, por eso el de arriba @SuppressWarnings("unchecked") para comunicarle al compilador que lo que se va hacer es seguro
 		return copia;
 		}
 		//movimientos
@@ -35,79 +36,92 @@ public class Jugador extends Personaje {
 			return movimientos;
 		}
 		public void setMovimientos(int movimientos) {
-			this.movimientos = movimientos;
+			if(movimientos < 1) {
+				this.movimientos = 0;
+			}else {
+				this.movimientos = movimientos;
+			}
 		}
-	//Metodos aÃ±adidos
+	//Metodos añadidos
 		
 		/*
 		 * Prototipo: public void mirarContenidoMochila()
 		 * 
-		 * Comentario: Este metodo se encarga de mostrar los objetos de tipo Objetos que tiene un jugador en su mochila.
+		 * Comentario: Este metodo se encarga de mostrar el contenido que tiene un Jugador en su mochila tanto si tiene un objeto 
+		 * 			   como sino.
 		 * 
-		 * Entradas:
+		 * Entradas: Ninguna
 		 * 
-		 * Salidas:
+		 * Salidas: Ninguna
 		 * 
-		 * Precondiciones:
+		 * Precondiciones: Ninguna
 		 * 
-		 * Postcondiciones:
+		 * Postcondiciones: Este metodo al ser un procedimiento no devolvera ningun tipo de dato, en este caso solo mostrara los 
+		 * 					objetos de tipo Objeto que tiene un Jugador en su mochila y tambien los espacios libres si los hay
 		 * 
 		 */
 		public void mirarContenidoMochila() {
 			
 			for(Objeto o : mochila) {
 				if(o != null) {
-				System.out.println(o.toString());
+				System.out.print(o.toString()+" |  ");
+				}else {
+					System.out.print("Espacio libre"+" |  ");
 				}
-			}
-			
+			}	
 		}
 		
 		/*
-
-		public boolean comprobarEspacioMochila() {
-			boolean espacio = false;
-			
-			for(int i = 0; i < mochila.size() && espacio == false; i++) {
-				if(mochila.get(i) == null) {
-					espacio = true;
-				}
-			}
-			return espacio;
-		}
-		*/
-		/*
-		 * Prototipo:
+		 * Prototipo: public void reducirMovimiento()
 		 * 
-		 * Comentario:
+		 * Comentario: Este metodo se encarga de reducir los movimientos de un objeto Jugador
 		 * 
-		 * Entradas:
+		 * Entradas: Niguna
 		 * 
-		 * Salidas:
+		 * Salidas: Ninguna
 		 * 
-		 * Precondiciones:
+		 * Precondiciones: Ninguna
 		 * 
-		 * Postcondiciones:
+		 * Postcondiciones: Este metodo no devolvera ningun tipo de dato ya que se trata de un procedimiento, 
+		 * 					solo reducira los movimientos de un Jugador
 		 * 
 		 */
 		public void reducirMovimiento() {
-			
 			movimientos--;
-			
+			if(movimientos < 0) {
+				movimientos = 0;
+			}
 		}
 		
 		/*
-		 * Prototipo:
 		 * 
-		 * Comentario:
+		 * 	public boolean reducirMovimiento() {
+			boolean reducir = false;
+			
+			if(movimientos > 0) {
+				movimientos--;
+				reducir = true;
+			}
+			return reducir;
+		}
 		 * 
-		 * Entradas:
+		 */
+		
+		/*
+		 * Prototipo: public boolean cogerObjeto(Objeto nuevo)
 		 * 
-		 * Salidas:
+		 * Comentario: Este metodo se encarga de guardar un objeto de tipo Objeto en la mochila(ArrayList<Objeto>) de un Jugador
 		 * 
-		 * Precondiciones:
+		 * Entradas: Objeto nuevo
 		 * 
-		 * Postcondiciones:
+		 * Salidas: boolean guardado
+		 * 
+		 * Precondiciones: Ninguna
+		 * 
+		 * Postcondiciones: Este metodo devolvera en este caso un tipo de dato boolean(guardado) ya que se trata de una funcion. 
+		 * 					Dicho dato booleano tendra dos posibilidades:
+		 * 						-True: Cuando en la mochila haya sitio y se guarde el Objeto recibido como parametro formal
+		 * 						-False: Cuando en la mochila no haya sitio y por lo tanto no se pueda guardar en Objeto recibido como parametro formal
 		 * 
 		 */
 		public boolean cogerObjeto(Objeto nuevo) {
@@ -115,24 +129,56 @@ public class Jugador extends Personaje {
 			
 			for(int i = 0; i < mochila.size() && guardado == false; i++) {
 				if(mochila.get(i) == null) {
+					nuevo.setEquipado(true);
 					mochila.set(i, nuevo);
 					guardado = true;
 				}
 			}
 			return guardado;
 		}
+		
+
 		/*
-		 * Prototipo: 
+		 * Prototipo: public Objeto tirarObjeto(int posicionObjeto)
 		 * 
-		 * Comentario: 
+		 * Comentario: Este metodo se encarga de sacar un objeto de la mochila de Jugador y devolver dicho objeto.
 		 * 
-		 * Entradas:  
+		 * Entradas: int posicionObjeto(la posicion en la mochila donde esta el objeto que quiere tirar el Jugador)  
 		 * 
-		 * Salidas:  
+		 * Salidas: Objecto tirado
 		 * 
-		 * Precondiciones: 
+		 * Precondiciones: posicionObjeto tiene que ser una posicion valida(Que este en el rango de posiciones de la mochila) en la mochila, 
+		 * 				   donde haya un objeto de tipo Objeto sino se producira un error.
 		 * 
-		 * Postcondiciones: 
+		 * Postcondiciones: Este metodo al tratarse de una funcion devolvera un tipo de dato, en este caso un Objeto(tirado)
+		 * 					que sera el objeto que contenga un Jugador en su mochila, quedando la posicion donde estaba antes el objeto libre
+		 * 
+		 * 
+		 */
+		public Objeto tirarObjeto(int posicionObjeto) {
+			Objeto tirado = mochila.get(posicionObjeto);
+			
+			mochila.set(posicionObjeto, null);
+			tirado.setEquipado(false);
+			
+			return tirado;
+		}
+		
+		/*
+		 * Prototipo: public int realizarAtaque(int posicionObjeto)
+		 * 
+		 * Comentario: Este metodo se encarga de devolver el ataque de un Jugador cuando este vaya a usar un objeto de tipo Objeto para atacar.
+		 * 			   Dicho ataque puede ser critico(* 2) o no
+		 * 
+		 * Entradas: int posicionObjeto(la posicion en la mochila donde esta el objeto que quiere usar el Jugador)  
+		 * 
+		 * Salidas: int danhoFinal
+		 * 
+		 * Precondiciones:  posicionObjeto tiene que ser una posicion valida(Que este en el rango de posiciones de la mochila) en la mochila,
+		 * 					donde haya un objeto de tipo Objeto sino se producira un error.
+		 * 
+		 * Postcondiciones: Este metodo al ser una funcion devolvera un tipo de dato, en este caso un int(danhoFinal) que sera el daño
+		 * 					que causa un Jugador mas el que le proporcione el objeto que use para atacar
 		 * 
 		 */
 		public int realizarAtaque(int posicionObjeto) {
@@ -144,17 +190,70 @@ public class Jugador extends Personaje {
 				danhoFinal *= BONIFICACION;
 			}
 			return danhoFinal;
+		} 
+		
+		/*
+		 * Prototipo: 
+		 * 
+		 * Comentario:
+		 * 
+		 * Entradas: 
+		 * 
+		 * Salidas: 
+		 * 
+		 * Precondiciones:  
+		 * 
+		 * Postcondiciones: 
+		 * 
+		 */
+		
+		public int consultarObjetosMisionMochila() {
+			final int OBJETOS_NECESARIOS = 3;
+			int objetosMision = 0;
+			String nombreObjeto = "";
+			
+			for(int i = 0; i < mochila.size() && objetosMision < OBJETOS_NECESARIOS; i++) {
+				if(mochila.get(i) != null) {
+					nombreObjeto = mochila.get(i).getNombre();
+					if(nombreObjeto.equals("Llave Coche") || nombreObjeto.equals("Gasolina") || nombreObjeto.equals("Rueda") ) {
+						objetosMision++;
+					}
+				}
+			}
+			return objetosMision;
 		}
-	
+		
+		
+		
+		/*
+		 * Prototipo: 
+		 * 
+		 * Comentario: 
+		 * 
+		 * Entradas: 
+		 * 
+		 * Salidas: 
+		 * 
+		 * Precondiciones: 
+		 * 
+		 * Postcondiciones: 
+		 * 
+		 */
+		public boolean consultarObjetosNecesarioMochila(String nombreObjeto) { 
+			boolean disponible = false;
 
+			for(int i = 0; i < mochila.size() && disponible == false; i++) {
+				if(mochila.get(i).getNombre().equals(nombreObjeto)) {
+					disponible = true;
+				}
+			}
+			
+			return disponible;
+		}
+	//Metodos heredados
+
+	    @Override
+		public String toString() {
+			return super.toString()+" - Mochila: "+mochila.size()+" - Movimientos: "+movimientos;
+		}	
 }
-
-
-
-
-
-
-
-
-
-
