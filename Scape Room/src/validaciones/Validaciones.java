@@ -176,8 +176,8 @@ public class Validaciones {
 			System.out.println("Estas en la gasolinera que deseas hacer: ");
 			System.out.println("0)Volver al departamento");
 			System.out.println("1)Registrar caja registradora"); 
-			System.out.println("2)????");
-			System.out.println("3)???? "); 
+			System.out.println("2)Inspeccionar interior de la gasolinera");
+			System.out.println("3)Revisar surtidores");
 			System.out.println("4)Mirar contenido mochila");
 			System.out.println("5)Ver tu estado");
 			opcion = teclado.nextInt();
