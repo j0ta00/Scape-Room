@@ -44,7 +44,7 @@ public class Personaje {
 		public int getDanho() {
 			return danho;
 		}
-	//Metodos añadidos
+	//Metodos aÃ±adidos
 		
 	/*
 	 * Prototipo:
@@ -60,7 +60,7 @@ public class Personaje {
 	 * Postcondiciones:
 	 * 
 	 */
-	public void recibirDaño(int danho){
+	public void recibirDanho(int danho){
 		vida-=danho;
 	}
 	
@@ -92,6 +92,6 @@ public class Personaje {
 	
 	@Override
 	public String toString() {
-		return "Nombre: "+nombre+" Vida: "+vida+" Daño: "+danho;
+		return "Nombre: "+nombre+" Vida: "+vida+" DaÃ±o: "+danho;
 	}
 }
