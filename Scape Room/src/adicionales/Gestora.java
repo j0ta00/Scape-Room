@@ -37,14 +37,14 @@ public class Gestora {
 
 			//Creacion de los objetos, que van ha salir en el juego
 			oos.writeObject(new Objeto("Llave Puerta", 0, "Puede abrir algo interesante"));
-			oos.writeObject(new Objeto("Pala", 15, "Quizás puedas desenterrar algo con ella o defenderte"));
+			oos.writeObject(new Objeto("Pala", 15, "QuizÃ¡s puedas desenterrar algo con ella o defenderte"));
 			oos.writeObject(new Objeto("Gasolina", 0, "Igual puede servir como combustible"));
 			oos.writeObject(new Objeto("Llave Coche", 0, "Vinculado con Audi R8"));
-			oos.writeObject(new Objeto("Bateria", 0, "Tiene el tamaño perfecto para encajar en un automóvil"));
+			oos.writeObject(new Objeto("Bateria", 0, "Tiene el tamaÃ±o perfecto para encajar en un automÃ³vil"));
 			oos.writeObject(new Objeto("Pistola", 50, "Ideal para defenderte en medio de un apocalipsis"));
-			oos.writeObject(new Objeto("Navaja", 20, "A pesar de estar en malas condiciones aún conserva su filo"));
-			oos.writeObject(new Objeto("Hacha", 30, "Te permitirá cotar y despedazar"));
-			oos.writeObject(new Objeto("Regadera", 0, "Aún contiene agua"));
+			oos.writeObject(new Objeto("Navaja", 20, "A pesar de estar en malas condiciones aÃºn conserva su filo"));
+			oos.writeObject(new Objeto("Hacha", 30, "Te permitirÃ¡ cotar y despedazar"));
+			oos.writeObject(new Objeto("Regadera", 0, "AÃºn contiene agua"));
 			oos.writeObject(new Objeto("Maceta", 5, "No esta en la mejor de las condiciones"));
 			oos.writeObject(new Objeto("Dolares", 0, "La moneda de cambio mas popular, aunque no te serviara de mucho en un apocalipsis"));
 			oos.writeObject(new Objeto("Llave laboratorio", 0, "Te permitira acceder al laboratorio"));
@@ -61,6 +61,28 @@ public class Gestora {
 			}catch(IOException i) {
 				i.printStackTrace();
 			}
+		}
+	}
+	/* EN CONSTRUCCIÃ“N*/
+	public static void guardarObjetoUsuario(Objeto objeto, Jugador usuario, Validaciones validacion) {
+		char respuesta=' ';
+		int posicionMochila=0;
+		if (usuario.cogerObjeto(objeto)) {
+
+			System.out.println("El objeto ha sido equipado");
+
+		} else {
+
+			System.out.println("Â¿Quieres tirar algÃºn objeto? Introduce 'S' para tirarlo o 'N' para no hacerlo");
+			respuesta = validacion.leerValidarRespuesta();
+			if (respuesta == 'S') {
+				System.out.println("Estos son los objetos que tienes en tu inventario, introduce la posiciÃ³n del objeto que desea tirar");
+				usuario.mirarContenidoMochila();
+				posicionMochila = validacion.leerValidarPosicionMochila();
+				usuario.tirarObjeto(posicionMochila);
+				usuario.cogerObjeto(objeto);
+			}
+
 		}
 	}
 	
