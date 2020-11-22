@@ -47,6 +47,23 @@ public class Validaciones {
 		teclado.close();
 		return opcion;
 	}
+	public int leerValidarPosicionMochila(){
+		
+		Scanner teclado = new Scanner(System.in);
+		int posicionMochila=0;
+		
+		do{
+			posicionMochila = teclado.nextInt();
+
+			if(posicionMochila<0 || posicionMochila> 4) {
+				
+				System.out.println("Error respuesta no valida, por favor introduzca una valida(S-N)");
+				
+			}
+		}while(posicionMochila<0 || posicionMochila>4);
+
+		return posicionMochila;
+	}
 	
 	public int mostrarLeerValidarOpcionesCementario() {
 		
