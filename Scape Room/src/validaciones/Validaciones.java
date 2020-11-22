@@ -29,10 +29,13 @@ public class Validaciones {
 		
 		do {
 			System.out.println("Estas en tu departamento tienes 4 sitios a donde ir: ");
+			System.out.println("0)Terminar la partida");
 			System.out.println("1)Ir al garaje");
 			System.out.println("2)Ir al cementerio");
 			System.out.println("3)Ir a la mansion abandonada");
 			System.out.println("4)Ir a la gasolinera");
+			System.out.println("5)Mirar contenido mochila");
+			System.out.println("6)Ver tu estado");
 			opcion = teclado.nextInt();
 			
 			if(opcion < 1 || opcion > 4) {
@@ -55,7 +58,9 @@ public class Validaciones {
 			System.out.println("0)Volver al departamento");
 			System.out.println("1)Registrar tumba");
 			System.out.println("2)Leer nota");
-			System.out.println("3)Visita casetilla ");
+			System.out.println("3)Visita casetilla");
+			System.out.println("4)Mirar contenido mochila");
+			System.out.println("5)Ver tu estado");
 			opcion = teclado.nextInt();
 			
 			if(opcion < 0 || opcion > 3) {
@@ -102,6 +107,9 @@ public class Validaciones {
 			System.out.println("1)Registrar cocina");
 			System.out.println("2)Registrar dormitorio");
 			System.out.println("3)Salir al jardin");
+			System.out.println("4)Bajar al sotano");
+			System.out.println("5)Mirar contenido mochila");
+			System.out.println("6)Ver tu estado");
 			opcion = teclado.nextInt();
 			
 			if(opcion < 0 || opcion > 3) {
@@ -170,6 +178,8 @@ public class Validaciones {
 			System.out.println("1)Registrar caja registradora"); 
 			System.out.println("2)????");
 			System.out.println("3)???? "); 
+			System.out.println("4)Mirar contenido mochila");
+			System.out.println("5)Ver tu estado");
 			opcion = teclado.nextInt();
 			
 			if(opcion < 0 || opcion > 3) {
