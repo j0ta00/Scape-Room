@@ -85,7 +85,30 @@ public class Main {
 					break;
 					
 					case 4:
-						
+						do{
+						validacion.mostrarLeerValidarOpcionesGasolinera();
+						switch(opcion) {
+
+							case 1:
+								System.out.println("Es una vieja caja registradora");
+								objetoZona4 = Gestora.obtenerObjeto(objetos, "Dolares");
+								if (!objetoZona4.getEquipado()) {
+									System.out.println("Parece que aún tiene dinero");
+									System.out.println("¿Quieres cogerlo? Introduce 'S' para cogerlo o 'N' para dejarlo ahí");
+									respuesta = validacion.leerValidarRespuesta();
+									if (respuesta == 'S') {
+										Gestora.guardarObjetoUsuario(objetoZona4,usuario,validacion);
+									} else {
+
+										System.out.println("Has dejado el objeto donde estaba");
+									}
+								} else {
+
+									System.out.println("Ya no queda nada interesante que hacer aquí");
+
+								}
+
+							break;
 					break;
 					
 					}
