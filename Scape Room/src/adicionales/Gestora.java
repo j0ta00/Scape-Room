@@ -12,6 +12,21 @@ import objetos.Objeto;
 
 public class Gestora {
 	
+	/*
+	 * Prototipo: public static void crearGuardarObjetos(String path)
+	 * 
+	 * Comentario: Este metodo se encarga de crear y guardar en un fichero una lista de objetos de tipo Objeto.
+	 * 
+	 * Entradas: String path
+	 * 
+	 * Salidas: Ninguna
+	 * 
+	 * Precondiciones: Path es la ruta del fichero por que debera de estar bien especificada
+	 * 
+	 * Postcondiciones: Este metodo se trata de un procedimiento por lo que no devolvera ningun tipo de dato,
+	 * 					solo creara una serie de objetos de tipo Objeto y los escribira en un fichero
+	 * 
+	 */
 	public static void crearGuardarObjetos(String path) {
 		
 		ObjectOutputStream  oos = null;
@@ -41,18 +56,19 @@ public class Gestora {
 	
 	/*
 	 * 
-	 * Prototipo: public Objeto obtenerObjeto(String path, String nombre)
+	 * Prototipo: public static ArrayList<Objeto> obtenerObjetos(String path)
 	 * 
-	 * Comentario: Este metodo se encarga de buscar y coger todos objeto de tipo Objeto en un fichero y almacenarlos en un ArrayList.
+	 * Comentario: Este metodo se encarga de buscar y coger todos objeto de tipo Objeto de un fichero y almacenarlos en un ArrayList.
 	 * 			   (Se carga un fichero de Objeto en memoria)
 	 * 
-	 * Entradas: String path, String nombre
+	 * Entradas: String path
 	 * 
 	 * Salidas: ArrayList<Objeto> solicitados
 	 * 
 	 * Precondiciones: Path es la ruta del fichero por que debera de estar bien especificada
 	 * 
-	 * Postcondiciones: 
+	 * Postcondiciones: Este metodo se trata de una funcion por lo que devolvera un tipo de dato, en este caso un ArrayList<Objeto>
+	 * 					que contendra todos los objetos de tipo Objeto que hay en un fichero
 	 *  
 	 */
 	public static ArrayList<Objeto> obtenerObjetos(String path) {
@@ -65,12 +81,12 @@ public class Gestora {
 			
 			ois = new ObjectInputStream(new FileInputStream(path));
 			
-			while( (objeto = (Objeto)ois.readObject() ) != null ) {
-				solicitados.add(objeto);
+			while( (objeto = (Objeto)ois.readObject() ) != null ) { //Mientras no se ha fin de fichero
+				solicitados.add(objeto); //Se guarda el objeto en
 			}
 	
 		}catch(EOFException e){
-			
+			//Cuando se lee un fichero con ObjectInputStream y se llega a fin de fichero se lanza una excepcion EOFException
 		}catch(IOException | ClassNotFoundException i ) {
 			i.printStackTrace();
 		}finally {
@@ -84,14 +100,29 @@ public class Gestora {
 		return solicitados;
 	}
 	
+	/*
+	 * 
+	 * Prototipo: public static Objeto obtenerObjeto(ArrayList<Objeto> objetos, String nombre)
+	 * 
+	 * Comentario: Este metodo se encarga de coger un objeto de tipo Objeto de un ArrayList de Objeto
+	 * 
+	 * Entradas: ArrayList<Objeto> objetos, String nombre
+	 * 
+	 * Salidas: Objeto solicitado
+	 * 
+	 * Precondiciones: Nombre debe ser el de un objeto que haya en el ArrayList sino se devolvera Null(Vacio)
+	 * 
+	 * Postcondiciones: Este metodo se trata de una funcion por lo que devolvera un tipo de dato, en este caso un Objeto que sera 
+	 * 					uno segun el nombre especificado como parametro formal
+	 *  
+	 */
 	public static Objeto obtenerObjeto(ArrayList<Objeto> objetos, String nombre) {
 		
 		Objeto solicitado = null; 
 		
-		for(int i = 0; i < objetos.size() && solicitado == null; i++ ) {
+		for(int i = 0; i < objetos.size() && solicitado == null; i++ ) { //Mientras haya objetos que mirar en el ArrayList y no se haya encontrado el objeto deseado
 			
-			if(objetos.get(i).getNombre().equals(nombre) && objetos.get(i).getCogido() == false) {
-				objetos.get(i).setCogido(true);
+			if(objetos.get(i).getNombre().equals(nombre) && objetos.get(i).getEquipado() == false) { //Si el nombre del objeto en la posicion i del ArrayList es igual al nombre recibido como parametro y ademas ese objeto no se ha cogido ya
 				solicitado = objetos.get(i);
 			}
 		}
