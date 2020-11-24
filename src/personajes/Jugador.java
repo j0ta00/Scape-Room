@@ -42,7 +42,7 @@ public class Jugador extends Personaje {
 				this.movimientos = movimientos;
 			}
 		}
-	//Metodos a�adidos
+	//Metodos añadidos
 		
 		/*
 		 * Prototipo: public void mirarContenidoMochila()
@@ -163,7 +163,7 @@ public class Jugador extends Personaje {
 		 * 
 		 * Precondiciones:  posicionObjeto tiene que ser una posicion valida(Que este en el rango de posiciones de la mochila) en la mochila.
 		 * 
-		 * Postcondiciones: Este metodo al ser una funcion devolvera un tipo de dato, en este caso un int(danhoFinal) que sera el da�o
+		 * Postcondiciones: Este metodo al ser una funcion devolvera un tipo de dato, en este caso un int(danhoFinal) que sera el daño
 		 * 					que causa un Jugador mas el que le proporcione el objeto que use para atacar
 		 * 
 		 */
@@ -184,17 +184,17 @@ public class Jugador extends Personaje {
 		} 
 		
 		/*
-		 * Prototipo: 
+		 * Prototipo:public int consultarObjetosMisionMochila() 
 		 * 
-		 * Comentario:
+		 * Comentario:Este método nos permite consultar si tenemos todos los objetos necesarios para conseguir cumplir la misión
 		 * 
-		 * Entradas: 
+		 * Entradas:Ninguna 
 		 * 
-		 * Salidas: 
+		 * Salidas:int objetosMision 
 		 * 
-		 * Precondiciones:  
+		 * Precondiciones:Ninguna  
 		 * 
-		 * Postcondiciones: 
+		 * Postcondiciones:Se trata de un procedimiento 
 		 * 
 		 */
 		
@@ -217,17 +217,18 @@ public class Jugador extends Personaje {
 		
 		
 		/*
-		 * Prototipo: 
+		 * Prototipo:public boolean consultarObjetosNecesarioMochila(String nombreObjeto)  
 		 * 
-		 * Comentario: 
+		 * Comentario:Se trata de unmétodo que nos permitirá comprobar si tenemos en nuestro inventario el objeto necesario para
+		 * continuar la aventura o abrir una puerta
+		 *
+		 * Entradas:String nombreObjeto 
 		 * 
-		 * Entradas: 
+		 * Salidas:boolean disponible 
 		 * 
-		 * Salidas: 
+		 * Precondiciones:El nombre del objeto deberá ser introducido correctamente 
 		 * 
-		 * Precondiciones: 
-		 * 
-		 * Postcondiciones: 
+		 * Postcondiciones:Se trata de una función que nos devolverá un tipo de dato entero 
 		 * 
 		 */
 		public boolean consultarObjetosNecesarioMochila(String nombreObjeto) { 
@@ -243,17 +244,17 @@ public class Jugador extends Personaje {
 		}
 		
 		/*
-		 * Prototipo: 
+		 * Prototipo:public void consumirObjeto 
 		 * 
-		 * Comentario: 
+		 * Comentario:Este método permitirá que el usuario consuma un objeto y obtenga un incremento en su vida 
 		 * 
-		 * Entradas: 
+		 * Entradas:int incremento, String opcion 
 		 * 
-		 * Salidas: 
+		 * Salidas:Ninguna 
 		 * 
-		 * Precondiciones: 
+		 * Precondiciones:Ninguna 
 		 * 
-		 * Postcondiciones: 
+		 * Postcondiciones:Se trata de un procedmiento
 		 * 
 		 */
 		
