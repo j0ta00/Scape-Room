@@ -149,7 +149,7 @@ public class Gestora {
 	public static void iteracionUsuarioConObjeto(Objeto objeto, Jugador usuario) {
 		char respuesta = ' ';
 		int posicionMochila = 0;
-		Validaciones validacion;
+		Validaciones validacion = new Validacion();
 	
 		System.out.println("Has encontrado el siguiente objeto: "+objeto.getNombre());
 		System.out.println("¿Quieres cogerlo?");
