@@ -71,7 +71,7 @@ public class Validaciones {
 		int opcion = 0;
 		
 		do {
-			System.out.println("Estas en el garaje huele un poco a goma todavia.¿Que quieres hacer?: ");
+			System.out.println("Estas en el garaje huele un poco a goma todavia.Â¿Que quieres hacer?: ");
 			System.out.println("0)Subir al departamento");
 			System.out.println("1)Inspeccionar coche");
 			System.out.println("2)Registrar caja de herramientas");
@@ -137,7 +137,7 @@ public class Validaciones {
 		int opcion = 0;
 		
 		do {
-			System.out.println("Te encuentras en la mansion abandonada. ¿Qué quieres hacer? ");
+			System.out.println("Te encuentras en la mansion abandonada. Â¿QuÃ© quieres hacer? ");
 			System.out.println("0)Volver al departamento");
 			System.out.println("1)Registrar cocina");
 			System.out.println("2)Subir al dormitorio");
@@ -209,8 +209,8 @@ public class Validaciones {
 			System.out.println("Estas en la gasolinera que deseas hacer: ");
 			System.out.println("0)Volver al departamento");
 			System.out.println("1)Registrar caja registradora"); 
-			System.out.println("2)????");
-			System.out.println("3)???? "); 
+			System.out.println("2)Revisar surtidores");
+			System.out.println("3)Mirar Almacen de la gasolinera"); 
 			System.out.println("4)Mirar contenido mochila");
 			System.out.println("5)Ver tu estado");
 			opcion = teclado.nextInt();
@@ -223,4 +223,28 @@ public class Validaciones {
 
 		return opcion;
 	}
+	
+	public int mostrarLeerValidarOpcionesAlmacenGasolinera() {
+		
+		Scanner teclado = new Scanner (System.in);
+		int opcion = 0;
+		
+		do {
+			System.out.println("Estas en el almacen de la gasolinera que deseas hacer: ");
+			System.out.println("0)Volver al principio de la Gasolinera");
+			System.out.println("1)Registrar zona"); 
+			System.out.println("2)Revisar puerta extraÃ±a");
+			System.out.println("4)Mirar contenido mochila");
+			System.out.println("5)Ver tu estado");
+			opcion = teclado.nextInt();
+			
+			if(opcion < 0 || opcion > 5) {
+				System.out.println("Error opcion no valida, por favor introduzca una valida(0-5)");
+			}
+		
+		}while(opcion < 0 || opcion > 5);
+
+		return opcion;
+	}
+	
 }
