@@ -38,36 +38,41 @@ public class Personaje {
 			return vida;
 		}
 		public void setVida(int vida) {
-			this.vida=vida;
+			if(vida < 1) {
+				this.vida = 0;
+			}else {
+				this.vida=vida;	
+			}
 		}
 		//danho
 		public int getDanho() {
 			return danho;
 		}
-	//Metodos aÃ±adidos
+	//Metodos añadidos
 		
 	/*
-	 * Prototipo:
+	 * Prototipo: public void recibirDaño(int danho)
 	 * 
-	 * Comentario:
+	 * Comentario: Este metodo se encarga de reducir la vida de un objeto de tipo Personaje cuando recibe un daño
 	 * 
-	 * Entradas:
+	 * Entradas: int danho
 	 * 
-	 * Salidas:
+	 * Salidas: Ninguna
 	 * 
-	 * Precondiciones:
+	 * Precondiciones: El daño recibido tiene que ser mayor que 0 
 	 * 
-	 * Postcondiciones:
+	 * Postcondiciones: Este metodo como es un procedimiento no devolvera ningun tipo de dato, 
+	 * 					en este caso solo disminuira el atributo vida de un Personje.
 	 * 
 	 */
-	public void recibirDanho(int danho){
-		vida-=danho;
+	public void recibirDaño(int danho){
+		setVida(vida-danho);
 	}
 	
 	/*
 	 * Prototipo: public int realizarAtaque()
 	 * 
-	 * Comentario: Este metodo se encarga de devolver el ataque de un personaje 
+	 * Comentario: Este metodo se encarga de devolver el ataque de un Personaje pudiendo ser dicho ataque critico(*2)
 	 * 
 	 * Entradas: Ninguna
 	 * 
@@ -75,11 +80,11 @@ public class Personaje {
 	 * 
 	 * Precondiciones: Ninguna
 	 * 
-	 * Postcondiciones: Este metodo es una funcion y que devuelve un tipo de dato entero(ataque)
+	 * Postcondiciones: Este metodo se trata de una funcion y devolvera en este caso un tipo de dato entero(ataque)
 	 * 
 	 */
 	public int realizarAtaque() {
-		final int BONIFICACION = 2; //Valor que se multiplicara al ataque que realiza un personaje cuando se produzca un critico
+		final int BONIFICACION = 2; //Valor que se multiplicara al ataque que realiza un Personaje cuando se produzca un critico
 		int critico = (int)(Math.random()*10+1);
 		int ataque = danho;
 			
@@ -92,6 +97,6 @@ public class Personaje {
 	
 	@Override
 	public String toString() {
-		return "Nombre: "+nombre+" Vida: "+vida+" DaÃ±o: "+danho;
+		return "Nombre: "+nombre+" - Vida: "+vida+" - Daño: "+danho;
 	}
 }

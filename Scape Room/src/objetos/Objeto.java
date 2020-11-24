@@ -1,10 +1,11 @@
 package objetos;
 
+import java.io.Serializable;
+
+public class Objeto implements Serializable{
 
 
-public class Objeto {
-
-	
+	private static final long serialVersionUID = 1L;//Id control de versiones
 	
 	//Atributos 
 	private String nombre;

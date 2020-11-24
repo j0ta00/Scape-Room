@@ -10,7 +10,7 @@ public class Validaciones {
 			char respuesta = ' ';
 			
 			do {
-				respuesta = Character.toLowerCase(teclado.next().charAt(0));
+				respuesta = Character.toUpperCase(teclado.next().charAt(0));
 				
 				if(respuesta != 'S' && respuesta != 'N') {
 					System.out.println("Error respuesta no valida, por favor introduzca una valida(S-N)");
@@ -18,8 +18,26 @@ public class Validaciones {
 			
 			}while(respuesta != 'S' && respuesta != 'N');
 			
-			teclado.close();
 			return respuesta;
+	}
+	
+	public int leerValidarPosicionMochila() {
+			
+			Scanner teclado = new Scanner (System.in);
+			int opcion = 0;
+			
+			do {
+				System.out.println("\nIngrese una posicion de la mochila donde esta el objeto que desea(No se tendra encuenta si no hay nada en dicha posicion)");
+				opcion = teclado.nextInt();
+				
+				if(opcion < 0 || opcion > 4) {
+					System.out.println("Error opcion no valida, por favor introduzca una valida(1-4)");
+				}
+				
+				}while(opcion < 0 || opcion > 4);
+			
+
+			return opcion;
 	}
 
 	public int mostrarLeerValidarOpcionInicial() {
@@ -28,9 +46,9 @@ public class Validaciones {
 		int opcion = 0;
 		
 		do {
-			System.out.println("Estas en tu departamento tienes 4 sitios a donde ir: ");
+			System.out.println("Estas en tu departamento que accion deseas realizar: ");
 			System.out.println("0)Terminar la partida");
-			System.out.println("1)Ir al garaje");
+			System.out.println("1)Bajar al garaje");
 			System.out.println("2)Ir al cementerio");
 			System.out.println("3)Ir a la mansion abandonada");
 			System.out.println("4)Ir a la gasolinera");
@@ -38,31 +56,34 @@ public class Validaciones {
 			System.out.println("6)Ver tu estado");
 			opcion = teclado.nextInt();
 			
-			if(opcion < 1 || opcion > 4) {
-				System.out.println("Error opcion no valida, por favor introduzca una valida(1-4)");
+			if(opcion < 0 || opcion > 6) {
+				System.out.println("Error opcion no valida, por favor introduzca una valida(0-6)");
 			}
 			
-			}while(opcion < 1 || opcion > 4);
+			}while(opcion < 0 || opcion > 6);
 		
-		teclado.close();
 		return opcion;
 	}
-	public int leerValidarPosicionMochila(){
+	
+	public int mostrarLeerValidarOpcionesGaraje() {
 		
-		Scanner teclado = new Scanner(System.in);
-		int posicionMochila=0;
+		Scanner teclado = new Scanner (System.in);
+		int opcion = 0;
 		
-		do{
-			posicionMochila = teclado.nextInt();
-
-			if(posicionMochila<0 || posicionMochila> 4) {
-				
-				System.out.println("Error respuesta no valida, por favor introduzca una valida(S-N)");
-				
+		do {
+			System.out.println("Estas en el garaje huele un poco a goma todavia.¿Que quieres hacer?: ");
+			System.out.println("0)Subir al departamento");
+			System.out.println("1)Inspeccionar coche");
+			System.out.println("2)Registrar caja de herramientas");
+			opcion = teclado.nextInt();
+			
+			if(opcion < 0 || opcion > 2) {
+				System.out.println("Error opcion no valida, por favor introduzca una valida(0-2)");
 			}
-		}while(posicionMochila<0 || posicionMochila>4);
-
-		return posicionMochila;
+		
+		}while(opcion < 0 || opcion > 2);
+		
+		return opcion;
 	}
 	
 	public int mostrarLeerValidarOpcionesCementario() {
@@ -71,22 +92,20 @@ public class Validaciones {
 		int opcion = 0;
 		
 		do {
-			System.out.println("Te encuentras en el cementerio y tienes : ");
+			System.out.println("Te encuentras en el cementerio y puedes realizar las siguietes acciones: ");
 			System.out.println("0)Volver al departamento");
 			System.out.println("1)Registrar tumba");
-			System.out.println("2)Leer nota");
-			System.out.println("3)Visita casetilla");
-			System.out.println("4)Mirar contenido mochila");
-			System.out.println("5)Ver tu estado");
+			System.out.println("2)Visita casetilla");
+			System.out.println("3)Mirar contenido mochila");
+			System.out.println("4)Ver tu estado");
 			opcion = teclado.nextInt();
 			
-			if(opcion < 0 || opcion > 3) {
-				System.out.println("Error opcion no valida, por favor introduzca una valida(0-3)");
+			if(opcion < 0 || opcion > 4) {
+				System.out.println("Error opcion no valida, por favor introduzca una valida(0-4)");
 			}
 		
-		}while(opcion < 0 || opcion > 3);
+		}while(opcion < 0 || opcion > 4);
 		
-		teclado.close();
 		return opcion;
 	}
 	
@@ -99,8 +118,8 @@ public class Validaciones {
 			System.out.println("Ves enfrente 3 tumbas cual deseas inspeccionar: ");
 			System.out.println("0)Volver atras");
 			System.out.println("1)Tumba 1. Antonio Perez");
-			System.out.println("2)Tumba 2.  Perez"); 
-			System.out.println("3)Tumba 3. Antonio ");
+			System.out.println("2)Tumba 2. Ma u l Cor ez"); 
+			System.out.println("3)Tumba 3. Romancio Gutierrez");
 			opcion = teclado.nextInt();
 			
 			if(opcion < 0 || opcion > 3) {
@@ -109,7 +128,6 @@ public class Validaciones {
 		
 		}while(opcion < 0 || opcion > 3);
 		
-		teclado.close();
 		return opcion;
 	}
 	
@@ -119,23 +137,22 @@ public class Validaciones {
 		int opcion = 0;
 		
 		do {
-			System.out.println("Te encuentras en la mansion abandonada y tienes : ");
+			System.out.println("Te encuentras en la mansion abandonada. ¿Qué quieres hacer? ");
 			System.out.println("0)Volver al departamento");
 			System.out.println("1)Registrar cocina");
-			System.out.println("2)Registrar dormitorio");
+			System.out.println("2)Subir al dormitorio");
 			System.out.println("3)Salir al jardin");
 			System.out.println("4)Bajar al sotano");
 			System.out.println("5)Mirar contenido mochila");
 			System.out.println("6)Ver tu estado");
 			opcion = teclado.nextInt();
 			
-			if(opcion < 0 || opcion > 3) {
-				System.out.println("Error opcion no valida, por favor introduzca una valida(0-3)");
+			if(opcion < 0 || opcion > 6) {
+				System.out.println("Error opcion no valida, por favor introduzca una valida(0-6)");
 			}
 		
-		}while(opcion < 0 || opcion > 3);
-		
-		teclado.close();
+		}while(opcion < 0 || opcion > 6);
+
 		return opcion;
 	}
 	
@@ -158,7 +175,7 @@ public class Validaciones {
 			
 			}while(opcion < 0 || opcion > 3);
 			
-			teclado.close();
+
 			return opcion;
 	}
 	
@@ -179,8 +196,7 @@ public class Validaciones {
 			}
 		
 		}while(opcion < 0 || opcion > 2);
-		
-		teclado.close();
+
 		return opcion;
 	}
 	
@@ -193,19 +209,18 @@ public class Validaciones {
 			System.out.println("Estas en la gasolinera que deseas hacer: ");
 			System.out.println("0)Volver al departamento");
 			System.out.println("1)Registrar caja registradora"); 
-			System.out.println("2)Inspeccionar interior de la gasolinera");
-			System.out.println("3)Revisar surtidores");
+			System.out.println("2)????");
+			System.out.println("3)???? "); 
 			System.out.println("4)Mirar contenido mochila");
 			System.out.println("5)Ver tu estado");
 			opcion = teclado.nextInt();
 			
-			if(opcion < 0 || opcion > 3) {
-				System.out.println("Error opcion no valida, por favor introduzca una valida(0-3)");
+			if(opcion < 0 || opcion > 5) {
+				System.out.println("Error opcion no valida, por favor introduzca una valida(0-5)");
 			}
 		
-		}while(opcion < 0 || opcion > 3);
-		
-		teclado.close();
+		}while(opcion < 0 || opcion > 5);
+
 		return opcion;
 	}
 }

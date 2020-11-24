@@ -4,41 +4,59 @@ import objetos.Objeto;
 import personajes.Jugador;
 
 public class TestJugador {
-
+	
 	public static void main(String[] args) {
-
+	
 		Jugador sinParametros = new Jugador();
-		Jugador conParametros = new Jugador("Juanjo",100,5,0);
-		Objeto prueba = new Objeto("prueba",15,"Esto es una prueba");
-		Objeto prueba2 = new Objeto("prueba2",25,"Esto es la segunda prueba");
+		Jugador conParametros = new Jugador("Prueba",500,15,10);
+		Objeto llave = new Objeto("Llave",0,"Esto es una prueba");
+		Objeto cuchillo = new Objeto("Cuchillo",10,"Esto es una prueba");
+		Objeto tirado = null;
+
 		System.out.println("--- Metodos Fundamentales (GETTERS AND SETTERS) ---");
 		System.out.println("		GETTERS			");
-		System.out.println("sinParametros: Nombre: "+sinParametros.getNombre()+" Daño: "+sinParametros.getDanho()+" Vida "+sinParametros.getVida()+" Movimiento "+sinParametros.getMovimientos());
-		System.out.println("conParametros: Nombre: "+conParametros.getNombre()+" Daño: "+conParametros.getDanho()+" Vida "+conParametros.getVida()+" Movimiento "+conParametros.getMovimientos());
-		System.out.println("ArrayList"+conParametros.getMochila());
+		System.out.println("sinParametros: Nombre: "+sinParametros.getNombre()+" Danho: "+sinParametros.getDanho()+" Vida: "+sinParametros.getVida()
+							+" Movimientos: "+sinParametros.getMovimientos()+" Mochila: "+sinParametros.getMochila().get(0));
+		System.out.println("conParametros: Nombre: "+conParametros.getNombre()+" Danho: "+conParametros.getDanho()+" Vida: "+conParametros.getVida()
+							+" Movimientos: "+conParametros.getMovimientos()+" Mochila: "+conParametros.getMochila().get(0));
 		System.out.println("		SETTERS			");
-		sinParametros.setMovimientos(1);
-		conParametros.setMovimientos(70);
-		System.out.println("conParametros: Movimientos "+conParametros.getMovimientos());
-		System.out.println("\n--- Metodos Añadidos ---");
-		System.out.println("cogerObjeto\n");
-		System.out.println("conParametros "+conParametros.cogerObjeto(prueba));
-		System.out.println("sinParametros "+sinParametros.cogerObjeto(prueba)+"\n");
-		System.out.println("sinParametros "+sinParametros.cogerObjeto(null)+"\n");
-		System.out.println("mirarContenidoMochila\n");
-		sinParametros.mirarContenidoMochila();
+		conParametros.setMovimientos(-2);
+		System.out.println("conParametros: atributo movimentos cambia de 10 a 0 --> "+conParametros.getMovimientos());
+		conParametros.setMovimientos(5);
+		System.out.println("conParametros: atributo movimentos cambia de 0 a 5 --> "+conParametros.getMovimientos());
+		System.out.println("--- Metodos Añadidos ---");
+		System.out.println("		mirarContenido");
+		System.out.print("conParametros: resultado esperado 4 Espacio vacios --> ");
 		conParametros.mirarContenidoMochila();
-		System.out.println("\nmirarContenidoMochila cuando la mochila esta llena y por lo tanto no debería coger el nuevo objeto\n");
-		sinParametros.cogerObjeto(prueba);
-		sinParametros.cogerObjeto(prueba);
-		sinParametros.cogerObjeto(prueba);
-		sinParametros.cogerObjeto(prueba);
-		sinParametros.cogerObjeto(prueba);
-		sinParametros.cogerObjeto(prueba2);
-		sinParametros.mirarContenidoMochila();
-		System.out.println("\nreducirMovimiento\n");
+		conParametros.cogerObjeto(llave);
+		System.out.print("\nconParametros: resultado esperado llave + 3 Espacio vacios --> ");
+		conParametros.mirarContenidoMochila();
+		System.out.println("\n		reducirMovimientos");
 		conParametros.reducirMovimiento();
-		System.out.println("Movimientos tras la reducción "+conParametros.getMovimientos());
+		System.out.println("conParametros: atributo movimentos cambia de 5 a 4 --> "+conParametros.getMovimientos());
+		conParametros.setMovimientos(0);
+		conParametros.reducirMovimiento();
+		System.out.println("conParametros: atributo movimentos cambia de 4 a 0 --> "+conParametros.getMovimientos());
+		System.out.println("		cogerObjeto");
+		System.out.println("conParametros: resultado esperado true --> "+conParametros.cogerObjeto(cuchillo));
+		conParametros.cogerObjeto(cuchillo);
+		conParametros.cogerObjeto(cuchillo);
+		System.out.println("conParametros: resultado esperado false --> "+conParametros.cogerObjeto(llave));
+		System.out.println("		tirarObjeto");
+		tirado = conParametros.tirarObjeto(0);
+		System.out.print("conParametros tira objeto llave de la posicion 1 de la mochila, si miramos su contenido en la posicion 1 se espera Espacio libre --> ");
+		conParametros.mirarContenidoMochila();
+		System.out.println("\ntoString del objeto tirado "+tirado.toString());
+		System.out.println("		realizarAtaque");
+		System.out.println("conParametros: resultado esperado de realizarAtaque  25 o 50 --> "+conParametros.realizarAtaque(3));
+		System.out.println("		consultarObjetoDisponible");//Bajo observacion
+		//System.out.println("conParametros: resultado esperado de consultarObjetoDisponible  true --> "+conParametros.consultarObjetosDisponibles());
+		 conParametros.tirarObjeto(1);
+		 conParametros.tirarObjeto(2);
+		 conParametros.tirarObjeto(3);
+		//System.out.println("conParametros: resultado esperado de consultarObjetoDisponible  false --> "+conParametros.consultarObjetosDisponibles());
+		System.out.println("--- Metodos Heredados ---");
+		System.out.println("		toString");
+		System.out.println("conParametros : "+conParametros.toString());
 	}
-
 }

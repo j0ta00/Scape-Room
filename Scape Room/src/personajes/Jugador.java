@@ -62,13 +62,16 @@ public class Jugador extends Personaje {
 		 */
 		public void mirarContenidoMochila() {
 			
-			for(Objeto o : mochila) {
-				if(o != null) {
-				System.out.print(o.toString()+" |  ");
+			System.out.print("Contenido de la mochila ---> ");
+			
+			for(int i = 0; i < mochila.size(); i++) {
+				if(mochila.get(i) != null) {
+					System.out.print("  ["+ i+"] "+ mochila.get(i).toString());
 				}else {
-					System.out.print("Espacio libre"+" |  ");
+					System.out.print("  ["+ i+"]"+ " Espacio libre");
 				}
 			}	
+			System.out.println();
 		}
 		
 		/*
@@ -174,8 +177,7 @@ public class Jugador extends Personaje {
 		 * 
 		 * Salidas: int danhoFinal
 		 * 
-		 * Precondiciones:  posicionObjeto tiene que ser una posicion valida(Que este en el rango de posiciones de la mochila) en la mochila,
-		 * 					donde haya un objeto de tipo Objeto sino se producira un error.
+		 * Precondiciones:  posicionObjeto tiene que ser una posicion valida(Que este en el rango de posiciones de la mochila) en la mochila.
 		 * 
 		 * Postcondiciones: Este metodo al ser una funcion devolvera un tipo de dato, en este caso un int(danhoFinal) que sera el daño
 		 * 					que causa un Jugador mas el que le proporcione el objeto que use para atacar
@@ -183,8 +185,13 @@ public class Jugador extends Personaje {
 		 */
 		public int realizarAtaque(int posicionObjeto) {
 			final int BONIFICACION = 2; //Valor que se multiplicara al ataque que realiza un Personaje cuando se produzca un critico
-			int danhoFinal = getDanho()+mochila.get(posicionObjeto).getDanho();
+			int danhoFinal = getDanho();
 			int critico = (int)(Math.random()*10+1);
+			Objeto objeto = mochila.get(posicionObjeto);
+			
+			if(objeto != null) {
+				danhoFinal += objeto.getDanho();
+			}
 			
 			if(critico < 4){
 				danhoFinal *= BONIFICACION;
@@ -215,7 +222,7 @@ public class Jugador extends Personaje {
 			for(int i = 0; i < mochila.size() && objetosMision < OBJETOS_NECESARIOS; i++) {
 				if(mochila.get(i) != null) {
 					nombreObjeto = mochila.get(i).getNombre();
-					if(nombreObjeto.equals("Llave Coche") || nombreObjeto.equals("Gasolina") || nombreObjeto.equals("Rueda") ) {
+					if(nombreObjeto.equals("Llave Coche") || nombreObjeto.equals("Gasolina") || nombreObjeto.equals("Bateria") ) {
 						objetosMision++;
 					}
 				}
@@ -243,13 +250,23 @@ public class Jugador extends Personaje {
 			boolean disponible = false;
 
 			for(int i = 0; i < mochila.size() && disponible == false; i++) {
-				if(mochila.get(i).getNombre().equals(nombreObjeto)) {
+				if(mochila.get(i) != null && mochila.get(i).getNombre().equals(nombreObjeto)) {
 					disponible = true;
 				}
 			}
 			
 			return disponible;
 		}
+		
+		public void consumirObjeto(int incremento, String opcion) {
+			
+			if(opcion.equals("Vida")) {
+				setVida(getVida()+incremento);
+			}else {
+				movimientos += incremento;
+			}
+		}
+		
 	//Metodos heredados
 
 	    @Override
