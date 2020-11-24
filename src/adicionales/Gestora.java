@@ -40,14 +40,14 @@ public class Gestora {
 
 			//Creacion de los objetos, que van ha salir en el juego
 			oos.writeObject(new Objeto("Llave Puerta", 0, "Puede abrir algo interesante"));
-			oos.writeObject(new Objeto("Pala", 15, "Quizás puedas desenterrar algo con ella o defenderte"));
+			oos.writeObject(new Objeto("Pala", 15, "QuizÃ¡s puedas desenterrar algo con ella o defenderte"));
 			oos.writeObject(new Objeto("Gasolina", 0, "Igual puede servir como combustible"));
 			oos.writeObject(new Objeto("Llave Coche", 0, "Vinculado con Audi R8"));
-			oos.writeObject(new Objeto("Bateria", 0, "Tiene el tamaño perfecto para encajar en un automóvil"));
+			oos.writeObject(new Objeto("Bateria", 0, "Tiene el tamaÃ±o perfecto para encajar en un automÃ³vil"));
 			oos.writeObject(new Objeto("Pistola", 50, "Ideal para defenderte en medio de un apocalipsis"));
-			oos.writeObject(new Objeto("Navaja", 20, "A pesar de estar en malas condiciones aún conserva su filo"));
-			oos.writeObject(new Objeto("Hacha", 30, "Te permitirá cotar y despedazar"));
-			oos.writeObject(new Objeto("Regadera", 0, "Aún contiene agua"));
+			oos.writeObject(new Objeto("Navaja", 20, "A pesar de estar en malas condiciones aÃºn conserva su filo"));
+			oos.writeObject(new Objeto("Hacha", 30, "Te permitirÃ¡ cotar y despedazar"));
+			oos.writeObject(new Objeto("Regadera", 0, "AÃºn contiene agua"));
 			oos.writeObject(new Objeto("Maceta", 5, "No esta en la mejor de las condiciones"));
 			oos.writeObject(new Objeto("Dolares", 0, "La moneda de cambio mas popular, aunque no te serviara de mucho en un apocalipsis"));
 			oos.writeObject(new Objeto("Llave laboratorio", 0, "Te permitira acceder al laboratorio"));
@@ -143,17 +143,18 @@ public class Gestora {
 	}
 
 	/*
-	 * Prototipo: 
+	 * Prototipo: public static void iteracionUsuarioConObjeto(Objeto objeto, Jugador usuario)
 	 * 
-	 * Comentario: 
+	 * Comentario: Este mÃ©todo se encarga de preguntar al usuario si desea coger un objeto y si es asÃ­ se guardara en el inventario y si 
+         * no se podrÃ¡ tirar otro objeto para hacer sitio al nuevo objeto
 	 * 
-	 * Entradas: 
+	 * Entradas: Objeto objeto, Jugador usuario
 	 * 
-	 * Salidas: 
+	 * Salidas:Ninguna 
 	 * 
-	 * Precondiciones: 
+	 * Precondiciones: Ninguna
 	 * 
-	 * Postcondiciones: 
+	 * Postcondiciones:Este mÃ©todo se trata de un procedimiento 
 	 * 
 	 */
 	public static void iteracionUsuarioConObjeto(Objeto objeto, Jugador usuario) {
@@ -162,7 +163,7 @@ public class Gestora {
 		Validaciones validacion = new Validaciones();
 	
 		System.out.println("Has encontrado el siguiente objeto: "+objeto.getNombre());
-		System.out.println("¿Quieres cogerlo?");
+		System.out.println("Â¿Quieres cogerlo?");
 		respuesta = validacion.leerValidarRespuesta();
 		
 		if(respuesta == 'S') {
@@ -171,11 +172,11 @@ public class Gestora {
 	
 			} else {
 				System.out.println("Tienes el inventario lleno");
-				System.out.println("¿Quieres tirar algún objeto? Introduce 'S' para tirarlo o 'N' para no hacerlo");
+				System.out.println("Â¿Quieres tirar algÃºn objeto? Introduce 'S' para tirarlo o 'N' para no hacerlo");
 				respuesta = validacion.leerValidarRespuesta();
 				
 				if (respuesta == 'S') {
-					System.out.println("Estos son los objetos que tienes en tu inventario, introduce la posición del objeto que desea tirar");
+					System.out.println("Estos son los objetos que tienes en tu inventario, introduce la posiciÃ³n del objeto que desea tirar");
 					usuario.mirarContenidoMochila(); //Muestra el contenido de la mochila del jugador
 					posicionMochila = validacion.obtenerPosicionMochila(); //Lee Y Valida la posicion del objeto a tirar
 					usuario.tirarObjeto(posicionMochila); //Se tira dicho objeto
@@ -188,17 +189,18 @@ public class Gestora {
 	}
 	
 	/*
-	 * Prototipo: 
+	 * Prototipo: public static void combateJugadorEnemigo(Personaje enemigo,Jugador usuario )
 	 * 
-	 * Comentario: 
+	 * Comentario: Este mÃ©todo se encarga de realizar un combate entre el usuario y un enemigo que solo acabara cuando
+	 *la vida de alguno de los dos llegue a 0
 	 * 
-	 * Entradas: 
+	 * Entradas:Personaje enemigo,Jugador usuario  
 	 * 
-	 * Salidas: 
+	 * Salidas:Ninguna 
 	 * 
-	 * Precondiciones: 
+	 * Precondiciones:Ninguna 
 	 * 
-	 * Postcondiciones: 
+	 * Postcondiciones:Este mÃ©todo se trata de un procedimiento 
 	 * 
 	 */
 	public static void combateJugadorEnemigo(Personaje enemigo,Jugador usuario ) {
@@ -208,7 +210,7 @@ public class Gestora {
 		char respuesta = ' ';
 		do {
 			//LeerValidar respuesta(En este caso sera la forma de atacar al enemigo)
-			System.out.println("Quieres usar un objeto de tu mochila para atacar al enemigo(S), si dices que no prepara tus puños(N)");
+			System.out.println("Quieres usar un objeto de tu mochila para atacar al enemigo(S), si dices que no prepara tus puÃ±os(N)");
 			respuesta = validacion.leerValidarRespuesta();
 			
 			if(respuesta == 'S') {
