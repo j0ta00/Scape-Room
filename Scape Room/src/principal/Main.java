@@ -46,7 +46,7 @@ public class Main {
 		System.out.println("Ingresar nombre jugador");
 		nombre = teclado.nextLine();
 		
-		Jugador usuario = new Jugador(nombre,500,10,10);//Crear jugador
+		Jugador usuario = new Jugador(nombre,500,10,10);//Crear jugador del usuario
 
 		//Mostrar Estadisticas Jugador
 		System.out.println("Estadisticas del jugador: \n"+usuario.toString()+"\n");
