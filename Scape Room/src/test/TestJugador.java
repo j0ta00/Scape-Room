@@ -11,6 +11,7 @@ public class TestJugador {
 		Jugador conParametros = new Jugador("Prueba",500,15,10);
 		Objeto llave = new Objeto("Llave",0,"Esto es una prueba");
 		Objeto cuchillo = new Objeto("Cuchillo",10,"Esto es una prueba");
+		Objeto gasolina = new Objeto("Gasolina",0,"Esto es una prueba");
 		Objeto tirado = null;
 
 		System.out.println("--- Metodos Fundamentales (GETTERS AND SETTERS) ---");
@@ -24,7 +25,7 @@ public class TestJugador {
 		System.out.println("conParametros: atributo movimentos cambia de 10 a 0 --> "+conParametros.getMovimientos());
 		conParametros.setMovimientos(5);
 		System.out.println("conParametros: atributo movimentos cambia de 0 a 5 --> "+conParametros.getMovimientos());
-		System.out.println("--- Metodos A�adidos ---");
+		System.out.println("--- Metodos Añadidos ---");
 		System.out.println("		mirarContenido");
 		System.out.print("conParametros: resultado esperado 4 Espacio vacios --> ");
 		conParametros.mirarContenidoMochila();
@@ -49,8 +50,16 @@ public class TestJugador {
 		System.out.println("\ntoString del objeto tirado "+tirado.toString());
 		System.out.println("		realizarAtaque");
 		System.out.println("conParametros: resultado esperado de realizarAtaque  25 o 50 --> "+conParametros.realizarAtaque(3));
-		System.out.println("		consultarObjetoDisponible");//Bajo observacion
-		//System.out.println("conParametros: resultado esperado de consultarObjetoDisponible  true --> "+conParametros.consultarObjetosDisponibles());
+		System.out.println("		consultarObjetosNecesarioMochila");
+		System.out.println("conParametros: resultado esperado true --> "+conParametros.consultarObjetosNecesarioMochila("Cuchillo"));
+		System.out.println("		consultarObjetosMisionMochila");
+		System.out.println("conParametros: resultado esperado 0 --> "+conParametros.consultarObjetosMisionMochila());
+		System.out.println("Le añadiremos al inventario uno de los objetos necesarios en esta caso la Gasolina ");
+		System.out.println("		consumirObjeto");
+		System.out.println("Antes de consumir el objeto -->"+conParametros.getVida());
+
+		conParametros.consumirObjeto(50,"Vida");
+		System.out.println("Tras consumirlo, resultado esperado 550 de vida -->"+conParametros.getVida());
 		 conParametros.tirarObjeto(1);
 		 conParametros.tirarObjeto(2);
 		 conParametros.tirarObjeto(3);

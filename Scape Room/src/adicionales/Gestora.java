@@ -40,14 +40,14 @@ public class Gestora {
 
 			//Creacion de los objetos, que van ha salir en el juego
 			oos.writeObject(new Objeto("Llave Puerta", 0, "Puede abrir algo interesante"));
-			oos.writeObject(new Objeto("Pala", 15, "Quizás puedas desenterrar algo con ella o defenderte"));
+			oos.writeObject(new Objeto("Pala", 15, "QuizÃ¡s puedas desenterrar algo con ella o defenderte"));
 			oos.writeObject(new Objeto("Gasolina", 0, "Igual puede servir como combustible"));
 			oos.writeObject(new Objeto("Llave Coche", 0, "Vinculado con Audi R8"));
-			oos.writeObject(new Objeto("Bateria", 0, "Tiene el tamaño perfecto para encajar en un automóvil"));
+			oos.writeObject(new Objeto("Bateria", 0, "Tiene el tamaÃ±o perfecto para encajar en un automÃ³vil"));
 			oos.writeObject(new Objeto("Pistola", 50, "Ideal para defenderte en medio de un apocalipsis"));
-			oos.writeObject(new Objeto("Navaja", 20, "A pesar de estar en malas condiciones aún conserva su filo"));
-			oos.writeObject(new Objeto("Hacha", 30, "Te permitirá cotar y despedazar"));
-			oos.writeObject(new Objeto("Regadera", 0, "Aún contiene agua"));
+			oos.writeObject(new Objeto("Navaja", 20, "A pesar de estar en malas condiciones aÃºn conserva su filo"));
+			oos.writeObject(new Objeto("Hacha", 30, "Te permitirÃ¡ cotar y despedazar"));
+			oos.writeObject(new Objeto("Regadera", 0, "AÃºn contiene agua"));
 			oos.writeObject(new Objeto("Maceta", 5, "No esta en la mejor de las condiciones"));
 			oos.writeObject(new Objeto("Dolares", 0, "La moneda de cambio mas popular, aunque no te serviara de mucho en un apocalipsis"));
 			oos.writeObject(new Objeto("Llave laboratorio", 0, "Te permitira acceder al laboratorio"));
@@ -68,7 +68,6 @@ public class Gestora {
 	}
 	
 	/*
-	 * 
 	 * Prototipo: public static ArrayList<Objeto> obtenerObjetos(String path)
 	 * 
 	 * Comentario: Este metodo se encarga de buscar y coger todos objeto de tipo Objeto de un fichero y almacenarlos en un ArrayList.
@@ -143,17 +142,20 @@ public class Gestora {
 	}
 
 	/*
-	 * Prototipo: 
+	 * Prototipo: public static void iteracionUsuarioConObjeto(Objeto objeto, Jugador usuario)
 	 * 
-	 * Comentario: 
+	 * Comentario: Este metodo se encarga de preguntar al usuario si desea coger un objeto y si es asi se guardara en el inventario y si 
+     * 			   si este esta lleno se podra tirar otro objeto para hacer sitio al nuevo objeto
 	 * 
-	 * Entradas: 
+	 * Entradas: Ninguna
 	 * 
-	 * Salidas: 
+	 * Salidas: Ninguna 
 	 * 
-	 * Precondiciones: 
+	 * Entradas/Salidas: Objeto objeto, Jugador usuario(El atributo equipado del objeto puede variar y la mochila del usuario tambien)
 	 * 
-	 * Postcondiciones: 
+	 * Precondiciones: Ninguna
+	 * 
+	 * Postcondiciones:Este metodo se trata de un procedimiento, en el cual se guardara un objeto en la mochila del usuario si este lo desea.
 	 * 
 	 */
 	public static void iteracionUsuarioConObjeto(Objeto objeto, Jugador usuario) {
@@ -171,13 +173,14 @@ public class Gestora {
 	
 			} else {
 				System.out.println("Tienes el inventario lleno");
-				System.out.println("¿Quieres tirar algún objeto? Introduce 'S' para tirarlo o 'N' para no hacerlo");
+				System.out.println("¿Quieres tirar algun objeto? Introduce 'S' para tirarlo o 'N' para no hacerlo");
 				respuesta = validacion.leerValidarRespuesta();
 				
 				if (respuesta == 'S') {
-					System.out.println("Estos son los objetos que tienes en tu inventario, introduce la posición del objeto que desea tirar");
+					System.out.println("Estos son los objetos que tienes en tu inventario, introduce la posicion del objeto que desea tirar");
 					usuario.mirarContenidoMochila(); //Muestra el contenido de la mochila del jugador
-					posicionMochila = validacion.obtenerPosicionMochila(); //Lee Y Valida la posicion del objeto a tirar
+					posicionMochila = validacion.obtenerPosicionMochila(); //Lee la posicion del objeto a tirar
+					System.out.println("Has tirado el objeto, puede ser que haya vuelto al lugar de origen");
 					usuario.tirarObjeto(posicionMochila); //Se tira dicho objeto
 					usuario.cogerObjeto(objeto); //Se guarda el nuevo objeto
 				}
@@ -188,17 +191,20 @@ public class Gestora {
 	}
 	
 	/*
-	 * Prototipo: 
+	 * Prototipo: public static void combateJugadorEnemigo(Personaje enemigo,Jugador usuario )
 	 * 
-	 * Comentario: 
+	 * Comentario: Este metodo se encarga de realizar un combate entre el usuario y un enemigo que solo acabara cuando
+	 *			   la vida de alguno de los dos llegue a 0
 	 * 
-	 * Entradas: 
+	 * Entradas: Ninguna 
 	 * 
-	 * Salidas: 
+	 * Salidas: Ninguna
 	 * 
-	 * Precondiciones: 
+	 * Entradas/Salida: Personaje enemigo, Jugador usuario(Se modificara la vida tanto del usuario como del enemigo)
 	 * 
-	 * Postcondiciones: 
+	 * Precondiciones: Tanto el enemigo como el usuario no pueden estar a vacios(null), sino se producira una excepcion
+	 * 
+	 * Postcondiciones: Este metodo se trata de un procedimiento, solo se modificara la vida del enemigo y el usuario
 	 * 
 	 */
 	public static void combateJugadorEnemigo(Personaje enemigo,Jugador usuario ) {
@@ -216,10 +222,10 @@ public class Gestora {
 				System.out.println("Miras rapido el contenido de tu mochila a ver si tienes algo util");
 				usuario.mirarContenidoMochila(); //Mostrar contenido de la mochila del usuairo
 				posicionMochila = validacion.obtenerPosicionMochila();//Se selecciona el lugar en la mochila donde esta el objeto que quiere usar
-				ataqueUsuario = usuario.realizarAtaque(posicionMochila);//Usuario realiza un ataque en funcion del objeto que ha seleccionado, si no hay nada en esa posicion no se tendra en cuenta
+				ataqueUsuario = usuario.realizarAtaque(posicionMochila);//Usuario realiza un ataque en funcion del objeto que ha seleccionado, si no hay nada en esa posicion se tendra en cuenta y se atacara solo con el daño base
 				
 			}else {
-				ataqueUsuario = usuario.realizarAtaque();
+				ataqueUsuario = usuario.realizarAtaque();//Ataque sin usar ningun objeto, solo con su daño base
 			}
 			
 			//Resultado ataque usuario
@@ -235,7 +241,7 @@ public class Gestora {
 			}
 			
 			System.out.println(usuario.getNombre()+" tu vida es de: "+usuario.getVida());
-			System.out.println("La vida de "+enemigo.getNombre()+" es de: "+enemigo.getVida());
+			System.out.println("La vida de "+enemigo.getNombre()+" es de: "+enemigo.getVida()+"\n");
 			
 		}while(enemigo.getVida() > 0 && usuario.getVida() > 0);
 	}
