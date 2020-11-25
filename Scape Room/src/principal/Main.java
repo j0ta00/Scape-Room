@@ -19,8 +19,8 @@ public class Main {
 		//Creacion de los objetos 
 		String pathObjetos = "C:\\Users\\Public\\ObjetosScapeRoom.txt";
 		File file = new File(pathObjetos);
-		if(!file.exists()) { //Si el fichero no esta creado se procede a ello
-			Gestora.crearGuardarObjetos("C:\\Users\\Public\\ObjetosScapeRoom.txt");
+		if(file.exists()) { //Si el fichero no esta creado se procede a ello
+			Gestora.crearGuardarObjetos(pathObjetos);
 		}
 		
 		//Se obtienen todos los objetos que hay en la partida del fichero
@@ -33,7 +33,7 @@ public class Main {
 		int opcionInicial = 0, opcionCementerio = 0, opcionTumbas = 0, opcionGasolinera = 0, opcionJardin = 0, opcionGaraje = 0, opcionMansion = 0, opcionDormitorio = 0, opcionAlmacen = 0;
 		int objetosMisionUsuario = 0;
 		final int OBJETOS_MISION = 3;
-		boolean tumba1 = false, tumba2 = false, tumba3 = false, cuartillo = false, cocina = false, cocheHuida = false, palancaActivada = false, cajasApartadas = false, cocheDestruidoRevisado=false ;
+		boolean tumba1 = false, tumba2 = false, tumba3 = false, cuartillo = false, comidaCocina = false, cocheHuida = false, palancaActivada = false, cajasApartadas = false, cocheDestruidoRevisado=false, iteracionPlanta = false;
 		char respuesta =' ';
 		String nombre = " ";
 		Objeto objetoZona = null;
@@ -212,6 +212,7 @@ public class Main {
 					break; //Fin Opcion mirar mochila
 					
 					}
+					
 				}while(opcionCementerio != 0 && usuario.getVida() > 0);
 				
 			break; //Fin Opcion ir al cementerio
@@ -229,32 +230,153 @@ public class Main {
 					
 					case 1://Opcion Registrar cocina
 						
-						if(cocina == false) {
-							System.out.println("Llegas a la cocina y obervas que el microondas esta abierto, te acercas y ves que en el interior hay un rico plato de croquetas");
+						objetoZona = Gestora.obtenerObjeto(objetos, "Taza");
+					
+						if(comidaCocina == false) { //Si no se a comido la comida de la cocina
+							System.out.println("Llegas a la cocina y observas que en la encimera hay un plato encima de otro, parece que hay algo en su interior");
+							System.out.println("Te acercas al plato y lo abres con cuidado. Vaya son unas croquetas de jamon.");
 							System.out.println("¿Quieres comertelo?");
 							respuesta = validacion.leerValidarRespuesta();
 							
 							if(respuesta == 'S') {
 								usuario.consumirObjeto(50, "Vida");
 								System.out.println("Las mejores sin duda, son igualitas a las que hace tu madre. Te sientes lleno de energia");
-								cocina = true;
+								comidaCocina = true;
 							}else {
 								System.out.println("Dejas la comina en su lugar.");
 							}
+						}else {
+							System.out.println("El plato se encuentra vacio.");
 						}
+						
+						System.out.print("Justo encima de la encimera hay un mueble, te dispones a abrirlo y en su interior: ");
+						if(!objetoZona.getEquipado()) { //Si no tiene equipado el objeto que sale en la cocina
+							Gestora.iteracionUsuarioConObjeto(objetoZona, usuario);
+						}else {
+							System.out.println("No hay nada de valor");
+						}
+						
 						System.out.println("Parece que no hay nada mas que hacer aqui, abandonas la cocina");
+						
 					break; //Fin Opcion Registrar cocina
 					
-					case 2:
+					case 2: //Opcion subir al dormitorio
 						
-					break;
+						do {
+							//LeerYValidarOpcionDormitorio
+							opcionDormitorio = validacion.mostrarObtenerOpcionesDormitorio();
+							
+							switch(opcionDormitorio) {
+							
+							case 1: //Opcion registrar armario
+								
+								objetoZona = Gestora.obtenerObjeto(objetos, "Zapato usado");
+								
+								if(!objetoZona.getEquipado()) {
+									System.out.println("Abres el armario y ves algo al fondo que te llama la atencion ");
+									Gestora.iteracionUsuarioConObjeto(objetoZona, usuario);
+									
+								}else {
+									System.out.println("No hay nada mas util solo queda ropa vieja y encima no es de tu talla");
+								}
+								
+							break;	//Fin Opcion registrar armario
+							
+							case 2: //Opcion registrar mesita de noche
+								
+								objetoZona = Gestora.obtenerObjeto(objetos, "Pistola");
+								
+								System.out.println("Avanzas lentamente hasta detenerte justo delante de una mesita de noche. Encima hay una lampara rota y toda la mesita esta llena de cristales. Ves que esta contiene un cajon y con sumo cuidado lo abres: ");
+								if(!objetoZona.getEquipado()) {
+									Gestora.iteracionUsuarioConObjeto(objetoZona, usuario);						
+								}else {
+									System.out.println("No hay nada en el interior");
+								}
+								
+							break;	//Fin Opcion registrar mesita de noche
+							
+							case 3: //Opcion registrar cama
+								System.out.println("Remueves las sabanas sucias pero no hay nada. Levantas el colchon en busca de algo que te pueda servir pero nada, aqui no guardan el dinero debajo del colchon como en las peliculas. ");
+							break;	//Fin Opcion registrar cama
+							
+							}	
+							
+						}while(opcionDormitorio != 0);
+						
+						System.out.println("Has bajado a la planta principal");
+						
+					break;	//Fin Opcion subir al dormitorio
 					
-					case 3:
+					case 3:	//Opcion salir al jardin
 						
-					break;
+						do {
+							//LeerYValidarOpcionesJardin
+							opcionJardin = validacion.mostrarObtenerOpcionesJardin();
+							
+							switch(opcionJardin) {
+							
+							case 1:	//Opcion Registrar Cuartillo
+								
+								System.out.print("Te acercas al cuartillo hasta plantarte justo delante. ");
+								objetoZona = Gestora.obtenerObjeto(objetos, "Regadera");
+								
+								if(cuartillo == false && usuario.consultarObjetosNecesarioMochila("Llave vieja")) { //Si el cuartillo esta cerrado y el jugador tiene una llave vieja
+									System.out.println("Se encuentra cerrado. Tienes una llave en el inventario. ¿Quieres usarla?");
+									respuesta = validacion.leerValidarRespuesta();
+									
+									if(respuesta == 'S') {
+										Gestora.iteracionUsuarioConObjeto(objetoZona, usuario);
+										cuartillo = true;
+									}
+								}else {
+									if(cuartillo == true) {
+										System.out.println("El cuartillo se encuentra abierto. ");
+										
+										if(!objetoZona.getEquipado()) { //Si el objeto de esta zona no se tiene equipado
+											Gestora.iteracionUsuarioConObjeto(objetoZona, usuario);
+										}else {
+											System.out.println("No hay nada mas en el interior");
+										}
+										
+									}else {
+										System.out.println("CERRADO. Necesitas algun tipo de llave que encaje con la cerradura");
+									}
+								}
+							break;	//Fin Opcion Registrar Cuartillo
+							
+							case 2: //Opcion interactuar con planta
+								
+								System.out.print("Ves una planta encima de una mesa ");
+								if(iteracionPlanta == false && usuario.consultarObjetosNecesarioMochila("Regadera")) { //Si no se ha interactuado con la planta y se tiene una regadera
+									enemigo = new Personaje("Planta carnivora",80,5);
+									System.out.println("parece que estuviera pididendo agua a gritos. Llevas encima una regadera ¿Quieres usarla?");
+									
+									respuesta = validacion.leerValidarRespuesta();
+									
+									if(respuesta == 'S') {
+										System.out.println("La planta comienza a levantarse, vaya no parece muy amigable.");
+										Gestora.combateJugadorEnemigo(enemigo, usuario);
+										cuartillo = true;
+									}else {
+										System.out.println("Dejas la planta tal y como estaba");
+									}
+									
+								}else {
+									if(iteracionPlanta == true) {
+									System.out.println("se encuentra aplastada, esperemos que Greta no se sienta ofendida");
+									}else {
+										System.out.println("necesitaras una regadera para interactuar con ella");
+									}	
+								}	
+							break;	//Fin Opcion interactuar con planta
+							}	
+						}while(opcionJardin != 0 && usuario.getVida() > 0);			
+						
+						
+					break;	//Fin Opcion salir al jardin
 					
 					case 4:
-						
+
 					break;	
 					
 					case 5: //Opcion mirar mochila
@@ -457,7 +579,7 @@ public class Main {
 				if(usuario.getMovimientos() == 0) {
 					System.out.println("Vaya te has quedado sin movimientos, se acabo...");
 				}else {
-					System.out.println("LOSE. Tu cuerpo no aguantaba mas y has muerto");
+					System.out.println("Frase cuando mueras");
 				}
 			}
 		}

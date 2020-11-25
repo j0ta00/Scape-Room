@@ -109,7 +109,7 @@ public class Validaciones {
 		return opcion;
 	}
 	
-	public int mostrarObtenerOpcionesRegistrarDormitorio() {
+	public int mostrarObtenerOpcionesDormitorio() {
 
 		int opcion = 0;
 		
@@ -124,14 +124,14 @@ public class Validaciones {
 		return opcion;
 	}
 	
-	public int mostrarObtenerOpcionesRegistrarJardin() {
+	public int mostrarObtenerOpcionesJardin() {
 
 		int opcion = 0;
 	
 		System.out.println("\nEstas en el jardin: ");
 		System.out.println("0)Volver a la entrada de la casa");
-		System.out.println("1)Registrar cuartillo"); //Regadera
-		System.out.println("2)Observar plantas"); //Planta con regadera te ataca 
+		System.out.println("1)Registrar cuartillo"); 
+		System.out.println("2)Interactuar con planta"); 
 		opcion = leerValidarOpcion(0,2);
 
 
