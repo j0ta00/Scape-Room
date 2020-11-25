@@ -42,7 +42,7 @@ public class Jugador extends Personaje {
 				this.movimientos = movimientos;
 			}
 		}
-	//Metodos añadidos
+	//Metodos a�adidos
 		
 		/*
 		 * Prototipo: public void mirarContenidoMochila()
@@ -99,9 +99,11 @@ public class Jugador extends Personaje {
 		 * 
 		 * Comentario: Este metodo se encarga de guardar un objeto de tipo Objeto en la mochila(ArrayList<Objeto>) de un Jugador
 		 * 
-		 * Entradas: Objeto nuevo
+		 * Entradas: Ninguna
 		 * 
 		 * Salidas: boolean guardado
+		 * 
+		 * Entrada/Salida: Objeto nuevo(Se modificaria su atributo Equipado)
 		 * 
 		 * Precondiciones: Ninguna
 		 * 
@@ -184,17 +186,17 @@ public class Jugador extends Personaje {
 		} 
 		
 		/*
-		 * Prototipo:public int consultarObjetosMisionMochila() 
+		 * Prototipo: public int consultarObjetosMisionMochila() 
 		 * 
-		 * Comentario:Este método nos permite consultar si tenemos todos los objetos necesarios para conseguir cumplir la misión
+		 * Comentario: Este metodo nos permite consultar si tenemos todos los objetos necesarios para conseguir cumplir la mision
 		 * 
-		 * Entradas:Ninguna 
+		 * Entradas: Ninguna 
 		 * 
-		 * Salidas:int objetosMision 
+		 * Salidas: int objetosMision 
 		 * 
-		 * Precondiciones:Ninguna  
+		 * Precondiciones: Ninguna  
 		 * 
-		 * Postcondiciones:Se trata de un procedimiento 
+		 * Postcondiciones: Se trata de un procedimiento, el cual devolvera cuantos objetos para completar la mision tiene un Jugador en su mochila
 		 * 
 		 */
 		
@@ -214,21 +216,21 @@ public class Jugador extends Personaje {
 			return objetosMision;
 		}
 		
-		
-		
 		/*
-		 * Prototipo:public boolean consultarObjetosNecesarioMochila(String nombreObjeto)  
+		 * Prototipo: public boolean consultarObjetosNecesarioMochila(String nombreObjeto)  
 		 * 
-		 * Comentario:Se trata de unmétodo que nos permitirá comprobar si tenemos en nuestro inventario el objeto necesario para
-		 * continuar la aventura o abrir una puerta
+		 * Comentario: Se trata de un metodo que nos permitira comprobar si tenemos en nuestro inventario el objeto necesario para
+		 * 				continuar la aventura o abrir algo.
 		 *
-		 * Entradas:String nombreObjeto 
+		 * Entradas: String nombreObjeto 
 		 * 
-		 * Salidas:boolean disponible 
+		 * Salidas: boolean disponible 
 		 * 
-		 * Precondiciones:El nombre del objeto deberá ser introducido correctamente 
+		 * Precondiciones: El nombre del objeto debera ser introducido correctamente 
 		 * 
-		 * Postcondiciones:Se trata de una función que nos devolverá un tipo de dato entero 
+		 * Postcondiciones: Se trata de una funcion que nos devolvera un tipo de dato booleano, el cual puede tomar dos posibilidades:
+		 * 					-true: Si el objeto el jugador lo tiene en su mochila
+		 * 					-false: Si el objeto el jugador no lo tiene en su mochila 
 		 * 
 		 */
 		public boolean consultarObjetosNecesarioMochila(String nombreObjeto) { 
@@ -244,17 +246,17 @@ public class Jugador extends Personaje {
 		}
 		
 		/*
-		 * Prototipo:public void consumirObjeto 
+		 * Prototipo: public void consumirObjeto(int incremento, String opcion) 
 		 * 
-		 * Comentario:Este método permitirá que el usuario consuma un objeto y obtenga un incremento en su vida 
+		 * Comentario: Este metodo permitira que el usuario consuma un objeto y obtenga un incremento en su vida o sus movimientos
 		 * 
-		 * Entradas:int incremento, String opcion 
+		 * Entradas: int incremento, String opcion 
 		 * 
-		 * Salidas:Ninguna 
+		 * Salidas: Ninguna 
 		 * 
-		 * Precondiciones:Ninguna 
+		 * Precondiciones: Ninguna 
 		 * 
-		 * Postcondiciones:Se trata de un procedmiento
+		 * Postcondiciones: Se trata de un procedimento el cual solo modificara la vida o los movimientos de un jugador
 		 * 
 		 */
 		
@@ -262,8 +264,8 @@ public class Jugador extends Personaje {
 			
 			if(opcion.equals("Vida")) {
 				setVida(getVida()+incremento);
-			}else {
-				movimientos += incremento;
+			}else if(opcion.equals("Movimiento")){
+				setMovimientos(movimientos + incremento);
 			}
 		}
 		
