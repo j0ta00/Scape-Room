@@ -19,7 +19,7 @@ public class Main {
 		//Creacion de los objetos 
 		String pathObjetos = "C:\\Users\\Public\\ObjetosScapeRoom.txt";
 		File file = new File(pathObjetos);
-		if(file.exists()) { //Si el fichero no esta creado se procede a ello
+		if(!file.exists()) { //Si el fichero no esta creado se procede a ello
 			Gestora.crearGuardarObjetos(pathObjetos);
 		}
 		
@@ -318,26 +318,32 @@ public class Main {
 							case 1:	//Opcion Registrar Cuartillo
 								
 								System.out.print("Te acercas al cuartillo hasta plantarte justo delante. ");
-								objetoZona = Gestora.obtenerObjeto(objetos, "Regadera");
 								
 								if(cuartillo == false && usuario.consultarObjetosNecesarioMochila("Llave vieja")) { //Si el cuartillo esta cerrado y el jugador tiene una llave vieja
 									System.out.println("Se encuentra cerrado. Tienes una llave en el inventario. ¿Quieres usarla?");
 									respuesta = validacion.leerValidarRespuesta();
 									
 									if(respuesta == 'S') {
+										objetoZona = Gestora.obtenerObjeto(objetos, "Regadera"); 
+										Gestora.iteracionUsuarioConObjeto(objetoZona, usuario);
+										objetoZona = Gestora.obtenerObjeto(objetos, "Hacha");
 										Gestora.iteracionUsuarioConObjeto(objetoZona, usuario);
 										cuartillo = true;
 									}
 								}else {
-									if(cuartillo == true) {
+									if(cuartillo == true) { //Si el cuartillo ya ha sido abierto
 										System.out.println("El cuartillo se encuentra abierto. ");
 										
-										if(!objetoZona.getEquipado()) { //Si el objeto de esta zona no se tiene equipado
+										objetoZona = Gestora.obtenerObjeto(objetos, "Regadera"); 
+										if(!objetoZona.getEquipado()) { //Si el objeto regadera no se tiene equipado se da la opcion de volvero a equipar
 											Gestora.iteracionUsuarioConObjeto(objetoZona, usuario);
-										}else {
-											System.out.println("No hay nada mas en el interior");
+										}
+										objetoZona = Gestora.obtenerObjeto(objetos, "Hacha"); 
+										if(!objetoZona.getEquipado()) { //Si el objeto hacha no se tiene equipado se da la opcion de volvero a equipar
+											Gestora.iteracionUsuarioConObjeto(objetoZona, usuario);
 										}
 										
+										System.out.println("No hay nada mas que hacer aqui");
 									}else {
 										System.out.println("CERRADO. Necesitas algun tipo de llave que encaje con la cerradura");
 									}
@@ -356,7 +362,7 @@ public class Main {
 									if(respuesta == 'S') {
 										System.out.println("La planta comienza a levantarse, vaya no parece muy amigable.");
 										Gestora.combateJugadorEnemigo(enemigo, usuario);
-										cuartillo = true;
+										iteracionPlanta = true;
 									}else {
 										System.out.println("Dejas la planta tal y como estaba");
 									}
