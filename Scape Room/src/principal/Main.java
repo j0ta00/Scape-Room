@@ -40,7 +40,7 @@ public class Main {
 		Personaje enemigo = null;
 		
 		//Contar historia
-		System.out.println("Contar historia inicial");
+		System.out.println("Contar historia inicial.....");
 		
 		//LeerNombreJugador
 		System.out.println("Ingresar nombre jugador");
