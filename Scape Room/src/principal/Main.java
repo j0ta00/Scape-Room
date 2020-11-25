@@ -14,7 +14,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		Scanner teclado = new Scanner(System.in);
+	 Scanner teclado = new Scanner(System.in);
 		
 		//Creacion de los objetos 
 		String pathObjetos = "C:\\Users\\Public\\ObjetosScapeRoom.txt";
