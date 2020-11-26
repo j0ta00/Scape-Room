@@ -585,12 +585,12 @@ public class Main {
 			System.out.println("Has abandonado el juego");
 		}else {
 			if(cocheHuida == true) {
-				System.out.println("Â¡Â¡Â¡ENHORABUENA!!! Estas hecho todo un superviviente, ya puedes huir de un apocalipsis sin despeinarte");
+				System.out.println("¡¡¡ENHORABUENA!!! Estas hecho todo un superviviente, ya puedes huir de un apocalipsis sin despeinarte");
 			}else {
 				if(usuario.getMovimientos() == 0) {
 					System.out.println("Vaya te has quedado sin movimientos, se acabo...");
 				}else {
-					System.out.println("Frase cuando mueras");
+					Gestora.mostrarFraseMuerte(pathFrases);
 				}
 			}
 		}

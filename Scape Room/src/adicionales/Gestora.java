@@ -1,8 +1,12 @@
 package adicionales;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.EOFException;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -39,16 +43,21 @@ public class Gestora {
 			bw = new BufferedWriter(new FileWriter(path));
 			
 			//Se escriben las frases en el fichero
-			bw.write("“Las guerras seguirán mientras el color de la piel siga siendo más importante que el de los ojos.” -Bob Marley-\n");
-			bw.write("“Las guerras seguirán mientras el color de la piel siga siendo más importante que el de los ojos.” -Bob Marley-\n");
-			bw.write("“Las guerras seguirán mientras el color de la piel siga siendo más importante que el de los ojos.” -Bob Marley-\n");
-			bw.write("“Las guerras seguirán mientras el color de la piel siga siendo más importante que el de los ojos.” -Bob Marley-\n");
-			bw.write("“Las guerras seguirán mientras el color de la piel siga siendo más importante que el de los ojos.” -Bob Marley-\n");
-			bw.write("“Las guerras seguirán mientras el color de la piel siga siendo más importante que el de los ojos.” -Bob Marley-\n");
-			bw.write("“Las guerras seguirán mientras el color de la piel siga siendo más importante que el de los ojos.” -Bob Marley-\n");
-			bw.write("“Las guerras seguirán mientras el color de la piel siga siendo más importante que el de los ojos.” -Bob Marley-\n");
-			bw.write("“Las guerras seguirán mientras el color de la piel siga siendo más importante que el de los ojos.” -Bob Marley-\n");
-			bw.write("“Las guerras seguirán mientras el color de la piel siga siendo más importante que el de los ojos.” -Bob Marley-\n");
+			bw.write("“Las guerras seguirán mientras el color de la piel siga siendo más importante que el de los ojos.”-Bob Mareley-\n");
+			bw.write("“Dar el ejemplo no es la principal manera de influir sobre los demás; es la única manera.”-Albert Einstein-\n");
+			bw.write("“El dinero no puede comprar la vida.” -Últimas palabras de Bob Marley a su hijo-\n");
+			bw.write("“Ningún hombre es lo bastante bueno para gobernar a otros sin su consentimiento.”-Abraham Lincoln-\n");
+			bw.write("“El sabio no dice nunca todo lo que piensa, pero siempre piensa todo lo que dice.”-Aristóteles-\n");
+			bw.write("“Lo que importa verdaderamente en la vida no son los objetivos que nos marcamos, sino los caminos que seguimos para lograrlo.”-Peter Bamm-\n");
+			bw.write("“El mundo es bello, pero tiene un defecto llamado hombre.”-Friedrich Nietzsche-\n");
+			bw.write("“De humanos es errar y de necios permanecer en el error.”-Marco Tulio Cicerón-\n");
+			bw.write("“Hace falta toda una vida para aprender a vivir.”-Séneca-\n");
+			bw.write("“Podrán cortar todas las flores, pero no podrán detener la primavera.”-Pablo Neruda-\n");
+			bw.write("“Las últimas palabras son para los tontos que no han dicho suficiente.”-Últimas palabras de Karl Marx-\n");
+			bw.write("“No es que me aterrorizara contemplar cosas horribles, sino que me aterraba la idea de no ver nada.”-Edgar Allan Poe-\n");
+			bw.write("“Las religiones, como las luciérnagas, necesitan de oscuridad para brillar.”-Arthur Schopenhauer-\n");
+			bw.write("“La peor lucha es la que no se hace”-Karl Marx-\n");
+			bw.write("“El corazón tiene razones que la razón ignora”-Blaise Pascal-");
 			
 		}catch(IOException e) {
 			e.printStackTrace();
@@ -77,20 +86,27 @@ public class Gestora {
 	 */
 	
 	public static void mostrarFraseMuerte(String path){
-		int aleatorio = (int)(Math.random()*10+1);
-		BufferReader br = null;
+		int aleatorio = (int)(Math.random()*15+1);
+		String frase = "";
+		BufferedReader br = null;
 		
 		try{
-			br = new BuefferedReader(new FileReader(path));
+			br = new BufferedReader(new FileReader(path));
 			
+			for(int i = 1; i <= aleatorio; i++) {
+				frase = br.readLine();
+			}
 			
-		}catch(){
-		
+			System.out.println(frase);
+			
+		}catch(IOException e){
+			e.printStackTrace();
 		} finally{
+			
 		 	try{
-			
-			}catch(){
-			
+		 		br.close();
+			}catch(IOException e){
+			e.printStackTrace();
 			}		
 		}
 	}
@@ -122,7 +138,7 @@ public class Gestora {
 			oos.writeObject(new Objeto("Pala", 15, "Quizas puedas desenterrar algo con ella o defenderte"));
 			oos.writeObject(new Objeto("Gasolina", 0, "Igual puede servir como combustible"));
 			oos.writeObject(new Objeto("Llave coche", 0, "Vinculado con Audi R8"));
-			oos.writeObject(new Objeto("Bateria", 0, "Tiene el tamaño perfecto para encajar en un automovil"));
+			oos.writeObject(new Objeto("Bateria", 0, "Tiene el tamaÃ±o perfecto para encajar en un automovil"));
 			oos.writeObject(new Objeto("Pistola", 50, "Ideal para defenderte en medio de un apocalipsis"));
 			oos.writeObject(new Objeto("Navaja", 20, "A pesar de estar en malas condiciones aun conserva su filo"));
 			oos.writeObject(new Objeto("Hacha", 30, "Te permitira cotar y despedazar"));
@@ -130,7 +146,7 @@ public class Gestora {
 			oos.writeObject(new Objeto("Dolares", 0, "La moneda de cambio mas popular, aunque no te serviara de mucho en un apocalipsis"));
 			oos.writeObject(new Objeto("Llave laboratorio", 0, "Te permitira acceder al laboratorio"));
 			oos.writeObject(new Objeto("Llave vieja", 0, "Esta vieja pero todavia funciona"));
-			oos.writeObject(new Objeto("Zapato usado", 0, "No huele muy bien pero ¿Donde esta el otro?"));
+			oos.writeObject(new Objeto("Zapato usado", 0, "No huele muy bien pero Â¿Donde esta el otro?"));
 			oos.writeObject(new Objeto("Taza", 1, "Perfecta para hacerte un ColaCao"));
 		
 		}catch(IOException i) {
@@ -242,7 +258,7 @@ public class Gestora {
 		Validaciones validacion = new Validaciones();
 	
 		System.out.println("Has encontrado el siguiente objeto: "+objeto.getNombre());
-		System.out.println("¿Quieres cogerlo?");
+		System.out.println("Â¿Quieres cogerlo?");
 		respuesta = validacion.leerValidarRespuesta();
 		
 		if(respuesta == 'S') {
@@ -251,7 +267,7 @@ public class Gestora {
 	
 			} else {
 				System.out.println("Tienes el inventario lleno");
-				System.out.println("¿Quieres tirar algun objeto? Introduce 'S' para tirarlo o 'N' para no hacerlo");
+				System.out.println("Â¿Quieres tirar algun objeto? Introduce 'S' para tirarlo o 'N' para no hacerlo");
 				respuesta = validacion.leerValidarRespuesta();
 				
 				if (respuesta == 'S') {
@@ -292,7 +308,7 @@ public class Gestora {
 		char respuesta = ' ';
 		do {
 			//LeerValidar respuesta(En este caso sera la forma de atacar al enemigo)
-			System.out.println("Quieres usar un objeto de tu mochila para atacar al enemigo(S), si dices que no prepara tus puños(N)");
+			System.out.println("Quieres usar un objeto de tu mochila para atacar al enemigo(S), si dices que no prepara tus puÃ±os(N)");
 			respuesta = validacion.leerValidarRespuesta();
 			
 			if(respuesta == 'S') {
@@ -300,10 +316,10 @@ public class Gestora {
 				System.out.println("Miras rapido el contenido de tu mochila a ver si tienes algo util");
 				usuario.mirarContenidoMochila(); //Mostrar contenido de la mochila del usuairo
 				posicionMochila = validacion.obtenerPosicionMochila();//Se selecciona el lugar en la mochila donde esta el objeto que quiere usar
-				ataqueUsuario = usuario.realizarAtaque(posicionMochila);//Usuario realiza un ataque en funcion del objeto que ha seleccionado, si no hay nada en esa posicion se tendra en cuenta y se atacara solo con el daño base
+				ataqueUsuario = usuario.realizarAtaque(posicionMochila);//Usuario realiza un ataque en funcion del objeto que ha seleccionado, si no hay nada en esa posicion se tendra en cuenta y se atacara solo con el daÃ±o base
 				
 			}else {
-				ataqueUsuario = usuario.realizarAtaque();//Ataque sin usar ningun objeto, solo con su daño base
+				ataqueUsuario = usuario.realizarAtaque();//Ataque sin usar ningun objeto, solo con su daÃ±o base
 			}
 			
 			//Resultado ataque usuario
@@ -323,91 +339,4 @@ public class Gestora {
 			
 		}while(enemigo.getVida() > 0 && usuario.getVida() > 0);
 	}
-	
-	/*
-	 * Prototipo:public static void frasesCelebres() 
-	 * 
-	 * Comentario:Se trata de un método que nos imprimirá en pantalla una frase célebre 
-	 * 
-	 * Entradas:Ninguna 
-	 * 
-	 * Salidas:Ninguna 
-	 * 
-	 * Precondiciones:Ninguna 
-	 * 
-	 * Postcondiciones:Se trata de un procedimiento
-	 * 
-	 */
-	
-	public static void frasesCelebres(){
-		int random = (int) Math.floor(Math.random()*(16-1)+1);
-		
-		switch(random){
-		case 1:
-			System.out.println("“Las guerras seguirán mientras el color de la piel siga siendo más importante que el de los ojos.”");
-			System.out.println("Bob Marley");
-		break;
-		case 2:
-			System.out.println("“Dar el ejemplo no es la principal manera de influir sobre los demás; es la única manera.”");
-			System.out.println("Albert Einstein");
-		break;
-		case 3:
-			System.out.println("“El dinero no puede comprar la vida.”");
-			System.out.println("Últimas palabras de Bob Marley a su hijo");
-		break;
-		case 4:
-			System.out.println("“Ningún hombre es lo bastante bueno para gobernar a otros sin su consentimiento.”");
-			System.out.println("Abraham Lincoln");
-		break;
-		case 5:
-			System.out.println("“El sabio no dice nunca todo lo que piensa, pero siempre piensa todo lo que dice.”");
-			System.out.println("Aristóteles");
-		break;
-		case 6:
-			System.out.println("“Lo que importa verdaderamente en la vida no son los objetivos que nos marcamos, sino los caminos que seguimos para lograrlo.”");
-			System.out.println("Peter Bamm");
-		break;
-		case 7:
-			System.out.println("“El mundo es bello, pero tiene un defecto llamado hombre.”");
-			System.out.println("Friedrich Nietzsche");
-		break;
-		case 8:
-			System.out.println("“De humanos es errar y de necios permanecer en el error.”");
-			System.out.println("Marco Tulio Cicerón");
-		break;
-		case 9:
-			System.out.println("“Hace falta toda una vida para aprender a vivir.”");
-			System.out.println("Séneca");
-		break;
-		case 10:
-			System.out.println("“Podrán cortar todas las flores, pero no podrán detener la primavera.”");
-			System.out.println("Pablo Neruda");
-		break;
-		case 11:
-			System.out.println("“Las últimas palabras son para los tontos que no han dicho suficiente.”");
-			System.out.println("Últimas palabras de Karl Marx");
-		break;
-		case 12:
-			System.out.println("“No es que me aterrorizara contemplar cosas horribles, sino que me aterraba la idea de no ver nada.”");
-			System.out.println("Edgar Allan Poe");
-		break;
-		case 13:
-			System.out.println("“Las religiones, como las luciérnagas, necesitan de oscuridad para brillar.”");
-			System.out.println("Arthur Schopenhauer");
-		break;
-		case 14:
-			System.out.println("“La peor lucha es la que no se hace”");
-			System.out.println("Karl Marx");
-		break;
-		case 15:
-			System.out.println("“El corazón tiene razones que la razón ignora”");
-			System.out.println("Blaise Pascal");
-		break;
-		
-		}
-				
-		
-	}
-	
-	
 }

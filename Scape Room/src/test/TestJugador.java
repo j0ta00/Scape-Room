@@ -45,10 +45,9 @@ public class TestJugador {
 		conParametros.cogerObjeto(llave);
 		System.out.println("conParametros: resultado esperado false --> "+conParametros.cogerObjeto(llave));
 		System.out.println("		tirarObjeto");
-		tirado = conParametros.tirarObjeto(0);
+		conParametros.tirarObjeto(0);
 		System.out.print("conParametros tira objeto llave de la posicion 1 de la mochila, si miramos su contenido en la posicion 1 se espera Espacio libre --> ");
 		conParametros.mirarContenidoMochila();
-		System.out.println("toString del objeto tirado "+tirado.toString());
 		System.out.println("		realizarAtaque");
 		System.out.println("conParametros: resultado esperado de realizarAtaque  25 o 50 --> "+conParametros.realizarAtaque(3));
 		System.out.println("		consultarObjetosNecesarioMochila");
