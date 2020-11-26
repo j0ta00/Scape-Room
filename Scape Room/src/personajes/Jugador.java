@@ -141,8 +141,7 @@ public class Jugador extends Personaje {
 		 * Precondiciones: posicionObjeto tiene que ser una posicion valida(Que este en el rango de posiciones de la mochila) en la mochila, 
 		 * 				   donde haya un objeto de tipo Objeto sino se producira un error.
 		 * 
-		 * Postcondiciones: Este metodo al tratarse de una funcion devolvera un tipo de dato, en este caso un Objeto(tirado)
-		 * 					que sera el objeto que contenga un Jugador en su mochila, quedando la posicion donde estaba antes el objeto libre
+		 * Postcondiciones: Este metodo no devolvera ningun tipo de dato ya que se trata de un procedimiento.
 		 * 
 		 * 
 		 */
@@ -152,6 +151,36 @@ public class Jugador extends Personaje {
 			mochila.set(posicionObjeto, null);
 			tirado.setEquipado(false);
 			
+		}
+	
+	
+	
+		/*
+		 * Prototipo: public void colocarObjeto(String nombreObjeto)
+		 * 
+		 * Comentario: Este metodo se encarga de sacar un objeto de la mochila de Jugador y devolver colocarlo en una zona determinada de manera que ese objeto no volverá a aparecer
+		 * 
+		 * Entradas: String nombreObjeto 
+		 * 
+		 * Salidas: Ninguna
+		 * 
+		 * Entradas/Salidas: Ninguna
+		 * 
+		 * Precondiciones: String nombreObjeto debe coincidir con el nombre de uno de los objetos que el usuario lleve en el inventario en dicho momento.
+		 * 
+		 * Postcondiciones: Este metodo no devolvera ningun tipo de dato ya que se trata de un procedimiento.
+		 * 
+		 * 
+		 */
+	
+		public void colocarObjeto(String nombreObjeto) {
+			for(int i = 0; i < mochila.size() ; i++) {
+			
+				if(mochila.get(i).getNombre().equals(nombreObjeto)){
+					
+					mochila.set(i, null);	
+				} 
+			}	
 		}
 		
 		/*
