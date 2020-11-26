@@ -21,13 +21,12 @@ public class Main {
 		String pathFrases = "C:\\Users\\Public\\FrasesMuertes.txt";
 		File fileObjetos = new File(pathObjetos);
 		File fileFrases = new File(pathFrases);
-		if(!fileObjetos.exists()) { //Si el fichero no esta creado se procede a ello
+		if(!fileObjetos.exists()) { //Si el fichero con los objetos no esta creado se procede a ello
 			Gestora.crearGuardarObjetos(pathObjetos);
 		}
-		if(!fileFrases.exists()) {
+		if(!fileFrases.exists()) { //Si el fichero con las frases no esta creado se procede a ello
 			Gestora.crearGuardarFrasesMuerte(pathFrases);
 		}
-		
 		
 		//Se obtienen todos los objetos que hay en la partida del fichero
 		ArrayList<Objeto> objetos = Gestora.obtenerObjetos(pathObjetos);
