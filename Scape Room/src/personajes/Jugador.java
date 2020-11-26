@@ -42,7 +42,7 @@ public class Jugador extends Personaje {
 				this.movimientos = movimientos;
 			}
 		}
-	//Metodos a�adidos
+	//Metodos añadidos
 		
 		/*
 		 * Prototipo: public void mirarContenidoMochila()
@@ -128,13 +128,15 @@ public class Jugador extends Personaje {
 		
 
 		/*
-		 * Prototipo: public Objeto tirarObjeto(int posicionObjeto)
+		 * Prototipo: public void tirarObjeto(int posicionObjeto)
 		 * 
 		 * Comentario: Este metodo se encarga de sacar un objeto de la mochila de Jugador y devolver dicho objeto.
 		 * 
 		 * Entradas: int posicionObjeto(la posicion en la mochila donde esta el objeto que quiere tirar el Jugador)  
 		 * 
-		 * Salidas: Objecto tirado
+		 * Salidas: Ninguna
+		 * 
+		 * Entradas/Salidas: El objeto que se vaya a tirar se le modificara su atributo equipado, por referencia
 		 * 
 		 * Precondiciones: posicionObjeto tiene que ser una posicion valida(Que este en el rango de posiciones de la mochila) en la mochila, 
 		 * 				   donde haya un objeto de tipo Objeto sino se producira un error.
@@ -144,13 +146,12 @@ public class Jugador extends Personaje {
 		 * 
 		 * 
 		 */
-		public Objeto tirarObjeto(int posicionObjeto) {
+		public void tirarObjeto(int posicionObjeto) {
 			Objeto tirado = mochila.get(posicionObjeto);
 			
 			mochila.set(posicionObjeto, null);
 			tirado.setEquipado(false);
 			
-			return tirado;
 		}
 		
 		/*
@@ -165,7 +166,7 @@ public class Jugador extends Personaje {
 		 * 
 		 * Precondiciones:  posicionObjeto tiene que ser una posicion valida(Que este en el rango de posiciones de la mochila) en la mochila.
 		 * 
-		 * Postcondiciones: Este metodo al ser una funcion devolvera un tipo de dato, en este caso un int(danhoFinal) que sera el daño
+		 * Postcondiciones: Este metodo al ser una funcion devolvera un tipo de dato, en este caso un int(danhoFinal) que sera el daÃ±o
 		 * 					que causa un Jugador mas el que le proporcione el objeto que use para atacar
 		 * 
 		 */
