@@ -15,6 +15,52 @@ import validaciones.Validaciones;
 
 public class Gestora {
 	
+		
+	/*
+	 * Prototipo: 
+	 * 
+	 * Comentario: 
+	 * 
+	 * Entradas:  
+	 * 
+	 * Salidas: 
+	 * 
+	 * Precondiciones: 
+	 * 
+	 * Postcondiciones: 
+	 * 
+	 */
+	public static void crearGuardarFrasesMuerte(String path) {
+		
+		BufferedWriter bw =null;
+		
+		try {
+			
+			bw = new BufferedWriter(new FileWriter(path));
+			
+			//Se escriben las frases en el fichero
+			bw.write("Frase 1\n");
+			bw.write("Frase 1\n");
+			bw.write("Frase 1\n");
+			bw.write("Frase 1\n");
+			bw.write("Frase 1\n");
+			bw.write("Frase 1\n");
+			bw.write("Frase 1\n");
+			bw.write("Frase 1\n");
+			bw.write("Frase 1\n");
+			bw.write("Frase 1\n");
+			
+		}catch(IOException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				bw.close();//Se cierra el fichero de escritura
+			}catch(IOException e) {
+				e.printStackTrace();
+			}
+		}	
+	}
+	
 	/*
 	 * Prototipo: public static void crearGuardarObjetos(String path)
 	 * 
