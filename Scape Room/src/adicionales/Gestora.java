@@ -39,16 +39,16 @@ public class Gestora {
 			bw = new BufferedWriter(new FileWriter(path));
 			
 			//Se escriben las frases en el fichero
-			bw.write("Frase 1\n");
-			bw.write("Frase 1\n");
-			bw.write("Frase 1\n");
-			bw.write("Frase 1\n");
-			bw.write("Frase 1\n");
-			bw.write("Frase 1\n");
-			bw.write("Frase 1\n");
-			bw.write("Frase 1\n");
-			bw.write("Frase 1\n");
-			bw.write("Frase 1\n");
+			bw.write("“Las guerras seguirán mientras el color de la piel siga siendo más importante que el de los ojos.” -Bob Marley-\n");
+			bw.write("“Las guerras seguirán mientras el color de la piel siga siendo más importante que el de los ojos.” -Bob Marley-\n");
+			bw.write("“Las guerras seguirán mientras el color de la piel siga siendo más importante que el de los ojos.” -Bob Marley-\n");
+			bw.write("“Las guerras seguirán mientras el color de la piel siga siendo más importante que el de los ojos.” -Bob Marley-\n");
+			bw.write("“Las guerras seguirán mientras el color de la piel siga siendo más importante que el de los ojos.” -Bob Marley-\n");
+			bw.write("“Las guerras seguirán mientras el color de la piel siga siendo más importante que el de los ojos.” -Bob Marley-\n");
+			bw.write("“Las guerras seguirán mientras el color de la piel siga siendo más importante que el de los ojos.” -Bob Marley-\n");
+			bw.write("“Las guerras seguirán mientras el color de la piel siga siendo más importante que el de los ojos.” -Bob Marley-\n");
+			bw.write("“Las guerras seguirán mientras el color de la piel siga siendo más importante que el de los ojos.” -Bob Marley-\n");
+			bw.write("“Las guerras seguirán mientras el color de la piel siga siendo más importante que el de los ojos.” -Bob Marley-\n");
 			
 		}catch(IOException e) {
 			e.printStackTrace();
@@ -61,6 +61,39 @@ public class Gestora {
 		}	
 	}
 	
+	/*
+	 * Prototipo: 
+	 * 
+	 * Comentario: 
+	 * 
+	 * Entradas:  
+	 * 
+	 * Salidas: 
+	 * 
+	 * Precondiciones: 
+	 * 
+	 * Postcondiciones: 
+	 * 
+	 */
+	
+	public static void mostrarFraseMuerte(String path){
+		int aleatorio = (int)(Math.random()*10+1);
+		BufferReader br = null;
+		
+		try{
+			br = new BuefferedReader(new FileReader(path));
+			
+			
+		}catch(){
+		
+		} finally{
+		 	try{
+			
+			}catch(){
+			
+			}		
+		}
+	}
 	/*
 	 * Prototipo: public static void crearGuardarObjetos(String path)
 	 * 
