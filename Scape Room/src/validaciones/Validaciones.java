@@ -25,7 +25,7 @@ public class Validaciones {
 
 			int opcion = 0;
 		
-			System.out.println("\nIngrese una posicion de la mochila donde esta el objeto que desea(Si no hay nada en esa posicion atacaras con tus puños)");
+			System.out.println("\nIngrese una posicion de la mochila donde esta el objeto que desea(Si no hay nada en esa posicion atacaras con tus puÃ±os)");
 			opcion = leerValidarOpcion(0,4);
 			
 			return opcion;
@@ -52,7 +52,7 @@ public class Validaciones {
 
 		int opcion = 0;
 
-		System.out.println("\nEstas en el garaje huele un poco a goma todavia.¿Que quieres hacer? ");
+		System.out.println("\nEstas en el garaje huele un poco a goma todavia.Â¿Que quieres hacer? ");
 		System.out.println("0)Subir al departamento");
 		System.out.println("1)Inspeccionar coche");
 		System.out.println("2)Registrar caja de herramientas");
@@ -96,7 +96,7 @@ public class Validaciones {
 
 		int opcion = 0;
 
-		System.out.println("\nTe encuentras en la mansion abandonada. ¿Qué quieres hacer? ");
+		System.out.println("\nTe encuentras en la mansion abandonada. Â¿QuÃ© quieres hacer? ");
 		System.out.println("0)Volver al departamento");
 		System.out.println("1)Registrar cocina");
 		System.out.println("2)Subir al dormitorio");
@@ -137,6 +137,22 @@ public class Validaciones {
 
 		return opcion;
 	}
+	public int mostrarObtenerOpcionesSotano() {
+
+		int opcion = 0;
+		
+		System.out.println("\nEstas en el sotano de la mansiÃ³n, se respira un aire denso aquÃ­ dentro...");
+		System.out.println("0)Volver a la entrada de la casa");
+		System.out.println("1)Registrar estanterÃ­as");
+		System.out.println("2)Investigar pared desgastada");
+		System.out.println("3)Investigar grifo goteando");
+		System.out.println("4)Mirar contenido mochila");
+		System.out.println("5)Ver tu estado");
+		opcion = leerValidarOpcion(0,5);
+		
+
+		return opcion;
+	}
 	
 	public int mostrarObtenerOpcionesGasolinera() {
 		int opcion = 0;
@@ -161,7 +177,7 @@ public class Validaciones {
 		System.out.println("\nEstas en el almacen de la gasolinera que deseas hacer: ");
 		System.out.println("0)Volver al principio de la Gasolinera");
 		System.out.println("1)Registrar zona"); 
-		System.out.println("2)Revisar puerta extraña");
+		System.out.println("2)Revisar puerta extraÃ±a");
 		System.out.println("3)Mirar contenido mochila");
 		System.out.println("4)Ver tu estado");
 		opcion = leerValidarOpcion(0,4);
