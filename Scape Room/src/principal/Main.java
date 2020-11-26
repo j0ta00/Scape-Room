@@ -81,10 +81,10 @@ public class Main {
 						if(objetosMisionUsuario == OBJETOS_MISION) {
 							System.out.println("Tienes todo lo necesario para hacer que el coche funcione. Sacas tu lado mecanico y procedes a instalas las piezas");
 							System.out.println("Parace que funciona todo bien, el coche parece en buen estado y capaz de soportar lo "
-												+ "suficiente como para huir de la ciudad, metes la llave pero no arranca.\n¿Quieres volverlo a intentar?");
+												+ "suficiente como para huir de la ciudad, metes la llave pero no arranca.\nÂ¿Quieres volverlo a intentar?");
 							respuesta = validacion.leerValidarRespuesta();
 							if(respuesta == 'S') {
-								System.out.println("Por suerte arranca y empiezas a escuhar el motor ¡¡¡brrrr!!!. Aqui contar como que los zombies han escuchado el sonido y vienen a por ti");
+								System.out.println("Por suerte arranca y empiezas a escuhar el motor Â¡Â¡Â¡brrrr!!!. Aqui contar como que los zombies han escuchado el sonido y vienen a por ti");
 								cocheHuida = true;
 							}else {
 								System.out.println("Bajas del coche y te paras enfrente de el.");
@@ -240,7 +240,7 @@ public class Main {
 						if(comidaCocina == false) { //Si no se a comido la comida de la cocina
 							System.out.println("Llegas a la cocina y observas que en la encimera hay un plato encima de otro, parece que hay algo en su interior");
 							System.out.println("Te acercas al plato y lo abres con cuidado. Vaya son unas croquetas de jamon.");
-							System.out.println("¿Quieres comertelo?");
+							System.out.println("Â¿Quieres comertelo?");
 							respuesta = validacion.leerValidarRespuesta();
 							
 							if(respuesta == 'S') {
@@ -325,7 +325,7 @@ public class Main {
 								System.out.print("Te acercas al cuartillo hasta plantarte justo delante. ");
 								
 								if(cuartillo == false && usuario.consultarObjetosNecesarioMochila("Llave vieja")) { //Si el cuartillo esta cerrado y el jugador tiene una llave vieja
-									System.out.println("Se encuentra cerrado. Tienes una llave en el inventario. ¿Quieres usarla?");
+									System.out.println("Se encuentra cerrado. Tienes una llave en el inventario. Â¿Quieres usarla?");
 									respuesta = validacion.leerValidarRespuesta();
 									
 									if(respuesta == 'S') {
@@ -360,7 +360,7 @@ public class Main {
 								System.out.print("Ves una planta encima de una mesa ");
 								if(iteracionPlanta == false && usuario.consultarObjetosNecesarioMochila("Regadera")) { //Si no se ha interactuado con la planta y se tiene una regadera
 									enemigo = new Personaje("Planta carnivora",80,5);
-									System.out.println("parece que estuviera pididendo agua a gritos. Llevas encima una regadera ¿Quieres usarla?");
+									System.out.println("parece que estuviera pididendo agua a gritos. Llevas encima una regadera Â¿Quieres usarla?");
 									
 									respuesta = validacion.leerValidarRespuesta();
 									
@@ -386,9 +386,79 @@ public class Main {
 						
 					break;	//Fin Opcion salir al jardin
 					
-					case 4:
-
-					break;	
+					case 4://Opción Bajar al sótano
+							do {
+								//LeerYValidarOpcionesSotano
+								opcionSotano = validacion.mostrarObtenerOpcionesSotano();
+								switch(opcionSotano) {
+								
+									case 1:
+										System.out.println("Hay muchos libros, están llenos de polvo parece que hace mucho tiempo que no se leen");
+										System.out.println("De entre ellos hay uno completamente desenpolvado parece que ha sido leido hace poco, ¿Quieres cogerlo?'");
+										respuesta = validacion.leerValidarRespuesta();
+										if(respuesta=='S'){
+											
+											System.out.println("El libro tiene una página marcada la pagina habla sobre jardinería pero dentro parece haber una nota");
+											System.out.println("La nota dice lo siguiente: Las pruebas con el espécimen vegetal ya comienza a dar sus frutos señor Mason, \n"
+													+ "me pongo en contacto con usted por correspondencia debido a que tenemos sospechas de que Nova Corp tiene un infiltrado \n"
+													+ "en nuestras filas y se encuentra en nuestro propio laboratorio por lo que no es seguro usar la intranet de la compañia \n"
+													+ "no se preocupe pondremos fin a esto enseguida y todo seguirá según lo acordado, saludos cordiales \n"
+													+ " Firmado Doctor Alex Morgan");
+										}else {
+											System.out.println("No lo has cogido");
+										}
+									break;//Fin Registrar estanterías
+									
+									case 2: //Investigar pared desgastada
+										if(entradaLaboratorio==false) {
+										System.out.println("Parece una simple pared pero a través de ella pasa una ligera brisa");
+										}else {
+											
+											System.out.println("Lo que antes era una pared ahora es un largo pasadizo");
+											System.out.println("¿Quieres adentrarte en él?");
+											respuesta = validacion.leerValidarRespuesta();
+											if(respuesta=='S'){
+												
+												
+												
+											}else{
+												System.out.println("No has entrado en el pasadizo");
+											}
+										}
+									break; //Fin Investigar pared desgastada
+									
+									case 3: //Investigar grifo goteando
+										System.out.println("No es más que una tubería con un grifo, parece que le falta una pieza y por eso gotea...");
+										if( usuario.consultarObjetosNecesarioMochila("Valvula")){
+											System.out.println("Parece que la válvula encaja perfectamente,¿Quieres colocarla sobre en el grifo roto?");
+											respuesta = validacion.leerValidarRespuesta();
+											
+											if(respuesta=='S'){
+												System.out.println("Has colocado la válvula y has girado la manivela parece que funciona");
+												System.out.println("*PRPRPRPRPRP* Un gran estruendo sucumbe la habitación, parece que la pared se esta abriendo");
+												System.out.println("La pared desgastada se ha abierto, resultaba ser un pasadizo secreto, ahora parece ser la entrada a un recóndito y extraño lugar...");
+												usuario.colocarObjeto("Valvula");
+												entradaLaboratorio=true;
+												
+											}else {
+												System.out.println("No has colocado nada");
+											}
+										}
+									break; //Fin Investigar grifo goteando
+								
+									case 4: //Opción mirar mochila
+										usuario.mirarContenidoMochila();
+									break; //Fin Opción mirar mochila
+									
+									case 5: //Opción ver estado
+										System.out.println(usuario.toString());
+									break; //Fin Opción ver estado
+									
+								
+								}
+								
+							}while(opcionInicial != 0 && usuario.getMovimientos() > 0 && cocheHuida == false);
+					break;		
 					
 					case 5: //Opcion mirar mochila
 						usuario.mirarContenidoMochila();
@@ -419,11 +489,11 @@ public class Main {
 						objetoZona = Gestora.obtenerObjeto(objetos, "Dolares");
 						
 						if (!objetoZona.getEquipado()) {
-							System.out.println("Parece que aún tiene dinero");
+							System.out.println("Parece que aÃºn tiene dinero");
 							Gestora.iteracionUsuarioConObjeto(objetoZona, usuario);
 							
 						}else {
-							System.out.println("Ya no queda nada interesante que hacer aquí");
+							System.out.println("Ya no queda nada interesante que hacer aquÃ­");
 						}
 					break;//Fin Opcion registrar caja registradora
 						
@@ -432,11 +502,11 @@ public class Main {
 					break;//Fin Opcion Revisar surtidores
 					
 					case 3://Opcion Mirar coche en mal estado
-						System.out.println("No es más que un coche completamente destruido");
-						System.out.println("Parece que intento huir de la ciudad pero se choco por desgracia ninguna de las piezas del vehículo te servirían");
+						System.out.println("No es mÃ¡s que un coche completamente destruido");
+						System.out.println("Parece que intento huir de la ciudad pero se choco por desgracia ninguna de las piezas del vehÃ­culo te servirÃ­an");
 						
 						if(cocheDestruidoRevisado == false) {
-							System.out.println("¿Quieres registrar el interior del vehículo a ver si contiene algo?");
+							System.out.println("Â¿Quieres registrar el interior del vehÃ­culo a ver si contiene algo?");
 							respuesta = validacion.leerValidarRespuesta();
 							
 							if(respuesta == 'S') {
@@ -447,28 +517,28 @@ public class Main {
 								
 								if(usuario.getVida() > 0) {
 								System.out.println("El zombie ha muerto y ha dejado caer una nota, dice lo siguiente:");
-								System.out.println("Hola Tom las cosas se han puesto difíciles por aquí así que \n"
+								System.out.println("Hola Tom las cosas se han puesto difÃ­ciles por aquÃ­ asÃ­ que \n"
 										+ "he decidido marcharme, los rumores son ciertos no estaban locos es verdad \n"
-										+ "hay seres infernales por las afueras de la ciudad y sobre todo cerca de esa vieja mansión, \n"
-										+ "antes de que esos seres lleguen a la ciudad deberías abandonarla, utiliza los surtidores \n"
-										+ "y huye cuanto antes, pero si llegas tarde te dejaré combustible suficiente como para abandonarla, \n"
-										+ "lo guardaré en el armario de la limpieza en el almacen de la gasolinera, recuerda que debes \n"
-										+ "desactivar la electricidad si no quieres achicharrarte, también te dejo algo \n"
+										+ "hay seres infernales por las afueras de la ciudad y sobre todo cerca de esa vieja mansiÃ³n, \n"
+										+ "antes de que esos seres lleguen a la ciudad deberÃ­as abandonarla, utiliza los surtidores \n"
+										+ "y huye cuanto antes, pero si llegas tarde te dejarÃ© combustible suficiente como para abandonarla, \n"
+										+ "lo guardarÃ© en el armario de la limpieza en el almacen de la gasolinera, recuerda que debes \n"
+										+ "desactivar la electricidad si no quieres achicharrarte, tambiÃ©n te dejo algo \n"
 										+ "de efectivo en la caja por si necesitas comprar algo durante el viaje, te esperamos en la casa \n"
 										+ "de mama, espero que esta carta te llegue a tiempo pues debido a que las carreteras estan cortadas \n"
-										+ "no puedo hacertela llegar, además ni el internet ni la línea funcionan esto es muy extraño la polícia o \n"
-										+ "incluso el gobierno debe estar detrás de esto,bueno mucha suerte espero que llegues sano y salvo y volvamos a vernos \n"
-										+ "Con cariño tu hermano John");
+										+ "no puedo hacertela llegar, ademÃ¡s ni el internet ni la lÃ­nea funcionan esto es muy extraÃ±o la polÃ­cia o \n"
+										+ "incluso el gobierno debe estar detrÃ¡s de esto,bueno mucha suerte espero que llegues sano y salvo y volvamos a vernos \n"
+										+ "Con cariÃ±o tu hermano John");
 								}
 							}else {
 								System.out.println("No has abierto el coche lo has dejado tal y como estaba");	
 							}
 						}else {
-							System.out.println("Ya no queda nada interesante que hacer aquí");							
+							System.out.println("Ya no queda nada interesante que hacer aquÃ­");							
 						}
 					break;//Fin Opcion Mirar coche en mal estado
 					
-					case 4://Opcion Mirar Almacén
+					case 4://Opcion Mirar AlmacÃ©n
 	
 						do {
 							//LeerYValidarOpcionesAlmacenGasolinera
@@ -481,14 +551,14 @@ public class Main {
 								if(palancaActivada == false) { //Si la palanca de la electricidad no ha sido activada
 									
 									if(cajasApartadas == false){ //Si no se han apartados las cajas	
-										System.out.println("Nada más hay cajas viejas");
-										System.out.println("¿Quieres apartarlas?");
+										System.out.println("Nada mÃ¡s hay cajas viejas");
+										System.out.println("Â¿Quieres apartarlas?");
 										respuesta = validacion.leerValidarRespuesta();
 										
 										if(respuesta == 'S'){
 											cajasApartadas = true;
 											System.out.println("Ouch!! Una llave inglesa ha golpeado tu cabeza");
-											System.out.println("Has sufrido un leve daño");
+											System.out.println("Has sufrido un leve daÃ±o");
 											usuario.recibirDanho(30);	
 											
 										}else{
@@ -496,8 +566,8 @@ public class Main {
 										}
 									}
 									
-									if(cajasApartadas == true && usuario.getVida() > 0) { //Si las cajas fueron apartadas y el jugador esta vivo. Se controla que el jugador este vivo porque la primera vez que se quitan las cajas habra un objeto que te haga daño																									
-										System.out.println("Detrás de las cajas hay una vieja palanca, ¿Quiéres usarla?");
+									if(cajasApartadas == true && usuario.getVida() > 0) { //Si las cajas fueron apartadas y el jugador esta vivo. Se controla que el jugador este vivo porque la primera vez que se quitan las cajas habra un objeto que te haga daÃ±o																									
+										System.out.println("DetrÃ¡s de las cajas hay una vieja palanca, Â¿QuiÃ©res usarla?");
 										respuesta = validacion.leerValidarRespuesta();
 										
 										if(respuesta == 'S'){
@@ -509,15 +579,15 @@ public class Main {
 										}
 									}		
 								}else {	
-									System.out.println("Ya no queda nada interesante que hacer aquí");
+									System.out.println("Ya no queda nada interesante que hacer aquÃ­");
 								}
 							
 							break; //Fin Registrar Zona
 							
-							case 2://Revisar Puerta Extraña
+							case 2://Revisar Puerta ExtraÃ±a
 								
 								System.out.println("Se trata de la puerta de un armario de limpieza con un simbolo de Warning");
-								System.out.println("¿Quieres abrir la puerta?");
+								System.out.println("Â¿Quieres abrir la puerta?");
 								respuesta = validacion.leerValidarRespuesta();
 								
 								if(respuesta == 'S') {
@@ -527,21 +597,21 @@ public class Main {
 										if(palancaActivada == false) {
 											usuario.recibirDanho(50);
 											System.out.println("TRTRTTRTRTTRTR *SONIDO DE CHISPORROTEO*");
-											System.out.println("Has recibido algo de daño");
+											System.out.println("Has recibido algo de daÃ±o");
 											System.out.println("Vaya parece que te has llevado una buena descarga, al parecer la puerta tiene \n"
-													+ "algún tipo de mecanismo de seguridad y aún sigue cerrada");
+													+ "algÃºn tipo de mecanismo de seguridad y aÃºn sigue cerrada");
 										}else {
-											System.out.println("Has abierto la puerta, justo detrás de ella parece haber un bidón de algo");
+											System.out.println("Has abierto la puerta, justo detrÃ¡s de ella parece haber un bidÃ³n de algo");
 											Gestora.iteracionUsuarioConObjeto(objetoZona, usuario);
 										} 
 									}else {
-										System.out.println("No hay nada, ya no queda nada interesante que hacer aquí. Cierras la puerta al salir");
+										System.out.println("No hay nada, ya no queda nada interesante que hacer aquÃ­. Cierras la puerta al salir");
 									}
 									
 								}else {			
 									System.out.println("No la has abierto");
 								}
-							break;//Fin Revisar Puerta Extraña
+							break;//Fin Revisar Puerta ExtraÃ±a
 							
 							case 3: //Opcion mirar mochila
 								usuario.mirarContenidoMochila();
@@ -554,7 +624,7 @@ public class Main {
 						
 						}while(opcionAlmacen!=0 && usuario.getVida()>0);
 
-					break; //Fin Opcion Mirar Almacén
+					break; //Fin Opcion Mirar AlmacÃ©n
 					
 					case 5: //Opcion mirar mochila
 						usuario.mirarContenidoMochila();
@@ -585,7 +655,7 @@ public class Main {
 			System.out.println("Has abandonado el juego");
 		}else {
 			if(cocheHuida == true) {
-				System.out.println("���ENHORABUENA!!! Estas hecho todo un superviviente, ya puedes huir de un apocalipsis sin despeinarte");
+				System.out.println("¡¡¡ENHORABUENA!!! Estas hecho todo un superviviente, ya puedes huir de un apocalipsis sin despeinarte");
 			}else {
 				if(usuario.getMovimientos() == 0) {
 					System.out.println("Vaya te has quedado sin movimientos, se acabo...");
