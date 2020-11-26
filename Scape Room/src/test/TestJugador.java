@@ -12,6 +12,7 @@ public class TestJugador {
 		Objeto llave = new Objeto("Llave",0,"Esto es una prueba");
 		Objeto cuchillo = new Objeto("Cuchillo",10,"Esto es una prueba");
 		Objeto gasolina = new Objeto("Gasolina",0,"Esto es una prueba");
+		Objeto llave = new Objeto("Valvula",0,"Esto es una prueba");
 		Objeto tirado = null;
 
 		System.out.println("--- Metodos Fundamentales (GETTERS AND SETTERS) ---");
@@ -25,7 +26,7 @@ public class TestJugador {
 		System.out.println("conParametros: atributo movimentos cambia de 10 a 0 --> "+conParametros.getMovimientos());
 		conParametros.setMovimientos(5);
 		System.out.println("conParametros: atributo movimentos cambia de 0 a 5 --> "+conParametros.getMovimientos());
-		System.out.println("--- Metodos Añadidos ---");
+		System.out.println("--- Metodos AÃ±adidos ---");
 		System.out.println("		mirarContenido");
 		System.out.print("conParametros: resultado esperado 5 Espacio vacios --> ");
 		conParametros.mirarContenidoMochila();
@@ -48,6 +49,11 @@ public class TestJugador {
 		conParametros.tirarObjeto(0);
 		System.out.print("conParametros tira objeto llave de la posicion 1 de la mochila, si miramos su contenido en la posicion 1 se espera Espacio libre --> ");
 		conParametros.mirarContenidoMochila();
+		System.out.println("		colocarObjeto");
+		conParametros.cogerObjeto(Valvula);
+		conParametros.colocarObjeto(Valvula);
+		System.out.print("conParametros coloca objeto valvula introduciendo su nombre por parámetros, si miramos su contenido en la posicion 1 se espera Espacio libre --> ");
+		conParametros.mirarContenidoMochila();
 		System.out.println("		realizarAtaque");
 		System.out.println("conParametros: resultado esperado de realizarAtaque  25 o 50 --> "+conParametros.realizarAtaque(3));
 		System.out.println("		consultarObjetosNecesarioMochila");
@@ -55,7 +61,7 @@ public class TestJugador {
 		System.out.println("		consultarObjetosMisionMochila");
 		System.out.println("conParametros: resultado esperado 0 --> "+conParametros.consultarObjetosMisionMochila());
 		conParametros.cogerObjeto(gasolina);
-		System.out.println("Le a�adiremos al inventario uno de los objetos necesarios en esta caso la Gasolina resultado esperado 1 --> "+conParametros.consultarObjetosMisionMochila());
+		System.out.println("Le añadiremos al inventario uno de los objetos necesarios en esta caso la Gasolina resultado esperado 1 --> "+conParametros.consultarObjetosMisionMochila());
 		System.out.println("		consumirObjeto");
 		System.out.println("conParaemtros: Antes de consumir el objeto -->"+conParametros.getVida());
 		conParametros.consumirObjeto(50,"Vida");
