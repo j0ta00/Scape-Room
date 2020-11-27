@@ -13,13 +13,13 @@ public class Jugador extends Personaje {
 	//Constructor por defecto
 	public Jugador() {
 		super();
-		mochila = new ArrayList<Objeto>(Arrays.asList(null,null,null,null,null));
+		mochila = new ArrayList<Objeto>(Arrays.asList(null,null,null,null,null)); //Se inicializa con 5 espacios vacios
 		movimientos = 0;
 	}
 	
 	//Constructor con parametros
 	public Jugador(String nombre, int vida, int danho, int movimientos) {
-		super(nombre,vida,danho);
+		super(nombre, vida, danho);
 		mochila = new ArrayList<Objeto>(Arrays.asList(null,null,null,null,null));
 		this.movimientos = movimientos;
 	}
@@ -28,7 +28,7 @@ public class Jugador extends Personaje {
 		//mochila
 		public ArrayList<Objeto> getMochila(){
 			@SuppressWarnings("unchecked")
-			ArrayList<Objeto> copia = (ArrayList<Objeto>) mochila.clone(); //El compilador marca como Type safety: Unchecked cast from Object to ArrayList<Objeto> poque cree que puede se puede llegar a producir un error por ello, por eso el de arriba @SuppressWarnings("unchecked") para comunicarle al compilador que lo que se va hacer es seguro
+			ArrayList<Objeto> copia = (ArrayList<Objeto>) mochila.clone(); //El compilador marca como -Type safety: Unchecked cast from Object to ArrayList<Objeto>- porque cree que se puede llegar a producir un error por ello, por eso el de arriba @SuppressWarnings("unchecked") para comunicarle al compilador que lo que se va hacer es seguro
 		return copia;
 		}
 		//movimientos
@@ -42,7 +42,7 @@ public class Jugador extends Personaje {
 				this.movimientos = movimientos;
 			}
 		}
-	//Metodos añadidos
+	//Metodos a�adidos
 		
 		/*
 		 * Prototipo: public void mirarContenidoMochila()
@@ -103,14 +103,14 @@ public class Jugador extends Personaje {
 		 * 
 		 * Salidas: boolean guardado
 		 * 
-		 * Entrada/Salida: Objeto nuevo(Se modificaria su atributo Equipado)
+		 * Entrada/Salida: Objeto nuevo(Se modificaria su atributo Equipado si en la mochial hay espacio)
 		 * 
 		 * Precondiciones: Ninguna
 		 * 
 		 * Postcondiciones: Este metodo devolvera en este caso un tipo de dato boolean(guardado) ya que se trata de una funcion. 
 		 * 					Dicho dato booleano tendra dos posibilidades:
-		 * 						-True: Cuando en la mochila haya sitio y se guarde el Objeto recibido como parametro formal
-		 * 						-False: Cuando en la mochila no haya sitio y por lo tanto no se pueda guardar en Objeto recibido como parametro formal
+		 * 						-true: Cuando en la mochila haya sitio y se guarde el Objeto recibido como parametro formal
+		 * 						-false: Cuando en la mochila no haya sitio y por lo tanto no se pueda guardar en Objeto recibido como parametro formal
 		 * 
 		 */
 		public boolean cogerObjeto(Objeto nuevo) {
@@ -125,12 +125,11 @@ public class Jugador extends Personaje {
 			}
 			return guardado;
 		}
-		
 
 		/*
 		 * Prototipo: public void tirarObjeto(int posicionObjeto)
 		 * 
-		 * Comentario: Este metodo se encarga de sacar un objeto de la mochila de Jugador y devolver dicho objeto.
+		 * Comentario: Este metodo se encarga de sacar un objeto de la mochila de Jugador.
 		 * 
 		 * Entradas: int posicionObjeto(la posicion en la mochila donde esta el objeto que quiere tirar el Jugador)  
 		 * 
@@ -143,7 +142,6 @@ public class Jugador extends Personaje {
 		 * 
 		 * Postcondiciones: Este metodo no devolvera ningun tipo de dato ya que se trata de un procedimiento.
 		 * 
-		 * 
 		 */
 		public void tirarObjeto(int posicionObjeto) {
 			Objeto tirado = mochila.get(posicionObjeto);
@@ -153,12 +151,10 @@ public class Jugador extends Personaje {
 			
 		}
 	
-	
-	
 		/*
 		 * Prototipo: public void colocarObjeto(String nombreObjeto)
 		 * 
-		 * Comentario: Este metodo se encarga de sacar un objeto de la mochila de Jugador y devolver colocarlo en una zona determinada de manera que ese objeto no volverá a aparecer
+		 * Comentario: Este metodo se encarga de sacar un objeto de la mochila de Jugador y colocarlo en una zona determinada de manera que ese objeto no volvera a aparecer
 		 * 
 		 * Entradas: String nombreObjeto 
 		 * 
@@ -170,15 +166,14 @@ public class Jugador extends Personaje {
 		 * 
 		 * Postcondiciones: Este metodo no devolvera ningun tipo de dato ya que se trata de un procedimiento.
 		 * 
-		 * 
 		 */
-	
 		public void colocarObjeto(String nombreObjeto) {
-			for(int i = 0; i < mochila.size() ; i++) {
+			boolean colocado = false;
 			
+			for(int i = 0; i < mochila.size() && colocado == false ; i++) {	
 				if(mochila.get(i).getNombre().equals(nombreObjeto)){
-					
 					mochila.set(i, null);	
+					colocado = true;
 				} 
 			}	
 		}
@@ -195,7 +190,7 @@ public class Jugador extends Personaje {
 		 * 
 		 * Precondiciones:  posicionObjeto tiene que ser una posicion valida(Que este en el rango de posiciones de la mochila) en la mochila.
 		 * 
-		 * Postcondiciones: Este metodo al ser una funcion devolvera un tipo de dato, en este caso un int(danhoFinal) que sera el daÃ±o
+		 * Postcondiciones: Este metodo al ser una funcion devolvera un tipo de dato, en este caso un int(danhoFinal) que sera el da�o
 		 * 					que causa un Jugador mas el que le proporcione el objeto que use para atacar
 		 * 
 		 */
@@ -216,40 +211,49 @@ public class Jugador extends Personaje {
 		} 
 		
 		/*
-		 * Prototipo: public int consultarObjetosMisionMochila() 
+		 * Prototipo: public boolean consultarObjetosMisionMochila(String necesario1, String necesario2, String necesario3)
 		 * 
-		 * Comentario: Este metodo nos permite consultar si tenemos todos los objetos necesarios para conseguir cumplir la mision
+		 * Comentario: Este metodo permite consultar al jugador si tiene todos los objetos necesarios para conseguir cumplir la mision
 		 * 
-		 * Entradas: Ninguna 
+		 * Entradas: String necesario1, String necesario2, String necesario3
 		 * 
-		 * Salidas: int objetosMision 
+		 * Salidas: boolean mision
 		 * 
-		 * Precondiciones: Ninguna  
+		 * Precondiciones: Los tres parametros String deben de ser el nombre de alguno de los objetos del juego
 		 * 
-		 * Postcondiciones: Se trata de un procedimiento, el cual devolvera cuantos objetos para completar la mision tiene un Jugador en su mochila
+		 * Postcondiciones: Este metodo se trata de una funcion que en este caso devuelve un tipo de dato booleano.
+		 * 					Dicho booleano(mision) puede tener dos posibilidades:
+		 * 					-true: Si el usuario tiene en su mochila los tres objetos necesarios(especificados como paraemtros) para cumplir la mision,
+		 * 					-false: Si el usuario no tiene en su mochila los tres objetos necesarios(especificados como paraemtros) para cumplir la mision
 		 * 
 		 */
 		
-		public int consultarObjetosMisionMochila() {
+		public boolean consultarObjetosMisionMochila(String necesario1, String necesario2, String necesario3) {
+			boolean mision = false;
 			final int OBJETOS_NECESARIOS = 3;
 			int objetosMision = 0;
 			String nombreObjeto = "";
 			
+			//Se busca y cuenta cuantos objetos hay en la mochila que sean alguno de los 3 necesarios
 			for(int i = 0; i < mochila.size() && objetosMision < OBJETOS_NECESARIOS; i++) {
 				if(mochila.get(i) != null) {
 					nombreObjeto = mochila.get(i).getNombre();
-					if(nombreObjeto.equals("Llave Coche") || nombreObjeto.equals("Gasolina") || nombreObjeto.equals("Bateria") ) {
+					if(nombreObjeto.equals(necesario1) || nombreObjeto.equals(necesario2) || nombreObjeto.equals(necesario3) ) {
 						objetosMision++;
 					}
 				}
 			}
-			return objetosMision;
+			
+			if(objetosMision == OBJETOS_NECESARIOS) { //Se comprueba si se tienen los 3 objetos necesarios para la mision
+				mision = true;
+			}
+			return mision;
 		}
 		
 		/*
 		 * Prototipo: public boolean consultarObjetosNecesarioMochila(String nombreObjeto)  
 		 * 
-		 * Comentario: Se trata de un metodo que nos permitira comprobar si tenemos en nuestro inventario el objeto necesario para
+		 * Comentario: Se trata de un metodo permitira al Jugador comprobar si tiene en su inventario el objeto necesario para
 		 * 				continuar la aventura o abrir algo.
 		 *
 		 * Entradas: String nombreObjeto 
@@ -284,7 +288,7 @@ public class Jugador extends Personaje {
 		 * 
 		 * Salidas: Ninguna 
 		 * 
-		 * Precondiciones: Ninguna 
+		 * Precondiciones: opcion debe tener un valor especifico "Vida" o "Movimiento" 
 		 * 
 		 * Postcondiciones: Se trata de un procedimento el cual solo modificara la vida o los movimientos de un jugador
 		 * 

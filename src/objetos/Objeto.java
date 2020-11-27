@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 public class Objeto implements Serializable{
 
-
 	private static final long serialVersionUID = 1L;//Id control de versiones
 	
 	//Atributos 
@@ -43,7 +42,7 @@ public class Objeto implements Serializable{
 		public String getDescripcion() {
 			return descripcion;
 		}
-		//cogido
+		//equipado
 		public boolean getEquipado() { 
 			return equipado;
 		}

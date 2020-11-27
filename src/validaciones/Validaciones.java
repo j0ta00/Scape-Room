@@ -4,33 +4,75 @@ import java.util.Scanner;
 
 public class Validaciones {
 	
+	/*
+	 * Prototipo: 
+	 * 
+	 * Comentario:
+	 * 
+	 * Entradas:
+	 * 
+	 * Salidas:
+	 * 
+	 * Precondiciones:
+	 * 
+	 * Postcondiciones:
+	 * 
+	 */
 	public char leerValidarRespuesta() {
 			
-			Scanner teclado = new Scanner (System.in);
-			char respuesta = ' ';
+		Scanner teclado = new Scanner (System.in);
+		char respuesta = ' ';
+		
+		do {
+			respuesta = Character.toUpperCase(teclado.next().charAt(0));
 			
-			do {
-				respuesta = Character.toUpperCase(teclado.next().charAt(0));
-				
-				if(respuesta != 'S' && respuesta != 'N') {
-					System.out.println("Error respuesta no valida, por favor introduzca una valida(S-N)");
-				}
-			
-			}while(respuesta != 'S' && respuesta != 'N');
-			
-			return respuesta;
+			if(respuesta != 'S' && respuesta != 'N') {
+				System.out.println("Error respuesta no valida, por favor introduzca una valida(S-N)");
+			}
+		
+		}while(respuesta != 'S' && respuesta != 'N');
+		
+		return respuesta;
 	}
 	
+	/*
+	 * Prototipo: 
+	 * 
+	 * Comentario:
+	 * 
+	 * Entradas:
+	 * 
+	 * Salidas:
+	 * 
+	 * Precondiciones:
+	 * 
+	 * Postcondiciones:
+	 * 
+	 */
 	public int obtenerPosicionMochila() {
 
-			int opcion = 0;
+		int opcion = 0;
+	
+		System.out.println("\nIngrese una posicion de la mochila donde esta el objeto que desea(Si no hay nada en esa posicion se dentra en cuenta)");
+		opcion = leerValidarOpcion(0,4);
 		
-			System.out.println("\nIngrese una posicion de la mochila donde esta el objeto que desea(Si no hay nada en esa posicion atacaras con tus puños)");
-			opcion = leerValidarOpcion(0,4);
-			
-			return opcion;
+		return opcion;
 	}
 
+	/*
+	 * Prototipo: 
+	 * 
+	 * Comentario:
+	 * 
+	 * Entradas:
+	 * 
+	 * Salidas:
+	 * 
+	 * Precondiciones:
+	 * 
+	 * Postcondiciones:
+	 * 
+	 */
 	public int mostrarObtenerOpcionInicial() {
 
 		int opcion = 0;
@@ -48,13 +90,27 @@ public class Validaciones {
 		return opcion;
 	}
 	
+	/*
+	 * Prototipo: 
+	 * 
+	 * Comentario:
+	 * 
+	 * Entradas:
+	 * 
+	 * Salidas:
+	 * 
+	 * Precondiciones:
+	 * 
+	 * Postcondiciones:
+	 * 
+	 */
 	public int mostrarObtenerOpcionesGaraje() {
 
 		int opcion = 0;
 
-		System.out.println("\nEstas en el garaje huele un poco a goma todavia.¿Que quieres hacer? ");
+		System.out.println("\nEstas en el garaje huele un poco a goma todavia. �Que quieres hacer? ");
 		System.out.println("0)Subir al departamento");
-		System.out.println("1)Inspeccionar coche");
+		System.out.println("1)Inspeccionar coche Audi R8");
 		System.out.println("2)Registrar caja de herramientas");
 		System.out.println("3)Mirar contenido mochila");
 		System.out.println("4)Ver tu estado");
@@ -63,6 +119,20 @@ public class Validaciones {
 		return opcion;
 	}
 	
+	/*
+	 * Prototipo: 
+	 * 
+	 * Comentario:
+	 * 
+	 * Entradas:
+	 * 
+	 * Salidas:
+	 * 
+	 * Precondiciones:
+	 * 
+	 * Postcondiciones:
+	 * 
+	 */
 	public int mostrarObtenerOpcionesCementario() {
 
 		int opcion = 0;
@@ -78,6 +148,20 @@ public class Validaciones {
 		return opcion;
 	}
 	
+	/*
+	 * Prototipo: 
+	 * 
+	 * Comentario:
+	 * 
+	 * Entradas:
+	 * 
+	 * Salidas:
+	 * 
+	 * Precondiciones:
+	 * 
+	 * Postcondiciones:
+	 * 
+	 */
 	public int mostrarObtenerOpcionesRegistrarTumba() {
 
 		int opcion = 0;
@@ -92,11 +176,25 @@ public class Validaciones {
 		return opcion;
 	}
 	
+	/*
+	 * Prototipo: 
+	 * 
+	 * Comentario:
+	 * 
+	 * Entradas:
+	 * 
+	 * Salidas:
+	 * 
+	 * Precondiciones:
+	 * 
+	 * Postcondiciones:
+	 * 
+	 */
 	public int mostrarObtenerOpcionesMansion() {
 
 		int opcion = 0;
 
-		System.out.println("\nTe encuentras en la mansion abandonada. ¿Qué quieres hacer? ");
+		System.out.println("\nTe encuentras en la mansion abandonada. �Que quieres hacer? ");
 		System.out.println("0)Volver al departamento");
 		System.out.println("1)Registrar cocina");
 		System.out.println("2)Subir al dormitorio");
@@ -109,11 +207,25 @@ public class Validaciones {
 		return opcion;
 	}
 	
+	/*
+	 * Prototipo: 
+	 * 
+	 * Comentario:
+	 * 
+	 * Entradas:
+	 * 
+	 * Salidas:
+	 * 
+	 * Precondiciones:
+	 * 
+	 * Postcondiciones:
+	 * 
+	 */
 	public int mostrarObtenerOpcionesDormitorio() {
 
 		int opcion = 0;
 		
-		System.out.println("\nEstas en el dormitorio : ");
+		System.out.println("\nEstas en el dormitorio: ");
 		System.out.println("0)Volver a la entrada de la casa");
 		System.out.println("1)Registrar armario");
 		System.out.println("2)Registrar mesita de noche");
@@ -124,6 +236,20 @@ public class Validaciones {
 		return opcion;
 	}
 	
+	/*
+	 * Prototipo: 
+	 * 
+	 * Comentario:
+	 * 
+	 * Entradas:
+	 * 
+	 * Salidas:
+	 * 
+	 * Precondiciones:
+	 * 
+	 * Postcondiciones:
+	 * 
+	 */
 	public int mostrarObtenerOpcionesJardin() {
 
 		int opcion = 0;
@@ -137,13 +263,28 @@ public class Validaciones {
 
 		return opcion;
 	}
+	
+	/*
+	 * Prototipo: 
+	 * 
+	 * Comentario:
+	 * 
+	 * Entradas:
+	 * 
+	 * Salidas:
+	 * 
+	 * Precondiciones:
+	 * 
+	 * Postcondiciones:
+	 * 
+	 */
 	public int mostrarObtenerOpcionesSotano() {
 
 		int opcion = 0;
 		
-		System.out.println("\nEstas en el sotano de la mansión, se respira un aire denso aquí dentro...");
+		System.out.println("\nEstas en el sotano de la mansion, se respira un aire denso aqui dentro...");
 		System.out.println("0)Volver a la entrada de la casa");
-		System.out.println("1)Registrar estanterías");
+		System.out.println("1)Registrar estanterias");
 		System.out.println("2)Investigar pared desgastada");
 		System.out.println("3)Investigar grifo goteando");
 		System.out.println("4)Mirar contenido mochila");
@@ -153,7 +294,22 @@ public class Validaciones {
 
 		return opcion;
 	}
-	public int mostrarObtenerOpcionesLaboratori() {
+	
+	/*
+	 * Prototipo: 
+	 * 
+	 * Comentario:
+	 * 
+	 * Entradas:
+	 * 
+	 * Salidas:
+	 * 
+	 * Precondiciones:
+	 * 
+	 * Postcondiciones:
+	 * 
+	 */
+	public int mostrarObtenerOpcionesLaboratorio() {
 
 		int opcion = 0;
 
@@ -171,6 +327,20 @@ public class Validaciones {
 		return opcion;
 	}
 	
+	/*
+	 * Prototipo: 
+	 * 
+	 * Comentario:
+	 * 
+	 * Entradas:
+	 * 
+	 * Salidas:
+	 * 
+	 * Precondiciones:
+	 * 
+	 * Postcondiciones:
+	 * 
+	 */
 	public int mostrarObtenerOpcionesGasolinera() {
 		int opcion = 0;
 		
@@ -187,6 +357,20 @@ public class Validaciones {
 		return opcion;
 	}
 	
+	/*
+	 * Prototipo: 
+	 * 
+	 * Comentario:
+	 * 
+	 * Entradas:
+	 * 
+	 * Salidas:
+	 * 
+	 * Precondiciones:
+	 * 
+	 * Postcondiciones:
+	 * 
+	 */
 	public int mostrarObtenerOpcionesAlmacenGasolinera() {
 
 		int opcion = 0;
@@ -194,7 +378,7 @@ public class Validaciones {
 		System.out.println("\nEstas en el almacen de la gasolinera que deseas hacer: ");
 		System.out.println("0)Volver al principio de la Gasolinera");
 		System.out.println("1)Registrar zona"); 
-		System.out.println("2)Revisar puerta extraña");
+		System.out.println("2)Revisar puerta extra�a");
 		System.out.println("3)Mirar contenido mochila");
 		System.out.println("4)Ver tu estado");
 		opcion = leerValidarOpcion(0,4);
@@ -202,6 +386,20 @@ public class Validaciones {
 		return opcion;
 	}
 	
+	/*
+	 * Prototipo: 
+	 * 
+	 * Comentario:
+	 * 
+	 * Entradas:
+	 * 
+	 * Salidas:
+	 * 
+	 * Precondiciones:
+	 * 
+	 * Postcondiciones:
+	 * 
+	 */
 	public int leerValidarOpcion(int rangoValido1, int rangoValido2) {
 		
 		Scanner teclado = new Scanner (System.in);

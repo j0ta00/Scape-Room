@@ -41,7 +41,7 @@ public class Personaje {
 			if(vida < 1) {
 				this.vida = 0;
 			}else {
-				this.vida=vida;	
+				this.vida = vida;	
 			}
 		}
 		//danho
@@ -51,7 +51,7 @@ public class Personaje {
 	//Metodos añadidos
 		
 	/*
-	 * Prototipo: public void recibirDaño(int danho)
+	 * Prototipo: public void recibirDanho(int danho)
 	 * 
 	 * Comentario: Este metodo se encarga de reducir la vida de un objeto de tipo Personaje cuando recibe un daño
 	 * 

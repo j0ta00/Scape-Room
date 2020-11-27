@@ -8,6 +8,7 @@ public class TestPersonaje {
 		
 		Personaje sinParametros = new Personaje();
 		Personaje conParametros = new Personaje("Prueba",100,10);
+		int ataque = 0;
 		
 		System.out.println("--- Metodos Fundamentales (GETTERS AND SETTERS) ---");
 		System.out.println("		GETTERS			");
@@ -20,7 +21,7 @@ public class TestPersonaje {
 		System.out.println("conParametros: atributo vida cambia de 0 a 70 --> "+conParametros.getVida());
 		System.out.println("--- Metodos Añadidos ---");
 		System.out.println("		realizarAtaque");
-		int ataque = conParametros.realizarAtaque();
+		ataque = conParametros.realizarAtaque();
 		System.out.println("conParametros: resultado esperado realizarAtaque 10 o 20 --> "+ataque);
 		System.out.println("		recibirdaño");
 		conParametros.recibirDanho(ataque);
