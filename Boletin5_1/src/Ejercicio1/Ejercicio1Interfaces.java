@@ -1,5 +1,6 @@
 package Ejercicio1;
 /*
+ *
  * a. Subprograma que teniendo como par�metros un car�cter y un n�mero, imprima
 una l�nea con tantas veces el car�cter como indique el n�mero.
 
