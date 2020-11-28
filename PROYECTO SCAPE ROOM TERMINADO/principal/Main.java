@@ -65,7 +65,7 @@ public class Main {
 
 		//Mostrar Estadisticas Jugador
 		System.out.println("Estadisticas del jugador: \n"+usuario.toString()+"\n");
-		
+		 
 		do{
 			//LeerValidarOpcionInicial
 			opcionInicial = validacion.mostrarObtenerOpcionInicial();
