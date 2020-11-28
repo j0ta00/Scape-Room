@@ -50,11 +50,12 @@ public class Main {
 		boolean tumba1 = false, jaulaAbierta=false, tumba2 = false, entradaLaboratorio=false, tumba3 = false, cuartillo = false, comidaCocina = false,
 				objetosMision = false, puertaOxidada=false, palancaActivada = false, cajasApartadas = false, cocheDestruidoRevisado = false, iteracionPlanta = false;
 		char respuesta =' ';
-		String nombre = " ";
+		String nombre = " ", historia = " ";
 		Objeto objetoZona = null;
 		Personaje enemigo = null;
 		
-		Gestora.mostrarTextoHistoria(1); //Se muestra el texto de la historia numero 1
+		historia = Gestora.obtenerTextoHistoria(1); //Se muestra el texto de la historia numero 1
+		Gestora.mostrarTextoHistoriaLento(historia);
 		
 		//LeerNombreJugador
 		System.out.println("Ingresar nombre jugador");
@@ -207,7 +208,7 @@ public class Main {
 						
 						if(!objetoZona.getEquipado()) {
 							System.out.println(" Hay una pala con una nota pegada");
-							Gestora.mostrarTextoHistoria(2); //Se muestra el texto de la historia numero 2
+							Gestora.obtenerTextoHistoria(2); //Se muestra el texto de la historia numero 2
 							Gestora.iteracionUsuarioConObjeto(objetoZona, usuario);
 						}else {
 							System.out.println(" No hay mas nada");
@@ -401,7 +402,7 @@ public class Main {
 								System.out.println("De entre ellos hay uno completamente desenpolvado parece que ha sido leido hace poco, ¿Quieres cogerlo?'");
 								respuesta = validacion.leerValidarRespuesta();
 								if(respuesta == 'S'){
-									Gestora.mostrarTextoHistoria(3); //Se muestra el texto de la historia numero 3
+									Gestora.obtenerTextoHistoria(3); //Se muestra el texto de la historia numero 3
 								}else {
 									System.out.println("No lo has cogido");
 								}
@@ -429,11 +430,11 @@ public class Main {
 												if(respuesta == 'S' && usuario.consultarObjetosNecesarioMochila("Spray de aceite")) {
 													System.out.println("Has apretado el botón pero no se abre, chirria bastante parece desengrasada. Por tu suerte llevas encima un Spray de aceite que aplicas en la puerta");
 													System.out.println("Has vuelto a apretar el botón, se ha abierto perfectamente");
-													Gestora.mostrarTextoHistoria(4); //Se muestra el texto de la historia numero 4
+													Gestora.obtenerTextoHistoria(4); //Se muestra el texto de la historia numero 4
 													System.out.println("Parece ser que la batería aún funciona");
 													Gestora.iteracionUsuarioConObjeto(objetoZona, usuario);
 													System.out.println("Parece que cerca de la batería hay una nota, dice lo siguiente:");
-													Gestora.mostrarTextoHistoria(5); //Se muestra el texto de la historia numero 5
+													Gestora.obtenerTextoHistoria(5); //Se muestra el texto de la historia numero 5
 													puertaOxidada = true;
 												}else {
 													if(respuesta == 'N') {
@@ -455,7 +456,7 @@ public class Main {
 										case 2:	//Opcion Entrar en sala de desarrollo
 											System.out.println("Parece la típica sala de laboratorio esta llena de probetas y muestras, es mejor no tocar nada.");
 											System.out.println("En la mesa al lado de un microscopio hay una nota, dice lo siguiente:");
-											Gestora.mostrarTextoHistoria(6); //Se muestra el texo de la historia numero 6
+											Gestora.obtenerTextoHistoria(6); //Se muestra el texo de la historia numero 6
 											System.out.println("Has vuelto al principio del laboratorio");
 										break;	//Fin Opcion Entrar en sala de desarrollo
 										
@@ -508,7 +509,7 @@ public class Main {
 											respuesta = validacion.leerValidarRespuesta();
 											if(respuesta == 'S') {
 												System.out.println("El ordenador tiene un e-mail abierto, en el pone lo siguiente:");
-												Gestora.mostrarTextoHistoria(7); //Se muestra el texo de la historia numero 7
+												Gestora.obtenerTextoHistoria(7); //Se muestra el texo de la historia numero 7
 											}else {
 												System.out.println("Has salido de la oficina y has vuelto al principio del laboratorio");	
 											}
@@ -613,7 +614,7 @@ public class Main {
 								
 								if(usuario.getVida() > 0) {
 									System.out.println("El zombie ha muerto y ha dejado caer una nota, dice lo siguiente:");
-									Gestora.mostrarTextoHistoria(8); //Se muestra el texo de la historia numero 8
+									Gestora.obtenerTextoHistoria(8); //Se muestra el texo de la historia numero 8
 								}
 							}else {
 								System.out.println("No has abierto el coche lo has dejado tal y como estaba");	
@@ -740,13 +741,13 @@ public class Main {
 		}else {
 			if(objetosMision == true) {
 				System.out.println("Has conseguido salir sano y salvo de la ciudad, pero en el coche comienza a reproducirse un mensaje a través de la radio");
-				Gestora.mostrarTextoHistoria(9); //Se muestra el texo de la historia numero 9
+				Gestora.obtenerTextoHistoria(9); //Se muestra el texo de la historia numero 9
 				System.out.println("¿Quieres rendirte y entregarte a Nova Corp? S/N");
 				respuesta = validacion.leerValidarRespuesta();
 				if(respuesta == 'S'){
-					Gestora.mostrarTextoHistoria(10); //Se muestra el texo de la historia numero 10
+					Gestora.obtenerTextoHistoria(10); //Se muestra el texo de la historia numero 10
 				}else {
-					Gestora.mostrarTextoHistoria(11); //Se muestra el texo de la historia numero 11	
+					Gestora.obtenerTextoHistoria(11); //Se muestra el texo de la historia numero 11	
 				}
 			}else {
 				if(usuario.getMovimientos() == 0) {
