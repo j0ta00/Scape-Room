@@ -537,13 +537,13 @@ public class Gestora {
 	 */
 	public static void mostrarTextoHistoriaLento(String texto) {
 
-        char[] caracteresMensaje = {' '};
-        caracteresMensaje = texto.toCharArray();// El texo se convierte a array de caracteres
+        char[] caracteresTexto = {' '};
+        caracteresTexto = texto.toCharArray();// El texo se convierte a array de caracteres
         System.out.print(" ");
 
-        for (int i = 0 ; i < caracteresMensaje.length ; i++) {
+        for (int i = 0 ; i < caracteresTexto.length ; i++) {
         	
-            System.out.print(caracteresMensaje[i]);
+            System.out.print(caracteresTexto[i]);
             try {
 				Thread.sleep(20); //Tiempo de espera entre un caracter y otro es de 20 milisengudos.
 			} catch (InterruptedException e) {
