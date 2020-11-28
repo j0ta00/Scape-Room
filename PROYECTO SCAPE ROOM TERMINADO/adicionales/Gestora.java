@@ -421,19 +421,19 @@ public class Gestora {
 		break;
 		
 		case 5:
-			System.out.println("-Resultados tests 28-10-2012:\n"
+			System.out.println("		-Resultados tests 28-10-2012:\n"
 					+ "El individuo C-238 responde adecuadamente a los estímulos es altamente resistente a \n"
 					+ "todo tipo de daños, a su vez es inmune a la infección del resto de especímenes como el B-126 o el \n"
 					+ "B-220 si bien estos pueden herirle de gravedad o matarle no pueden hacer que este forme parte de la simbiosis \n"
 					+ "por lo cual es inmune al virus que infecta a los otros especímenes, continuaremos las pruebas pero \n"
 					+ "podemos estar ante uno de los mayores avances en el proyecto.\n"
-					+ "-Resultados tests 15-11-2012:\n"
+					+ "		-Resultados tests 15-11-2012:\n"
 					+ "Una vez más el prototipo C-238 nos sorprende, no solo demuestra una resistencia y fuerza muy superior si no \n"
 					+ "que además es más inteligente que la media humana, se situa entorno a unos 175 CI es decir solo el 0,001% \n"
 					+ "de la población actual cuenta con un CI similar, a su vez destaca en la comprensión del lenguaje apenas se encuentra \n"
 					+ "en estado larvario y ya es capaz de mantener conversaciones, siguiendo el protocolo nosotros no respondemos nada a sus cuestiones \n"
-					+ "a su vez su desarrollo motor es muy superior también al del ser humano muy pronto alcanzará la etapa de la niñez"
-					+ "-Resultados tests 05-03-2013:\n"
+					+ "a su vez su desarrollo motor es muy superior también al del ser humano muy pronto alcanzará la etapa de la niñez\n"
+					+ "		-Resultados tests 05-03-2013:\n"
 					+ "Tras varios meses poniendo a prueba al espécimen C-238 recomendamos su aislamiento debido a que no se puede asegurar \n"
 					+ "su integridad o la de sus congéneres, C-238 ha desarrollado unas habilidades sagaces es capaz de resolver enormes \n"
 					+ "ecuaciones integrales mientras se divierte viendo la televisión, ha aprendido a hablar numerosas lenguas sin haberlas escuchado previamente \n"
