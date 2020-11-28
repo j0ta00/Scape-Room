@@ -5,17 +5,18 @@ import java.util.Scanner;
 public class Validaciones {
 	
 	/*
-	 * Prototipo: 
+	 * Prototipo: public char leerValidarRespuesta()
 	 * 
-	 * Comentario:
+	 * Comentario: Este metodo se encarga de leer y validar que la respuesta a una pregunta sea S o N
 	 * 
-	 * Entradas:
+	 * Entradas: Ninguna
 	 * 
-	 * Salidas:
+	 * Salidas: char respuesta
 	 * 
-	 * Precondiciones:
+	 * Precondiciones: Ninguna
 	 * 
-	 * Postcondiciones:
+	 * Postcondiciones: Este metodo se trata de una funcion ya que devuelve un tipo de dato, en este caso un caracter
+	 * 					el cual a la salida del metodo tomar como valor S o N
 	 * 
 	 */
 	public char leerValidarRespuesta() {
@@ -36,41 +37,44 @@ public class Validaciones {
 	}
 	
 	/*
-	 * Prototipo: 
+	 * Prototipo: public int obtenerPosicionMochila()
 	 * 
-	 * Comentario:
+	 * Comentario: Este metodo se encarga de leer una posicion de la mochila de un jugador y 
+	 * 			   mediante otro metodo(leerValidarOpcion) validar que dicha posicion exista en la mochila
+	 * 			   Ejemplo si el usuaior tiene 5 espacion en la mochila, las posiciones iran de 0-4.
 	 * 
-	 * Entradas:
+	 * Entradas: Ninguna
 	 * 
-	 * Salidas:
+	 * Salidas: int posicion
 	 * 
-	 * Precondiciones:
+	 * Precondiciones: El metodo leerValidarOpcion debe funcionar de forma correcta
 	 * 
-	 * Postcondiciones:
+	 * Postcondiciones: Este metodo se trata de una funcion ya que devuelve un tipo de dato, en este caso un entero
 	 * 
 	 */
 	public int obtenerPosicionMochila() {
 
-		int opcion = 0;
+		int posicion = 0;
 	
 		System.out.println("\nIngrese una posicion de la mochila donde esta el objeto que desea(Si no hay nada en esa posicion se dentra en cuenta)");
-		opcion = leerValidarOpcion(0,4);
+		posicion = leerValidarOpcion(0,4);
 		
-		return opcion;
+		return posicion;
 	}
 
 	/*
-	 * Prototipo: 
+	 * Prototipo: public int mostrarObtenerOpcionInicial() 
 	 * 
-	 * Comentario:
+	 * Comentario: Este metodo se encarga de mostrar las opciones iniciales del juego y obtener una de estas opciones, 
+	 *  		   ademas mediante el metodo leerValidarOpcion se leera y validara que la opcion a introducir sea una de las que se muestran
 	 * 
-	 * Entradas:
+	 * Entradas: Ninguna
 	 * 
-	 * Salidas:
+	 * Salidas: int opcion
 	 * 
-	 * Precondiciones:
+	 * Precondiciones: El metodo leerValidarOpcion debe funcionar de forma correcta
 	 * 
-	 * Postcondiciones:
+	 * Postcondiciones: Este metodo se trata de una funcion ya que devuelve un tipo de dato, en este caso un entero
 	 * 
 	 */
 	public int mostrarObtenerOpcionInicial() {
@@ -91,17 +95,18 @@ public class Validaciones {
 	}
 	
 	/*
-	 * Prototipo: 
+	 * Prototipo: public int mostrarObtenerOpcionesGaraje()
 	 * 
-	 * Comentario:
+	 * Comentario: Este metodo se encarga de mostrar las opciones que se tienen en un garaje y de obtener una de estas opciones,  
+	 *  		   ademas mediante el metodo leerValidarOpcion se leera y validara que la opcion a introducir sea una de las que se muestran
 	 * 
-	 * Entradas:
+	 * Entradas: Ninguna
 	 * 
-	 * Salidas:
+	 * Salidas: int opcion
 	 * 
-	 * Precondiciones:
+	 * Precondiciones: El metodo leerValidarOpcion debe funcionar de forma correcta
 	 * 
-	 * Postcondiciones:
+	 * Postcondiciones: Este metodo se trata de una funcion ya que devuelve un tipo de dato, en este caso un entero
 	 * 
 	 */
 	public int mostrarObtenerOpcionesGaraje() {
@@ -120,18 +125,19 @@ public class Validaciones {
 	}
 	
 	/*
-	 * Prototipo: 
+	 * Prototipo: public int mostrarObtenerOpcionesCementario() 
 	 * 
-	 * Comentario:
+	 * Comentario: Este metodo se encarga de mostrar las opciones que se tienen en un cementerio y de obtener una de estas opciones,
+ 	 *			   ademas mediante el metodo leerValidarOpcion se leera y validara que la opcion a introducir sea una de las que se muestran
 	 * 
-	 * Entradas:
+	 * Entradas: Ninguna
 	 * 
-	 * Salidas:
+	 * Salidas: int opcion
 	 * 
-	 * Precondiciones:
+	 * Precondiciones: El metodo leerValidarOpcion debe funcionar de forma correcta
 	 * 
-	 * Postcondiciones:
-	 * 
+	 * Postcondiciones: Este metodo se trata de una funcion ya que devuelve un tipo de dato, en este caso un entero
+	 *  
 	 */
 	public int mostrarObtenerOpcionesCementario() {
 
@@ -149,17 +155,18 @@ public class Validaciones {
 	}
 	
 	/*
-	 * Prototipo: 
+	 * Prototipo: public int mostrarObtenerOpcionesRegistrarTumba()
 	 * 
-	 * Comentario:
+	 * Comentario: Este metodo se encarga de mostrar las opciones que se tienen de registrar tumbas y de obtener una de estas opciones, 
+	 *  		   ademas mediante el metodo leerValidarOpcion se leera y validara que la opcion a introducir sea una de las que se muestran.
 	 * 
-	 * Entradas:
+	 * Entradas: Ninguna
 	 * 
-	 * Salidas:
+	 * Salidas: int opcion
 	 * 
-	 * Precondiciones:
+	 * Precondiciones: El metodo leerValidarOpcion debe funcionar de forma correcta
 	 * 
-	 * Postcondiciones:
+	 * Postcondiciones: Este metodo se trata de una funcion ya que devuelve un tipo de dato, en este caso un entero
 	 * 
 	 */
 	public int mostrarObtenerOpcionesRegistrarTumba() {
@@ -179,15 +186,16 @@ public class Validaciones {
 	/*
 	 * Prototipo: 
 	 * 
-	 * Comentario:
+	 * Comentario: Este metodo se encarga de mostrar las opciones que se tienen en una mansion y de obtener una de estas opciones,  
+     *			   ademas mediante el metodo leerValidarOpcion se leera y validara que la opcion a introducir sea una de las que se muestran
 	 * 
-	 * Entradas:
+	 * Entradas: Ninguna
 	 * 
-	 * Salidas:
+	 * Salidas: int opcion
 	 * 
-	 * Precondiciones:
+	 * Precondiciones: El metodo leerValidarOpcion debe funcionar de forma correcta
 	 * 
-	 * Postcondiciones:
+	 * Postcondiciones: Este metodo se trata de una funcion ya que devuelve un tipo de dato, en este caso un entero
 	 * 
 	 */
 	public int mostrarObtenerOpcionesMansion() {
@@ -208,17 +216,18 @@ public class Validaciones {
 	}
 	
 	/*
-	 * Prototipo: 
+	 * Prototipo: public int mostrarObtenerOpcionesDormitorio()
 	 * 
-	 * Comentario:
+	 * Comentario: Este metodo se encarga de mostrar las opciones que se tienen en un dormitorio y de obtener una de estas opciones,  
+     *			   ademas mediante el metodo leerValidarOpcion se leera y validara que la opcion a introducir sea una de las que se muestran
 	 * 
-	 * Entradas:
+	 * Entradas: Ninguna
 	 * 
-	 * Salidas:
+	 * Salidas: int opcion
 	 * 
-	 * Precondiciones:
+	 * Precondiciones: El metodo leerValidarOpcion debe funcionar de forma correcta
 	 * 
-	 * Postcondiciones:
+	 * Postcondiciones: Este metodo se trata de una funcion ya que devuelve un tipo de dato, en este caso un entero
 	 * 
 	 */
 	public int mostrarObtenerOpcionesDormitorio() {
@@ -237,17 +246,18 @@ public class Validaciones {
 	}
 	
 	/*
-	 * Prototipo: 
+	 * Prototipo: public int mostrarObtenerOpcionesJardin()
 	 * 
-	 * Comentario:
+	 * Comentario: Este metodo se encarga de mostrar las opciones que se tienen en un jardin y de obtener una de estas opciones,  
+     *			   ademas mediante el metodo leerValidarOpcion se leera y validara que la opcion a introducir sea una de las que se muestran
 	 * 
-	 * Entradas:
+	 * Entradas: Ninguna
 	 * 
-	 * Salidas:
+	 * Salidas: int opcion
 	 * 
-	 * Precondiciones:
+	 * Precondiciones: El metodo leerValidarOpcion debe funcionar de forma correcta
 	 * 
-	 * Postcondiciones:
+	 * Postcondiciones: Este metodo se trata de una funcion ya que devuelve un tipo de dato, en este caso un entero
 	 * 
 	 */
 	public int mostrarObtenerOpcionesJardin() {
@@ -265,17 +275,18 @@ public class Validaciones {
 	}
 	
 	/*
-	 * Prototipo: 
+	 * Prototipo: public int mostrarObtenerOpcionesSotano()
 	 * 
-	 * Comentario:
+	 * Comentario: Este metodo se encarga de mostrar las opciones que se tienen en un sotano y de obtener una de estas opciones,  
+     *			   ademas mediante el metodo leerValidarOpcion se leera y validara que la opcion a introducir sea una de las que se muestran
 	 * 
-	 * Entradas:
+	 * Entradas: Ninguna
 	 * 
-	 * Salidas:
+	 * Salidas: int opcion
 	 * 
-	 * Precondiciones:
+	 * Precondiciones: El metodo leerValidarOpcion debe funcionar de forma correcta
 	 * 
-	 * Postcondiciones:
+	 * Postcondiciones: Este metodo se trata de una funcion ya que devuelve un tipo de dato, en este caso un entero
 	 * 
 	 */
 	public int mostrarObtenerOpcionesSotano() {
@@ -296,17 +307,18 @@ public class Validaciones {
 	}
 	
 	/*
-	 * Prototipo: 
+	 * Prototipo: public int mostrarObtenerOpcionesLaboratorio()
 	 * 
-	 * Comentario:
+	 * Comentario: Este metodo se encarga de mostrar las opciones que se tienen en un laboratorio y de obtener una de estas opciones,  
+     *			   ademas mediante el metodo leerValidarOpcion se leera y validara que la opcion a introducir sea una de las que se muestran
 	 * 
-	 * Entradas:
+	 * Entradas: Niguna
 	 * 
-	 * Salidas:
+	 * Salidas: int opcion
 	 * 
-	 * Precondiciones:
+	 * Precondiciones: El metodo leerValidarOpcion debe funcionar de forma correcta
 	 * 
-	 * Postcondiciones:
+	 * Postcondiciones: Este metodo se trata de una funcion ya que devuelve un tipo de dato, en este caso un entero
 	 * 
 	 */
 	public int mostrarObtenerOpcionesLaboratorio() {
@@ -328,17 +340,18 @@ public class Validaciones {
 	}
 	
 	/*
-	 * Prototipo: 
+	 * Prototipo: public int mostrarObtenerOpcionesGasolinera()
 	 * 
-	 * Comentario:
+	 * Comentario: Este metodo se encarga de mostrar las opciones que se tienen en una gasolinera y de obtener una de estas opciones,  
+     *			   ademas mediante el metodo leerValidarOpcion se leera y validara que la opcion a introducir sea una de las que se muestran
 	 * 
-	 * Entradas:
+	 * Entradas: Ninguna
 	 * 
-	 * Salidas:
+	 * Salidas: int opcion
 	 * 
-	 * Precondiciones:
+	 * Precondiciones: El metodo leerValidarOpcion debe funcionar de forma correcta
 	 * 
-	 * Postcondiciones:
+	 * Postcondiciones: Este metodo se trata de una funcion ya que devuelve un tipo de dato, en este caso un entero
 	 * 
 	 */
 	public int mostrarObtenerOpcionesGasolinera() {
@@ -358,17 +371,18 @@ public class Validaciones {
 	}
 	
 	/*
-	 * Prototipo: 
+	 * Prototipo: public int mostrarObtenerOpcionesAlmacenGasolinera()
 	 * 
-	 * Comentario:
+	 * Comentario: Este metodo se encarga de mostrar las opciones que se tienen en un almacen de una gasolinera y de obtener una de estas opciones,  
+     *			   ademas mediante el metodo leerValidarOpcion se leera y validara que la opcion a introducir sea una de las que se muestran
 	 * 
-	 * Entradas:
+	 * Entradas: Ninguna
 	 * 
-	 * Salidas:
+	 * Salidas: int opcion
 	 * 
-	 * Precondiciones:
+	 * Precondiciones: El metodo leerValidarOpcion debe funcionar de forma correcta
 	 * 
-	 * Postcondiciones:
+	 * Postcondiciones: Este metodo se trata de una funcion ya que devuelve un tipo de dato, en este caso un entero
 	 * 
 	 */
 	public int mostrarObtenerOpcionesAlmacenGasolinera() {
@@ -387,17 +401,17 @@ public class Validaciones {
 	}
 	
 	/*
-	 * Prototipo: 
+	 * Prototipo: public int leerValidarOpcion(int rangoValido1, int rangoValido2)
 	 * 
-	 * Comentario:
+	 * Comentario: Este metodo se encarga de leer y validar dos numeros(opciones).
 	 * 
-	 * Entradas:
+	 * Entradas: int rangoValido1, int rangoValido2
 	 * 
-	 * Salidas:
+	 * Salidas: int opcion
 	 * 
-	 * Precondiciones:
+	 * Precondiciones: Niguna
 	 * 
-	 * Postcondiciones:
+	 * Postcondiciones: Este metodo se trata de una funcion ya que devuelve un tipo de dato, en este caso un entero
 	 * 
 	 */
 	public int leerValidarOpcion(int rangoValido1, int rangoValido2) {

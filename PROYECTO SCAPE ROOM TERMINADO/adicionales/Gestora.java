@@ -367,7 +367,7 @@ public class Gestora {
 	 * 
 	 * Salidas: Ninguna
 	 * 
-	 * Precondiciones: Parte tiene que ser un numero entre 1 y 7
+	 * Precondiciones: Parte tiene que ser un numero entre 1 y 11
 	 * 
 	 * Postcondiciones: Este metodo se trata de un procedimiento ya que no devuelve ningun tipo de dato, solo muestra un parte de la historia del juego
 	 */
@@ -383,6 +383,7 @@ public class Gestora {
 					+ "lo único que queda en tu memoria es tu nombre y la sensación de que sabes que hay algo que hacer y que debes escapar de esta ciudad...\n"
 					+ "¡Que comience el espectáculo!");
 		break;
+		
 		case 2:
 			System.out.println("Parece que hay una nota, dice lo siguiente:");
 			System.out.println("Alfred, muchas gracias por hacerme este favor, se que Emily falleció hace muchos años y nunca es agradable \n"
@@ -476,6 +477,7 @@ public class Gestora {
 					+ "incluso el gobierno debe estar detrás de esto,bueno mucha suerte espero que llegues sano y salvo y volvamos a vernos \n"
 					+ "Con cariño tu hermano John");
 		break;
+		
 		case 9: 
 			System.out.println("Bien hecho monstruo, gracias a ti hemos conseguido averiguar donde estaba el laboratorio, hemos entrado y \n"
 					+ "conseguido las muestras a su vez hemos comprobado tu eficacia, desde luego que no eres una humano normal, eres mucho más \n"
@@ -490,6 +492,7 @@ public class Gestora {
 					+ "todo y que sepas que el coche tiene un localizador y aunque salgas de él estamos justo detrás de ti y delante así que mejor rindete y vuelve a ser una \n"
 					+ "rata de laboratorio");
 		break;
+		
 		case 10: 
 			System.out.println("Has parado el coche en seco y has salido de él, apenas 1 minuto después varios coches de color negro y con las ventanas tintadas se acercan a ti. \n"
 					+ " Una vez los coches están en tu posición varios agentes de Nova Corp se bajan y proceden a arrestarte, tu mientras con la cabeza agachada obedeces a sus ordenes, \n"
@@ -500,6 +503,7 @@ public class Gestora {
 			System.out.println("Friedrich Nietzsche");
 			System.out.println("\n\n													FIN");
 		break;
+		
 		case 11:
 			System.out.println("Has seguido tu camino pero varios coches bloquean el paso, son coches de color negro y con las ventanas tintadas, antes de que puedas hacer nada \n"
 					+ "comienzan a abrir fuego contra tu coche, de repente una lluvia de balas comienza a caer por la parte trasera del automóvil, sin poder reaccionar has sido \n"
