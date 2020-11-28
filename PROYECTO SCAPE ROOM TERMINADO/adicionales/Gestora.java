@@ -371,152 +371,187 @@ public class Gestora {
 	 * 
 	 * Postcondiciones: Este metodo se trata de un procedimiento ya que no devuelve ningun tipo de dato, solo muestra un parte de la historia del juego
 	 */
-	public static void mostrarTextoHistoria(int parte) {
+	public static String obtenerTextoHistoria(int parte) {
+		String texto = " ";
 		
 		switch(parte) {
 		case 1: 
-			System.out.println("Sientes mucho frío, comienzas a abrir los ojos y te encuentras en una habitación muy ordenada \n"
-					+ "no es más que un departamento común, tiene unas grandes ventanas, a través de ellas ves la ciudad, completamente \n"
-					+ "desolada, en ruinas y todo parece vacío, decenas de cadáveres se amontonan en las calles y extrañas figuras reptan \n"
-					+ "y se mueven sinuosamente, algunos parecen humanos pero están en condiciones deplorables, de repente a tu cabeza llegan \n"
-					+ "varias preguntas la primera de todas quien eres y que haces aquí, no recuerdas nada apenas vislumbras lejanos recuerdos \n"
-					+ "lo único que queda en tu memoria es tu nombre y la sensación de que sabes que hay algo que hacer y que debes escapar de esta ciudad...\n"
-					+ "¡Que comience el espectáculo!");
+			texto = "Sientes mucho frío, comienzas a abrir los ojos y te encuentras en una habitación muy ordenada "
+					+ "no es más que un departamento común, tiene unas grandes ventanas, a través de ellas ves la ciudad, completamente "
+					+ "desolada, en ruinas y todo parece vacío, decenas de cadáveres se amontonan en las calles y extrañas figuras reptan "
+					+ "y se mueven sinuosamente, algunos parecen humanos pero están en condiciones deplorables, de repente a tu cabeza llegan "
+					+ "varias preguntas la primera de todas quien eres y que haces aquí, no recuerdas nada apenas vislumbras lejanos recuerdos "
+					+ "lo único que queda en tu memoria es tu nombre y la sensación de que sabes que hay algo que hacer y que debes escapar de esta ciudad..."
+					+ "¡Que comience el espectáculo!";
 		break;
 		
 		case 2:
-			System.out.println("Parece que hay una nota, dice lo siguiente:");
-			System.out.println("Alfred, muchas gracias por hacerme este favor, se que Emily falleció hace muchos años y nunca es agradable \n"
-					+ "tener que pertubar el lugar de descanso pero no se me ocurre otro lugar donde pueda esconder ese objeto sin que sea encontrado por ellos \n"
-					+ "tu también trabajaste en la mansión y sabes para que sirve esa llave, sin ella no podrán entrar ahí dentro donde he guardado el otro objeto \n"
-					+ "que les impedirán bajar ahí abajo, nadie podrá encontrarlos, contacto contigo vía carta por que no se sí me están espiando y quizás \n"
-					+ "escuchan las llamadas de mi teléfono, se que si Emily siguiera viva ella misma aceptaría esto, la extraño mucho y aunque no este aquí \n"
-					+ "me ayudará a su manerá, se que todo esto es mi culpa pero no podía dejar que esas criaturas sufrierán, parecían humanos y sentián el dolor \n"
-					+ "como nosotros, como iba a saber que Nova Corp no quería llevarselos si no sembrar el caos en la ciudad, ahora tengo que huir de ellos \n"
-					+ "y de mis propios compañeros de trabajo, si el señor Mason se enterará también enviaría sicarios a por mi, estoy en una situación horrible \n"
-					+ "y personas inocentes morirán por mi culpa, no espero su perdón solamente espero que entiendan que yo solo quería salvar la vida de esas criaturas \n"
-					+ "bueno Alfred esta será probablemente mi ultima carta antes de que me asesinen, espero que en el laboratorio no hayan descubierto ya que he liberado \n"
-					+ "los especímenes si no allí encontraré mi final, bueno muchas gracias por hacerme este gran favor esperemos que nadie se quede con las muestras del laboratorio \n"
-					+ "y todas las criaturas no hagan daño a la gente...");
-			System.out.println("El resto de la nota esta arrancado y no puede leerse");
+			texto = "Parece que hay una nota, dice lo siguiente:"
+					+"Alfred, muchas gracias por hacerme este favor, se que Emily falleció hace muchos años y nunca es agradable "
+					+ "tener que pertubar el lugar de descanso pero no se me ocurre otro lugar donde pueda esconder ese objeto sin que sea encontrado por ellos "
+					+ "tu también trabajaste en la mansión y sabes para que sirve esa llave, sin ella no podrán entrar ahí dentro donde he guardado el otro objeto "
+					+ "que les impedirán bajar ahí abajo, nadie podrá encontrarlos, contacto contigo vía carta por que no se sí me están espiando y quizás "
+					+ "escuchan las llamadas de mi teléfono, se que si Emily siguiera viva ella misma aceptaría esto, la extraño mucho y aunque no este aquí "
+					+ "me ayudará a su manerá, se que todo esto es mi culpa pero no podía dejar que esas criaturas sufrierán, parecían humanos y sentián el dolor "
+					+ "como nosotros, como iba a saber que Nova Corp no quería llevarselos si no sembrar el caos en la ciudad, ahora tengo que huir de ellos "
+					+ "y de mis propios compañeros de trabajo, si el señor Mason se enterará también enviaría sicarios a por mi, estoy en una situación horrible "
+					+ "y personas inocentes morirán por mi culpa, no espero su perdón solamente espero que entiendan que yo solo quería salvar la vida de esas criaturas "
+					+ "bueno Alfred esta será probablemente mi ultima carta antes de que me asesinen, espero que en el laboratorio no hayan descubierto ya que he liberado "
+					+ "los especímenes si no allí encontraré mi final, bueno muchas gracias por hacerme este gran favor esperemos que nadie se quede con las muestras del laboratorio "
+					+ "y todas las criaturas no hagan daño a la gente..."
+					+ "El resto de la nota esta arrancado y no puede leerse";
 		break;
 		
 		case 3:
-			System.out.println("El libro tiene una página marcada, la pagina habla sobre jardinería pero dentro parece haber una nota");
-			System.out.println("La nota dice lo siguiente: Las pruebas con el espécimen vegetal ya comienza a dar sus frutos señor Mason, \n"
-					+ "me pongo en contacto con usted por correspondencia debido a que tenemos sospechas de que Nova Corp tiene un infiltrado \n"
-					+ "en nuestras filas y se encuentra en nuestro propio laboratorio por lo que no es seguro usar la intranet de la compañia \n"
-					+ "no se preocupe pondremos fin a esto enseguida y todo seguirá según lo acordado, saludos cordiales \n"
-					+ " Firmado Doctor Alex Morgan");
+			texto = "El libro tiene una página marcada, la pagina habla sobre jardinería pero dentro parece haber una nota "
+					+"La nota dice lo siguiente: Las pruebas con el espécimen vegetal ya comienza a dar sus frutos señor Mason, "
+					+ "me pongo en contacto con usted por correspondencia debido a que tenemos sospechas de que Nova Corp tiene un infiltrado "
+					+ "en nuestras filas y se encuentra en nuestro propio laboratorio por lo que no es seguro usar la intranet de la compañia "
+					+ "no se preocupe pondremos fin a esto enseguida y todo seguirá según lo acordado, saludos cordiales "
+					+ " Firmado Doctor Alex Morgan";
 		break;
 		
 		case 4:
-			System.out.println("Has entrado dentro de la habitación y aquello parece una sala de tortura \n"
-					+ "hay grandes manchas de sangre seca en el suelo, las paredes son de un marrón ennegrecido \n"
-					+ "huele a muerto y apenas se ve bien ni con la luz encendida, es un escenario muy macabro \n"
-					+ "también hay diversos instrumentos de tortura como herramientas, cuchillos y un enorme arsenal \n"
-					+ "de numerosos y horribles utensilios, de entre estos destaca una gran batería con dos cables conectados \n"
-					+ "y unas enormes pinzas, por alguna extaña y escalofriante razón esa sala te resulta familiar y te provoca un \n"
-					+ "enorme pavor en el cuerpo...");
+			texto = "Has entrado dentro de la habitación y aquello parece una sala de tortura "
+					+ "hay grandes manchas de sangre seca en el suelo, las paredes son de un marrón ennegrecido "
+					+ "huele a muerto y apenas se ve bien ni con la luz encendida, es un escenario muy macabro "
+					+ "también hay diversos instrumentos de tortura como herramientas, cuchillos y un enorme arsenal "
+					+ "de numerosos y horribles utensilios, de entre estos destaca una gran batería con dos cables conectados "
+					+ "y unas enormes pinzas, por alguna extaña y escalofriante razón esa sala te resulta familiar y te provoca un "
+					+ "enorme pavor en el cuerpo...";
 		break;
 		
 		case 5:
-			System.out.println("		-Resultados tests 28-10-2012:\n"
-					+ "El individuo C-238 responde adecuadamente a los estímulos es altamente resistente a \n"
-					+ "todo tipo de daños, a su vez es inmune a la infección del resto de especímenes como el B-126 o el \n"
-					+ "B-220 si bien estos pueden herirle de gravedad o matarle no pueden hacer que este forme parte de la simbiosis \n"
-					+ "por lo cual es inmune al virus que infecta a los otros especímenes, continuaremos las pruebas pero \n"
-					+ "podemos estar ante uno de los mayores avances en el proyecto.\n"
-					+ "		-Resultados tests 15-11-2012:\n"
-					+ "Una vez más el prototipo C-238 nos sorprende, no solo demuestra una resistencia y fuerza muy superior si no \n"
-					+ "que además es más inteligente que la media humana, se situa entorno a unos 175 CI es decir solo el 0,001% \n"
-					+ "de la población actual cuenta con un CI similar, a su vez destaca en la comprensión del lenguaje apenas se encuentra \n"
-					+ "en estado larvario y ya es capaz de mantener conversaciones, siguiendo el protocolo nosotros no respondemos nada a sus cuestiones \n"
-					+ "a su vez su desarrollo motor es muy superior también al del ser humano muy pronto alcanzará la etapa de la niñez\n"
-					+ "		-Resultados tests 05-03-2013:\n"
-					+ "Tras varios meses poniendo a prueba al espécimen C-238 recomendamos su aislamiento debido a que no se puede asegurar \n"
-					+ "su integridad o la de sus congéneres, C-238 ha desarrollado unas habilidades sagaces es capaz de resolver enormes \n"
-					+ "ecuaciones integrales mientras se divierte viendo la televisión, ha aprendido a hablar numerosas lenguas sin haberlas escuchado previamente \n"
-					+ "hablamos de habilidades casi omnipotentes debido a esto comenzamos con terapias de electrochoque y según la tomografía axial computarizada craneal \n"
-					+ "el individuo presenta enormes lesiones en la zona craneal que le provocan perdidas de memoria a corto y largo plazo, a su vez varios tumores \n"
-					+ "se desarrollan en distintas zonas de su cuerpo parece que no respondio bien a las terapias de choque, pensabamos que iba a ser \n"
-					+ "la evolución del ser humano pero parece que aún debemos seguir trabajando en ello.\n"
-					+ "El resto de notas estan rotas o son ilegibles, por alguna extraña razón comienza a dolerte mucho la cabeza...");
+			texto = "		-Resultados tests 28-10-2012: "
+					+ "El individuo C-238 responde adecuadamente a los estímulos es altamente resistente a "
+					+ "todo tipo de daños, a su vez es inmune a la infección del resto de especímenes como el B-126 o el "
+					+ "B-220 si bien estos pueden herirle de gravedad o matarle no pueden hacer que este forme parte de la simbiosis "
+					+ "por lo cual es inmune al virus que infecta a los otros especímenes, continuaremos las pruebas pero "
+					+ "podemos estar ante uno de los mayores avances en el proyecto."
+					+ "		-Resultados tests 15-11-2012: "
+					+ "Una vez más el prototipo C-238 nos sorprende, no solo demuestra una resistencia y fuerza muy superior si no "
+					+ "que además es más inteligente que la media humana, se situa entorno a unos 175 CI es decir solo el 0,001% "
+					+ "de la población actual cuenta con un CI similar, a su vez destaca en la comprensión del lenguaje apenas se encuentra "
+					+ "en estado larvario y ya es capaz de mantener conversaciones, siguiendo el protocolo nosotros no respondemos nada a sus cuestiones "
+					+ "a su vez su desarrollo motor es muy superior también al del ser humano muy pronto alcanzará la etapa de la niñez "
+					+ "		-Resultados tests 05-03-2013: "
+					+ "Tras varios meses poniendo a prueba al espécimen C-238 recomendamos su aislamiento debido a que no se puede asegurar "
+					+ "su integridad o la de sus congéneres, C-238 ha desarrollado unas habilidades sagaces es capaz de resolver enormes "
+					+ "ecuaciones integrales mientras se divierte viendo la televisión, ha aprendido a hablar numerosas lenguas sin haberlas escuchado previamente "
+					+ "hablamos de habilidades casi omnipotentes debido a esto comenzamos con terapias de electrochoque y según la tomografía axial computarizada craneal "
+					+ "el individuo presenta enormes lesiones en la zona craneal que le provocan perdidas de memoria a corto y largo plazo, a su vez varios tumores "
+					+ "se desarrollan en distintas zonas de su cuerpo parece que no respondio bien a las terapias de choque, pensabamos que iba a ser "
+					+ "la evolución del ser humano pero parece que aún debemos seguir trabajando en ello."
+					+ "El resto de notas estan rotas o son ilegibles, por alguna extraña razón comienza a dolerte mucho la cabeza...";
 		break;
 		
 		case 6:
-			System.out.println("	-Resultados tests 19-08-2013:\n"
-					+ "El espécimen C-238 falleció desgraciadamente, pero tuvimos suerte y pudimos conservar muestras de su ADN \n"
-					+ "gracias a esto hemos desarrollado a C-306 una mejor versión más estable, responde mejor a los estímulos, \n"
-					+ "es mucho más sensato y de una inteligencia y habilidad muy similar, no cuenta con habilidades sensoriales o telepáticas\n "
-					+ "esta versión es idéntico a un ser humano en apariencia de hecho es exactamente igual que este físicamente hablando pero tan capaz como C-238\n"
-					+ "solo que este usa armas/herramientas para la resolución de enigmas(sin rasgos de semi omnipotencia), este es el avance que buscabamos,  \n"
-					+ "la humanidad evolucionará al final y nos haremos de oro, con esto Nova Corp no tendrá nada que hacer y el ejercito usará nuestros experimentos, nos espera un futuro prometedor...");
+			texto = "	-Resultados tests 19-08-2013: "
+					+ "El espécimen C-238 falleció desgraciadamente, pero tuvimos suerte y pudimos conservar muestras de su ADN "
+					+ "gracias a esto hemos desarrollado a C-306 una mejor versión más estable, responde mejor a los estímulos, "
+					+ "es mucho más sensato y de una inteligencia y habilidad muy similar, no cuenta con habilidades sensoriales o telepáticas "
+					+ "esta versión es idéntico a un ser humano en apariencia de hecho es exactamente igual que este físicamente hablando pero tan capaz como C-238 "
+					+ "solo que este usa armas/herramientas para la resolución de enigmas(sin rasgos de semi omnipotencia), este es el avance que buscabamos,  "
+					+ "la humanidad evolucionará al final y nos haremos de oro, con esto Nova Corp no tendrá nada que hacer y el ejercito usará nuestros experimentos, nos espera un futuro prometedor...";
 		break;
 		
 		case 7:
-			System.out.println("Lo sentimos señor Mason todo ha salido mal, ese traidor se alió con Nova Corp y \n"
-					+ "ha conseguido liberar varios especímenes por qué según él estaban sufriendo y no era ético \n"
-					+ "que sabrá ese patán viudo lo que es ético o no, no se preocupe he puesto fin a su vida y capturaremos \n"
-					+ "a los especímenes antes de que hagan destrozos por la ciudad o sean capturados por Nova Corp, tenemos \n"
-					+ "la ayuda de la policía local, no saben los detalles pero por una cuantiosa suma nos ayudarán, resolveremos est_");
-			System.out.println("El e-mail esta sin terminar y todo esta rodeado de sangre por lo que no tuvo un buen final...");	
+			texto = "Lo sentimos señor Mason todo ha salido mal, ese traidor se alió con Nova Corp y "
+					+ "ha conseguido liberar varios especímenes por qué según él estaban sufriendo y no era ético "
+					+ "que sabrá ese patán viudo lo que es ético o no, no se preocupe he puesto fin a su vida y capturaremos "
+					+ "a los especímenes antes de que hagan destrozos por la ciudad o sean capturados por Nova Corp, tenemos "
+					+ "la ayuda de la policía local, no saben los detalles pero por una cuantiosa suma nos ayudarán, resolveremos est_ "
+					+"El e-mail esta sin terminar y todo esta rodeado de sangre por lo que no tuvo un buen final...";	
 		break;
 		
 		case 8:
-			System.out.println("Hola Tom las cosas se han puesto difíciles por aquí así que \n"
-					+ "he decidido marcharme, los rumores son ciertos no estaban locos es verdad \n"
-					+ "hay seres infernales por las afueras de la ciudad y sobre todo cerca de esa vieja mansión, \n"
-					+ "antes de que esos seres lleguen a la ciudad deberías abandonarla, utiliza los surtidores \n"
-					+ "y huye cuanto antes, pero si llegas tarde te dejaré combustible suficiente como para abandonarla, \n"
-					+ "lo guardaré en el armario de la limpieza en el almacen de la gasolinera, recuerda que debes \n"
-					+ "desactivar la electricidad si no quieres achicharrarte, también te dejo algo \n"
-					+ "de efectivo en la caja por si necesitas comprar algo durante el viaje, te esperamos en la casa \n"
-					+ "de mama, espero que esta carta te llegue a tiempo pues debido a que las carreteras estan cortadas \n"
-					+ "no puedo hacertela llegar, además ni el internet ni la línea funcionan esto es muy extraño la polícia o \n"
-					+ "incluso el gobierno debe estar detrás de esto,bueno mucha suerte espero que llegues sano y salvo y volvamos a vernos \n"
-					+ "Con cariño tu hermano John");
+			texto = "Hola Tom las cosas se han puesto difíciles por aquí así que "
+					+ "he decidido marcharme, los rumores son ciertos no estaban locos es verdad "
+					+ "hay seres infernales por las afueras de la ciudad y sobre todo cerca de esa vieja mansión, "
+					+ "antes de que esos seres lleguen a la ciudad deberías abandonarla, utiliza los surtidores "
+					+ "y huye cuanto antes, pero si llegas tarde te dejaré combustible suficiente como para abandonarla, "
+					+ "lo guardaré en el armario de la limpieza en el almacen de la gasolinera, recuerda que debes "
+					+ "desactivar la electricidad si no quieres achicharrarte, también te dejo algo "
+					+ "de efectivo en la caja por si necesitas comprar algo durante el viaje, te esperamos en la casa "
+					+ "de mama, espero que esta carta te llegue a tiempo pues debido a que las carreteras estan cortadas "
+					+ "no puedo hacertela llegar, además ni el internet ni la línea funcionan esto es muy extraño la polícia o "
+					+ "incluso el gobierno debe estar detrás de esto,bueno mucha suerte espero que llegues sano y salvo y volvamos a vernos "
+					+ "Con cariño tu hermano John";
 		break;
 		
 		case 9: 
-			System.out.println("Bien hecho monstruo, gracias a ti hemos conseguido averiguar donde estaba el laboratorio, hemos entrado y \n"
-					+ "conseguido las muestras a su vez hemos comprobado tu eficacia, desde luego que no eres una humano normal, eres mucho más \n"
-					+ "inteligente y capaz, además de tus habilidades para el combate usando armas y herramientas sin haber sido instruido en su uso \n"
-					+ "son mejores que las de un veterano de guerra, pero aún así en ningún momento sospechaste que tu huida y todo había sido preparado \n"
-					+ "para que nos condujeras hacia las muestras, a pesar de ser tan inteligente...JAJAJAJAJA!! no dejas de ser un inútil engendro, además \n"
-					+ "nos libraste de ese extraño ser casi invencible del que nos había hablado nuestro ''infiltrado'' aunque el era casi tan tonto como tú \n"
-					+ "y penso que os liberariamos y así fue el mismo te libero a ti y a especímenes agresivos que acabaron con la ciudad, quizás tu eras el único \n"
-					+ "que a pesar de las torturas seguía cuerdo o que no era un experimento fallido casi zombie,no se como te sentirás tras saber todo esto, solamente decirte \n"
-					+ "que gracias a ti Nova Corp será multimillonaria, nuestro principal competidor en la carrera biológica ha desaparecido, Mason se irá a la bancarrota \n"
-					+ "te venderemos a ti y al resto de especímenes que desarrollemos al gobierno y ellos se encargarán de vosotros para lo que decidan, así que gracias por \n"
-					+ "todo y que sepas que el coche tiene un localizador y aunque salgas de él estamos justo detrás de ti y delante así que mejor rindete y vuelve a ser una \n"
-					+ "rata de laboratorio");
+			texto = "Bien hecho monstruo, gracias a ti hemos conseguido averiguar donde estaba el laboratorio, hemos entrado y "
+					+ "conseguido las muestras a su vez hemos comprobado tu eficacia, desde luego que no eres una humano normal, eres mucho más "
+					+ "inteligente y capaz, además de tus habilidades para el combate usando armas y herramientas sin haber sido instruido en su uso "
+					+ "son mejores que las de un veterano de guerra, pero aún así en ningún momento sospechaste que tu huida y todo había sido preparado "
+					+ "para que nos condujeras hacia las muestras, a pesar de ser tan inteligente...JAJAJAJAJA!! no dejas de ser un inútil engendro, además "
+					+ "nos libraste de ese extraño ser casi invencible del que nos había hablado nuestro ''infiltrado'' aunque el era casi tan tonto como tú "
+					+ "y penso que os liberariamos y así fue el mismo te libero a ti y a especímenes agresivos que acabaron con la ciudad, quizás tu eras el único "
+					+ "que a pesar de las torturas seguía cuerdo o que no era un experimento fallido casi zombie,no se como te sentirás tras saber todo esto, solamente decirte "
+					+ "que gracias a ti Nova Corp será multimillonaria, nuestro principal competidor en la carrera biológica ha desaparecido, Mason se irá a la bancarrota "
+					+ "te venderemos a ti y al resto de especímenes que desarrollemos al gobierno y ellos se encargarán de vosotros para lo que decidan, así que gracias por "
+					+ "todo y que sepas que el coche tiene un localizador y aunque salgas de él estamos justo detrás de ti y delante así que mejor rindete y vuelve a ser una "
+					+ "rata de laboratorio";
 		break;
 		
 		case 10: 
-			System.out.println("Has parado el coche en seco y has salido de él, apenas 1 minuto después varios coches de color negro y con las ventanas tintadas se acercan a ti. \n"
-					+ " Una vez los coches están en tu posición varios agentes de Nova Corp se bajan y proceden a arrestarte, tu mientras con la cabeza agachada obedeces a sus ordenes, \n"
-					+ " ese ha sido el final de tu historia, tu libertad se acabo por qué no eres humano como ellos, no eres un ser creado por la naturaleza, no eres más que los designios de una \n"
-					+ "raza que decidió jugar a ser Dios, este dia ha sido el primer y último en el que has visto el sol y desde luego, no ha sido un día fácil...");
-			
-			System.out.println("\nQuien con monstruos lucha cuide de no convertirse a su vez en monstruo. Cuando miras largo tiempo a un abismo, también éste mira dentro de ti.");
-			System.out.println("Friedrich Nietzsche");
-			System.out.println("\n\n													FIN");
+			texto = "Has parado el coche en seco y has salido de él, apenas 1 minuto después varios coches de color negro y con las ventanas tintadas se acercan a ti."
+					+ " Una vez los coches están en tu posición varios agentes de Nova Corp se bajan y proceden a arrestarte, tu mientras con la cabeza agachada obedeces a sus ordenes, "
+					+ " ese ha sido el final de tu historia, tu libertad se acabo por qué no eres humano como ellos, no eres un ser creado por la naturaleza, no eres más que los designios de una "
+					+ "raza que decidió jugar a ser Dios, este dia ha sido el primer y último en el que has visto el sol y desde luego, no ha sido un día fácil... "
+					+ "Quien con monstruos lucha cuide de no convertirse a su vez en monstruo. Cuando miras largo tiempo a un abismo, también éste mira dentro de ti."
+					+ "Friedrich Nietzsche"
+					+ "FIN";
 		break;
 		
 		case 11:
-			System.out.println("Has seguido tu camino pero varios coches bloquean el paso, son coches de color negro y con las ventanas tintadas, antes de que puedas hacer nada \n"
-					+ "comienzan a abrir fuego contra tu coche, de repente una lluvia de balas comienza a caer por la parte trasera del automóvil, sin poder reaccionar has sido \n"
-					+ "alcanzado por una infinidad de balas y comienzas a desangrarte, tus parpados pesan mucho y cierras los ojos, pero no sientes tristeza, has muerto luchando \n"
-					+ "al contrario sientes felicidad encontrarás la paz que no has encontrado en este mundo por algo que tu no elegiste ser ni hacer, este es el final de tu historia, \n"
-					+ "varios agentes de Nova Corp se acercan para comprobar como el cuerpo del espécimen yace impertérrito sobre el coche, acto seguido este explota debido a la leve llama \n"
-					+ "que asomaba en su capo, provocando la muerte de todos los agentes de la zona, parece que el karma a veces si actúa, la carretera quedo en silencio, tu conciencia mientras \n"
-					+ "vuela en un mar de calma antes de que todo se vuelva más y más oscuro, hasta que dejas de sentir y se acabó,has dejado este mundo...");
-			
-			System.out.println("\nQuien con monstruos lucha cuide de no convertirse a su vez en monstruo. Cuando miras largo tiempo a un abismo, también éste mira dentro de ti.");
-			System.out.println("Friedrich Nietzsche");
-			System.out.println("\n\n													FIN");
+			texto = "Has seguido tu camino pero varios coches bloquean el paso, son coches de color negro y con las ventanas tintadas, antes de que puedas hacer nada "
+					+ "comienzan a abrir fuego contra tu coche, de repente una lluvia de balas comienza a caer por la parte trasera del automóvil, sin poder reaccionar has sido "
+					+ "alcanzado por una infinidad de balas y comienzas a desangrarte, tus parpados pesan mucho y cierras los ojos, pero no sientes tristeza, has muerto luchando "
+					+ "al contrario sientes felicidad encontrarás la paz que no has encontrado en este mundo por algo que tu no elegiste ser ni hacer, este es el final de tu historia,"
+					+ "varios agentes de Nova Corp se acercan para comprobar como el cuerpo del espécimen yace impertérrito sobre el coche, acto seguido este explota debido a la leve llama "
+					+ "que asomaba en su capo, provocando la muerte de todos los agentes de la zona, parece que el karma a veces si actúa, la carretera quedo en silencio, tu conciencia mientras "
+					+ "vuela en un mar de calma antes de que todo se vuelva más y más oscuro, hasta que dejas de sentir y se acabó,has dejado este mundo..."
+					+ "Quien con monstruos lucha cuide de no convertirse a su vez en monstruo. Cuando miras largo tiempo a un abismo, también éste mira dentro de ti."
+					+ "Friedrich Nietzsche"
+					+ "FIN";
 		break;
+		
 		}
+		return texto;
 	}
+	
+	
+	/*
+	 * Prototipo: public static void mostrarTextoHistoriaLento(String texto)
+	 * 
+	 * Comentario: Este metodo se mostrar un texto de una manera mas lenta a lo normal
+	 * 
+	 * Entradas: String texto
+	 * 
+	 * Salidas: Ninguna
+	 * 
+	 * Precondiciones: texto no deberia de estar vacio
+	 * 
+	 * Postcondiciones: Este metodo se trata de un procedimiento ya que no devuelve ningun tipo de dato, solo muestra un texo de manrea mas lenta a lo normal
+	 */
+	public static void mostrarTextoHistoriaLento(String texto) {
+
+        char[] caracteresMensaje = {' '};
+        caracteresMensaje = texto.toCharArray();// El texo se convierte a array de caracteres
+        System.out.print(" ");
+
+        for (int i = 0 ; i < caracteresMensaje.length ; i++) {
+        	
+            System.out.print(caracteresMensaje[i]);
+            if( (i + 1) % 150 == 0 || caracteresMensaje[i] == ':'){// Cada 150 caracteres se hace un saldo de linea o se encuentre :
+            	System.out.print("\n ");
+            }
+            try {
+				Thread.sleep(30); //Tiempo de espera entre un caracter y otro es de 30 milisengudos
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} 
+        }
+    }
 }
