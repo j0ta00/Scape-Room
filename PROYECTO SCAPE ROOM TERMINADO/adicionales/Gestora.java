@@ -548,7 +548,7 @@ public class Gestora {
             	System.out.print("\n ");
             }
             try {
-				Thread.sleep(30); //Tiempo de espera entre un caracter y otro es de 30 milisengudos
+				Thread.sleep(30); //Tiempo de espera entre un caracter y otro es de 30 milisengudos.
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			} 
