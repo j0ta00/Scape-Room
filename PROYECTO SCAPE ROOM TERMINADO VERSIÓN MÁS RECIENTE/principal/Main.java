@@ -54,8 +54,8 @@ public class Main {
 		Objeto objetoZona = null;
 		Personaje enemigo = null;
 		
-		historia = Gestora.obtenerTextoHistoria(1); //Se obtiene el texto de la historia número 1
-		Gestora.mostrarTextoHistoriaLento(historia); //Se muestra el texto de la historia número 1
+		historia = Gestora.obtenerTextoHistoria(1); //Se obtiene el texto de la historia nÃºmero 1
+		Gestora.mostrarTextoHistoriaLento(historia); //Se muestra el texto de la historia nÃºmero 1
 		
 		//LeerNombreJugador
 		Gestora.mostrarTextoHistoriaLento("Ingresar nombre jugador\n");
@@ -92,7 +92,7 @@ public class Main {
 						Gestora.mostrarTextoHistoriaLento("Ll es: Sin completar\n");
 						
 						//Obtener si se tienen objetos que se require para la mision(Son necesarios 3)
-						objetosMision = usuario.consultarObjetosMisionMochila("Llave coche","Batería","Gasolina");
+						objetosMision = usuario.consultarObjetosMisionMochila("Llave coche","BaterÃ­a","Gasolina");
 						
 						if(objetosMision) {
 							Gestora.mostrarTextoHistoriaLento("Tienes todo lo necesario para hacer que el coche funcione. Sacas tu lado mecanico y procedes a instalas las piezas");
@@ -208,11 +208,11 @@ public class Main {
 						
 						if(!objetoZona.getEquipado()) {
 							Gestora.mostrarTextoHistoriaLento("Hay una pala con una nota pegada");
-							historia=Gestora.obtenerTextoHistoria(2); //Se obtiene el texto de la historia número 2
-							Gestora.mostrarTextoHistoriaLento(historia);//Se muestra el texto de la historia número 2
+							historia = Gestora.obtenerTextoHistoria(2); //Se obtiene el texto de la historia nÃºmero 2
+							Gestora.mostrarTextoHistoriaLento(historia);//Se muestra el texto de la historia nÃºmero 2
 							Gestora.interaccionUsuarioConObjeto(objetoZona, usuario);
 						}else {
-							Gestora.mostrarTextoHistoriaLento("No hay nada más por aquí");
+							Gestora.mostrarTextoHistoriaLento("No hay nada mÃ¡s por aquÃ­");
 						}	
 					break; //Fin Opcion registrar casetilla
 					
@@ -246,7 +246,7 @@ public class Main {
 						if(comidaCocina == false) { //Si no se a comido la comida de la cocina
 							Gestora.mostrarTextoHistoriaLento("Llegas a la cocina y observas que en la encimera hay un plato encima de otro, parece que hay algo en su interior");
 							Gestora.mostrarTextoHistoriaLento("Te acercas al plato y lo abres con cuidado. Vaya son unas croquetas.");
-							Gestora.mostrarTextoHistoriaLento("¿Quieres comertelas?");
+							Gestora.mostrarTextoHistoriaLento("Â¿Quieres comertelas?");
 							respuesta = validacion.leerValidarRespuesta();
 							
 							if(respuesta == 'S') {
@@ -285,14 +285,14 @@ public class Main {
 									Gestora.interaccionUsuarioConObjeto(objetoZona, usuario);
 									
 								}else {
-									Gestora.mostrarTextoHistoriaLento("No hay nada más que ropa vieja y además no es de tu talla");
+									Gestora.mostrarTextoHistoriaLento("No hay nada mÃ¡s que ropa vieja y ademÃ¡s no es de tu talla");
 								}								
 							break;	//Fin Opcion registrar armario
 							
 							case 2: //Opcion registrar mesita de noche								
 								objetoZona = Gestora.obtenerObjeto(objetos, "Pistola");
 								
-								Gestora.mostrarTextoHistoriaLento("Avanzas lentamente hasta detenerte justo delante de una mesita de noche, encima hay una lampara rota y toda la mesita esta llena de cristales, ves que esta contiene un cajón y con sumo cuidado lo abres: ");
+								Gestora.mostrarTextoHistoriaLento("Avanzas lentamente hasta detenerte justo delante de una mesita de noche, encima hay una lampara rota y toda la mesita esta llena de cristales, ves que esta contiene un cajÃ³n y con sumo cuidado lo abres: ");
 								if(!objetoZona.getEquipado()) {
 									Gestora.interaccionUsuarioConObjeto(objetoZona, usuario);						
 								}else {
@@ -311,7 +311,7 @@ public class Main {
 						Gestora.mostrarTextoHistoriaLento("Has bajado a la planta principal");			
 					break;	//Fin Opcion subir al dormitorio
 					
-					case 3:	//Opcion salir al jardín
+					case 3:	//Opcion salir al jardÃ­n
 						
 						do {
 							//LeerYValidarOpcionesJardin
@@ -323,7 +323,7 @@ public class Main {
 								Gestora.mostrarTextoHistoriaLento("Te acercas al cuartillo hasta plantarte justo delante. ");
 								
 								if(cuartillo == false && usuario.consultarObjetosNecesarioMochila("Llave vieja")) { //Si el cuartillo esta cerrado y el jugador tiene una llave vieja
-									Gestora.mostrarTextoHistoriaLento("Se encuentra cerrado. Tienes una llave en el inventario. ¿Quieres usarla?");
+									Gestora.mostrarTextoHistoriaLento("Se encuentra cerrado. Tienes una llave en el inventario. Â¿Quieres usarla?");
 									respuesta = validacion.leerValidarRespuesta();
 									
 									if(respuesta == 'S') {
@@ -347,20 +347,20 @@ public class Main {
 											Gestora.interaccionUsuarioConObjeto(objetoZona, usuario);
 										}
 										
-										Gestora.mostrarTextoHistoriaLento("No hay nada más que hacer aquí");
+										Gestora.mostrarTextoHistoriaLento("No hay nada mÃ¡s que hacer aquÃ­");
 									}else {
-										Gestora.mostrarTextoHistoriaLento("*CERRADO* Necesitas algún tipo de llave que encaje con la cerradura");
+										Gestora.mostrarTextoHistoriaLento("*CERRADO* Necesitas algÃºn tipo de llave que encaje con la cerradura");
 									}
 								}
 							break;	//Fin Opcion Registrar Cuartillo
 							
 							case 2: //Opcion interactuar con planta
-								objetoZona = Gestora.obtenerObjeto(objetos, "Válvula");
+								objetoZona = Gestora.obtenerObjeto(objetos, "VÃ¡lvula");
 								Gestora.mostrarTextoHistoriaLento("Ves una planta enorme marchita en el huerto");
 								
 								if(interaccionPlanta == false && usuario.consultarObjetosNecesarioMochila("Regadera")) { //Si no se ha interactuado con la planta y se tiene una regadera
 									enemigo = new Personaje("Planta carnivora",80,5);
-									Gestora.mostrarTextoHistoriaLento("parece que estuviera pididendo agua a gritos, llevas encima una regadera. ¿Quieres usarla?");
+									Gestora.mostrarTextoHistoriaLento("parece que estuviera pididendo agua a gritos, llevas encima una regadera. Â¿Quieres usarla?");
 									respuesta = validacion.leerValidarRespuesta();
 									
 									if(respuesta == 'S') {
@@ -378,7 +378,7 @@ public class Main {
 								}else {
 									if(interaccionPlanta == true) {
 										Gestora.mostrarTextoHistoriaLento("Se encuentra aplastada, esperemos que Greta no se sienta ofendida");
-										if(!objetoZona.getEquipado()) { //Si el objeto válvula no se tiene equipado se da la opcion de volvero a equipar
+										if(!objetoZona.getEquipado()) { //Si el objeto vÃ¡lvula no se tiene equipado se da la opcion de volvero a equipar
 											Gestora.interaccionUsuarioConObjeto(objetoZona, usuario);
 										}
 									}else {
@@ -390,21 +390,21 @@ public class Main {
 						}while(opcionJardin != 0 && usuario.getVida() > 0);			
 						
 						
-					break;	//Fin Opcion salir al jardín
+					break;	//Fin Opcion salir al jardÃ­n
 					
-					case 4:	//Opcion Bajar al sótano
+					case 4:	//Opcion Bajar al sÃ³tano
 						do {
 							//LeerYValidarOpcionesSotano
 							opcionSotano = validacion.mostrarObtenerOpcionesSotano();
 							switch(opcionSotano) {
 							
-							case 1: //Opcion Registrar estatenrias
-								Gestora.mostrarTextoHistoriaLento("Hay muchos libros, están llenos de polvo parece que hace mucho tiempo que no se leen");
-								Gestora.mostrarTextoHistoriaLento("De entre ellos hay uno completamente desenpolvado parece que ha sido leido hace poco. ¿Quieres cogerlo?'");
+							case 1: //Opcion Registrar estanterias
+								Gestora.mostrarTextoHistoriaLento("Hay muchos libros, estÃ¡n llenos de polvo parece que hace mucho tiempo que no se leen");
+								Gestora.mostrarTextoHistoriaLento("De entre ellos hay uno completamente desenpolvado parece que ha sido leido hace poco. Â¿Quieres cogerlo?'");
 								respuesta = validacion.leerValidarRespuesta();
 								if(respuesta == 'S'){
-									historia = Gestora.obtenerTextoHistoria(3); //Se obtiene el texto de la historia número 3
-									Gestora.mostrarTextoHistoriaLento(historia); //Se muestra el texto de la historia número 3
+									historia = Gestora.obtenerTextoHistoria(3); //Se obtiene el texto de la historia nÃºmero 3
+									Gestora.mostrarTextoHistoriaLento(historia); //Se muestra el texto de la historia nÃºmero 3
 								}else {
 									Gestora.mostrarTextoHistoriaLento("No lo has cogido");
 								}
@@ -412,7 +412,7 @@ public class Main {
 							
 							case 2: //Opcion Investigar pared desgastada
 								if(entradaLaboratorio == false) { //Si no es activada la entrada al laboratorio
-									Gestora.mostrarTextoHistoriaLento("Parece una simple pared pero a través de ella pasa una ligera brisa");
+									Gestora.mostrarTextoHistoriaLento("Parece una simple pared pero a travÃ©s de ella pasa una ligera brisa");
 								}else {
 									Gestora.mostrarTextoHistoriaLento("Lo que antes era una pared ahora es un largo pasadizo. Te adentras muy lentamente hasta que llegas al lugar.");
 									do {
@@ -421,64 +421,64 @@ public class Main {
 										switch(opcionLaboratorio){
 										
 										case 1:	// Opcion Comprobar puerta vieja
-											objetoZona = Gestora.obtenerObjeto(objetos, "Batería");
-											Gestora.mostrarTextoHistoriaLento("Se trata de una puerta que destaca debido a que parece mucho más vieja que el resto del laboratorio");
+											objetoZona = Gestora.obtenerObjeto(objetos, "BaterÃ­a");
+											Gestora.mostrarTextoHistoriaLento("Se trata de una puerta que destaca debido a que parece mucho mÃ¡s vieja que el resto del laboratorio");
 											Gestora.mostrarTextoHistoriaLento("Se ve muy descuidada y parece sacada de un manicomio");
 											
 											if(puertaOxidada == false){
-												Gestora.mostrarTextoHistoriaLento("¿Quieres abrirla?");
+												Gestora.mostrarTextoHistoriaLento("Â¿Quieres abrirla?");
 												respuesta = validacion.leerValidarRespuesta();
 											
 												if(respuesta == 'S' && usuario.consultarObjetosNecesarioMochila("Spray de aceite")) {
-													Gestora.mostrarTextoHistoriaLento("Has apretado el botón pero no se abre, chirria bastante parece desengrasada. Por tu suerte llevas encima un Spray de aceite que aplicas en la puerta");
-													Gestora.mostrarTextoHistoriaLento("Has vuelto a apretar el botón, se ha abierto perfectamente");
-													historia = Gestora.obtenerTextoHistoria(4); //Se obtiene el texto de la historia número 4
-													Gestora.mostrarTextoHistoriaLento(historia); //Se muestra el texto de la historia número 4
-													Gestora.mostrarTextoHistoriaLento("Parece ser que la batería aún funciona");
+													Gestora.mostrarTextoHistoriaLento("Has apretado el botÃ³n pero no se abre, chirria bastante parece desengrasada. Por tu suerte llevas encima un Spray de aceite que aplicas en la puerta");
+													Gestora.mostrarTextoHistoriaLento("Has vuelto a apretar el botÃ³n, se ha abierto perfectamente");
+													historia = Gestora.obtenerTextoHistoria(4); //Se obtiene el texto de la historia nÃºmero 4
+													Gestora.mostrarTextoHistoriaLento(historia); //Se muestra el texto de la historia nÃºmero 4
+													Gestora.mostrarTextoHistoriaLento("Parece ser que la baterÃ­a aÃºn funciona");
 													Gestora.interaccionUsuarioConObjeto(objetoZona, usuario);
-													Gestora.mostrarTextoHistoriaLento("Parece que cerca de la batería hay una nota, dice lo siguiente:");
-													historia = Gestora.obtenerTextoHistoria(5); //Se obtiene el texto de la historia número 5
-													Gestora.mostrarTextoHistoriaLento(historia); //Se muestra el texto de la historia número 5
+													Gestora.mostrarTextoHistoriaLento("Parece que cerca de la baterÃ­a hay una nota, dice lo siguiente:");
+													historia = Gestora.obtenerTextoHistoria(5); //Se obtiene el texto de la historia nÃºmero 5
+													Gestora.mostrarTextoHistoriaLento(historia); //Se muestra el texto de la historia nÃºmero 5
 													puertaOxidada = true;
 												}else {
 													if(respuesta == 'N') {
 														Gestora.mostrarTextoHistoriaLento("No la has abierto");
 													}
 													else{
-														Gestora.mostrarTextoHistoriaLento("Has pulsado el botón para abrirla, pero parece que no se abre chirria bastante parece muy desengrasada...");
+														Gestora.mostrarTextoHistoriaLento("Has pulsado el botÃ³n para abrirla, pero parece que no se abre chirria bastante parece muy desengrasada...");
 													}
 												}						
 											}else{
 												Gestora.mostrarTextoHistoriaLento("Como la engrasaste se ha abierto y has entrado. "); 
-												if(!objetoZona.getEquipado()) { //Si el objeto batería no se tiene equipado se da la opcion de volvero a equipar
+												if(!objetoZona.getEquipado()) { //Si el objeto baterÃ­a no se tiene equipado se da la opcion de volvero a equipar
 													Gestora.interaccionUsuarioConObjeto(objetoZona, usuario);
 												}
-												Gestora.mostrarTextoHistoriaLento("No queda nada interesante así que has vuelto al principio del laboratorio");	
+												Gestora.mostrarTextoHistoriaLento("No queda nada interesante asÃ­ que has vuelto al principio del laboratorio");	
 											}	
 										break;	//Fin Opcion Comprobar puerta vieja
 										
 										case 2:	//Opcion Entrar en sala de desarrollo
-											Gestora.mostrarTextoHistoriaLento("Parece la típica sala de laboratorio esta llena de probetas y muestras, es mejor no tocar nada.");
+											Gestora.mostrarTextoHistoriaLento("Parece la tÃ­pica sala de laboratorio esta llena de probetas y muestras, es mejor no tocar nada.");
 											Gestora.mostrarTextoHistoriaLento("En la mesa al lado de un microscopio hay una nota, dice lo siguiente:");
-											historia = Gestora.obtenerTextoHistoria(6); //Se obtiene el texto de la historia número 6
-											Gestora.mostrarTextoHistoriaLento(historia); //Se muestra el texto de la historia número 6
+											historia = Gestora.obtenerTextoHistoria(6); //Se obtiene el texto de la historia nÃºmero 6
+											Gestora.mostrarTextoHistoriaLento(historia); //Se muestra el texto de la historia nÃºmero 6
 											Gestora.mostrarTextoHistoriaLento("Has vuelto al principio del laboratorio");
 										break;	//Fin Opcion Entrar en sala de desarrollo
 										
-										case 3:	//Opcion Sala de especÃ­menes
+										case 3:	//Opcion Sala de especimenes
 											Gestora.mostrarTextoHistoriaLento("Has entrado y parece una especie de perrera enorme con decenas de jaulas en las que apenas cabe una persona adulta de pie \n"
-													+ "Por alguna extraña razón ese lugar te resulta muy familiar, a su vez sientes un fuerte dolor de cabeza y leves náuseas");
+													+ "Por alguna extraÃ±a razÃ³n ese lugar te resulta muy familiar, a su vez sientes un fuerte dolor de cabeza y leves nÃ¡useas");
 											if(jaulaAbierta == false) {
-												Gestora.mostrarTextoHistoriaLento("Hay una jaula enorme cerrada esta muy oscura. ¿Quieres abrirla?");
+												Gestora.mostrarTextoHistoriaLento("Hay una jaula enorme cerrada esta muy oscura. Â¿Quieres abrirla?");
 												respuesta = validacion.leerValidarRespuesta();
 												
 												if(respuesta == 'S'){
-													enemigo = new Personaje("Monstruo Telépata",700,100);
+													enemigo = new Personaje("Monstruo TelÃ©pata",700,100);
 													Gestora.mostrarTextoHistoriaLento("Ha salido un "+enemigo.getNombre()+" justo al abrir la jaula");	
 													Gestora.combateJugadorEnemigo(enemigo, usuario);
 													if(usuario.getVida() > 0) {//Si el jugador no muere despues del combate
-														Gestora.mostrarTextoHistoriaLento("El extraño individuo antes de perecer inoculó un mensaje que resuena en tu cabeza \n"
-																+ "lo siento, no querías hacerlo y se que tu tampoco, ellos nos obligaron...");
+														Gestora.mostrarTextoHistoriaLento("El extraÃ±o individuo antes de perecer inoculÃ³ un mensaje que resuena en tu cabeza \n"
+																+ "lo siento, no querÃ­as hacerlo y se que tu tampoco, ellos nos obligaron...");
 													}
 													jaulaAbierta = true;
 													
@@ -487,22 +487,22 @@ public class Main {
 															+ "pero no la has abierto...");
 												}
 											}else{											
-												Gestora.mostrarTextoHistoriaLento("El enorme cadaver de ese poderoso ser permanece inmovil su jaula esta llena de cadaveres de cientíicos...");
+												Gestora.mostrarTextoHistoriaLento("El enorme cadaver de ese poderoso ser permanece inmovil su jaula esta llena de cadaveres de cientÃ­icos...");
 											}
-										break;	//Fin Opcion Sala de especÃ­menes
+										break;	//Fin Opcion Sala de especimenes
 										
 										case 4:	//Opcion Continuar Pasillo
 											
 											Gestora.mostrarTextoHistoriaLento("El pasillo esta bloqueado por una gran cantidad de escombros, parece como si hubiera sucedido \n"
-													+ "un terremoto o explosión, has vuelto por donde has venido, hay un científico medio enterrado en los escombros \n"
-													+ "pero tiene algo en su mano. ¿Quieres mirar?");
+													+ "un terremoto o explosiÃ³n, has vuelto por donde has venido, hay un cientÃ­fico medio enterrado en los escombros \n"
+													+ "pero tiene algo en su mano. Â¿Quieres mirar?");
 											respuesta = validacion.leerValidarRespuesta();
 											if(respuesta == 'S') {
 												objetoZona = Gestora.obtenerObjeto(objetos, "Llave coche");
 												if (!objetoZona.getEquipado()) {
 													Gestora.interaccionUsuarioConObjeto(objetoZona, usuario);
 												}else {
-													Gestora.mostrarTextoHistoriaLento("Ya no queda nada interesante que hacer aquí");
+													Gestora.mostrarTextoHistoriaLento("Ya no queda nada interesante que hacer aquÃ­");
 												}
 											}else {
 												Gestora.mostrarTextoHistoriaLento("Sigues tu camino, has vuelto al principio del laboratorio");												
@@ -510,12 +510,12 @@ public class Main {
 										break;	//Fin Opcion Continuar Pasillo
 										
 										case 5://Opcion Entrar en oficina
-											Gestora.mostrarTextoHistoriaLento("Es una oficina común y corriente todos los ordenadores están apagados excepto uno, ¿Quieres ver que hay en él?");
+											Gestora.mostrarTextoHistoriaLento("Es una oficina comÃºn y corriente todos los ordenadores estÃ¡n apagados excepto uno, Â¿Quieres ver que hay en Ã©l?");
 											respuesta = validacion.leerValidarRespuesta();
 											if(respuesta == 'S') {
 												Gestora.mostrarTextoHistoriaLento("El ordenador tiene un e-mail abierto, en el pone lo siguiente:");
-												historia = Gestora.obtenerTextoHistoria(7); //Se obtiene el texto de la historia número 7
-												Gestora.mostrarTextoHistoriaLento(historia); //Se muestra el texto de la historia número 7
+												historia = Gestora.obtenerTextoHistoria(7); //Se obtiene el texto de la historia nÃºmero 7
+												Gestora.mostrarTextoHistoriaLento(historia); //Se muestra el texto de la historia nÃºmero 7
 											}else {
 												Gestora.mostrarTextoHistoriaLento("Has salido de la oficina y has vuelto al principio del laboratorio");	
 											}
@@ -535,15 +535,15 @@ public class Main {
 							
 							case 3: //Opcion Investigar grifo goteando
 								Gestora.mostrarTextoHistoriaLento("No es mas que una tuberia con un grifo, parece que le falta una pieza y por eso gotea...");
-								if(usuario.consultarObjetosNecesarioMochila("Válvula")){
-									Gestora.mostrarTextoHistoriaLento("Parece que la válvula encaja perfectamente. ¿Quieres colocarla sobre en el grifo roto?");
+								if(usuario.consultarObjetosNecesarioMochila("VÃ¡lvula")){
+									Gestora.mostrarTextoHistoriaLento("Parece que la vÃ¡lvula encaja perfectamente. Â¿Quieres colocarla sobre en el grifo roto?");
 									respuesta = validacion.leerValidarRespuesta();
 									
 									if(respuesta == 'S'){
-										usuario.colocarObjeto("Válvula");
-										Gestora.mostrarTextoHistoriaLento("Has colocado la válvula y has girado la manivela parece que funciona");
+										usuario.colocarObjeto("VÃ¡lvula");
+										Gestora.mostrarTextoHistoriaLento("Has colocado la vÃ¡lvula y has girado la manivela parece que funciona");
 										Gestora.mostrarTextoHistoriaLento("*PRPRPRPRPRP* Un gran estruendo sucumbe la habitacion, parece que la parede se esta abriendo");
-										Gestora.mostrarTextoHistoriaLento("La pared desgastada se ha abierto, resultaba ser un pasadizo secreto, ahora parece ser la entrada a un recondito y extraño lugar...");
+										Gestora.mostrarTextoHistoriaLento("La pared desgastada se ha abierto, resultaba ser un pasadizo secreto, ahora parece ser la entrada a un recondito y extraÃ±o lugar...");
 										entradaLaboratorio = true;	
 									}else {
 										Gestora.mostrarTextoHistoriaLento("No has colocado nada");
@@ -561,7 +561,7 @@ public class Main {
 							}
 							
 						}while(opcionSotano != 0 && usuario.getVida() > 0);
-					break;	//Fin Opcion Bajar al sótano
+					break;	//Fin Opcion Bajar al sÃ³tano
 					
 					case 5: //Opcion mirar mochila
 						usuario.mirarContenidoMochila();
@@ -589,14 +589,14 @@ public class Main {
 
 					case 1: //Opcion registrar caja registradora
 						Gestora.mostrarTextoHistoriaLento("Es una vieja caja registradora");
-						objetoZona = Gestora.obtenerObjeto(objetos, "Dólares");
+						objetoZona = Gestora.obtenerObjeto(objetos, "DÃ³lares");
 						
 						if (!objetoZona.getEquipado()) {
-							Gestora.mostrarTextoHistoriaLento("Parece que aún tiene dinero");
+							Gestora.mostrarTextoHistoriaLento("Parece que aÃºn tiene dinero");
 							Gestora.interaccionUsuarioConObjeto(objetoZona, usuario);
 							
 						}else {
-							Gestora.mostrarTextoHistoriaLento("Ya no queda nada interesante que hacer aquí");
+							Gestora.mostrarTextoHistoriaLento("Ya no queda nada interesante que hacer aquÃ­");
 						}
 					break;//Fin Opcion registrar caja registradora
 						
@@ -605,11 +605,11 @@ public class Main {
 					break;//Fin Opcion Revisar surtidores
 					
 					case 3://Opcion Mirar coche en mal estado
-						Gestora.mostrarTextoHistoriaLento("No es más que un coche completamente destruido");
-						Gestora.mostrarTextoHistoriaLento("Parece que intento huir de la ciudad pero se choco por desgracia ninguna de las piezas del vehículo te servirán");
+						Gestora.mostrarTextoHistoriaLento("No es mÃ¡s que un coche completamente destruido");
+						Gestora.mostrarTextoHistoriaLento("Parece que intento huir de la ciudad pero se choco por desgracia ninguna de las piezas del vehÃ­culo te servirÃ¡n");
 						
 						if(cocheDestruidoRevisado == false) {
-							Gestora.mostrarTextoHistoriaLento("¿Quieres registrar el interior del vehículo a ver si contiene algo?");
+							Gestora.mostrarTextoHistoriaLento("Â¿Quieres registrar el interior del vehÃ­culo a ver si contiene algo?");
 							respuesta = validacion.leerValidarRespuesta();
 							
 							if(respuesta == 'S') {
@@ -620,14 +620,14 @@ public class Main {
 								
 								if(usuario.getVida() > 0) {
 									Gestora.mostrarTextoHistoriaLento("El zombie ha muerto y ha dejado caer una nota, dice lo siguiente:");
-									historia = Gestora.obtenerTextoHistoria(8); //Se obtiene el texto de la historia número 8
-									Gestora.mostrarTextoHistoriaLento(historia); //Se muestra el texto de la historia número 8
+									historia = Gestora.obtenerTextoHistoria(8); //Se obtiene el texto de la historia nÃºmero 8
+									Gestora.mostrarTextoHistoriaLento(historia); //Se muestra el texto de la historia nÃºmero 8
 								}
 							}else {
 								Gestora.mostrarTextoHistoriaLento("No has abierto el coche lo has dejado tal y como estaba");	
 							}
 						}else {
-							Gestora.mostrarTextoHistoriaLento("Ya no queda nada interesante que hacer aquí");							
+							Gestora.mostrarTextoHistoriaLento("Ya no queda nada interesante que hacer aquÃ­");							
 						}
 					break;//Fin Opcion Mirar coche en mal estado
 					
@@ -643,14 +643,14 @@ public class Main {
 								if(palancaActivada == false) { //Si la palanca de la electricidad no ha sido activada
 									
 									if(cajasApartadas == false){ //Si no se han apartados las cajas	
-										Gestora.mostrarTextoHistoriaLento("Nada más hay cajas viejas");
-										Gestora.mostrarTextoHistoriaLento("¿Quieres apartarlas?");
+										Gestora.mostrarTextoHistoriaLento("Nada mÃ¡s hay cajas viejas");
+										Gestora.mostrarTextoHistoriaLento("Â¿Quieres apartarlas?");
 										respuesta = validacion.leerValidarRespuesta();
 										
 										if(respuesta == 'S'){
 											cajasApartadas = true;
 											Gestora.mostrarTextoHistoriaLento("Ouch!! Una llave inglesa ha golpeado tu cabeza");
-											Gestora.mostrarTextoHistoriaLento("Has sufrido un leve daño");
+											Gestora.mostrarTextoHistoriaLento("Has sufrido un leve daÃ±o");
 											usuario.recibirDanho(30);	
 											
 										}else{
@@ -658,8 +658,8 @@ public class Main {
 										}
 									}
 									
-									if(cajasApartadas == true && usuario.getVida() > 0) { //Si las cajas fueron apartadas y el jugador esta vivo. Se controla que el jugador este vivo porque la primera vez que se quitan las cajas habra un objeto que te haga daÃ±o 																									
-										Gestora.mostrarTextoHistoriaLento("Detrás de las cajas hay una vieja palanca. ¿Quieres usarla?");
+									if(cajasApartadas == true && usuario.getVida() > 0) { //Si las cajas fueron apartadas y el jugador esta vivo. Se controla que el jugador este vivo porque la primera vez que se quitan las cajas habra un objeto que te haga daÃƒÂ±o 																									
+										Gestora.mostrarTextoHistoriaLento("DetrÃ¡s de las cajas hay una vieja palanca. Â¿Quieres usarla?");
 										respuesta = validacion.leerValidarRespuesta();
 										
 										if(respuesta == 'S'){
@@ -671,15 +671,15 @@ public class Main {
 										}
 									}		
 								}else {	
-									Gestora.mostrarTextoHistoriaLento("Ya no queda nada interesante que hacer aquí");
+									Gestora.mostrarTextoHistoriaLento("Ya no queda nada interesante que hacer aquÃ­");
 								}
 							
 							break; //Fin Registrar Zona
 							
-							case 2://Revisar Puerta ExtraÃ±a
+							case 2://Revisar Puerta ExtraÃƒÂ±a
 								
 								Gestora.mostrarTextoHistoriaLento("Se trata de la puerta de un armario de limpieza con un simbolo de Warning");
-								Gestora.mostrarTextoHistoriaLento("¿Quieres abrir la puerta?");
+								Gestora.mostrarTextoHistoriaLento("Â¿Quieres abrir la puerta?");
 								respuesta = validacion.leerValidarRespuesta();
 								
 								if(respuesta == 'S') {
@@ -689,21 +689,21 @@ public class Main {
 										if(palancaActivada == false) { //Sino se activo la palanaca que corta la electricidad
 											usuario.recibirDanho(50);
 											Gestora.mostrarTextoHistoriaLento("TRTRTTRTRTTRTR *SONIDO DE CHISPORROTEO*");
-											Gestora.mostrarTextoHistoriaLento("Has recibido algo de daño");
+											Gestora.mostrarTextoHistoriaLento("Has recibido algo de daÃ±o");
 											Gestora.mostrarTextoHistoriaLento("Vaya parece que te has llevado una buena descarga, al parecer la puerta tiene \n"
-													+ "algún tipo de mecanismo de seguridad y aún sigue cerrada");
+													+ "algÃºn tipo de mecanismo de seguridad y aÃºn sigue cerrada");
 										}else {
-											Gestora.mostrarTextoHistoriaLento("Has abierto la puerta, justo detrás de ella parece haber un bidón de algo");
+											Gestora.mostrarTextoHistoriaLento("Has abierto la puerta, justo detrÃ¡s de ella parece haber un bidÃ³n de algo");
 											Gestora.interaccionUsuarioConObjeto(objetoZona, usuario);
 										} 
 									}else {
-										Gestora.mostrarTextoHistoriaLento("No hay nada, ya no queda nada interesante que hacer aquí. Cierras la puerta al salir");
+										Gestora.mostrarTextoHistoriaLento("No hay nada, ya no queda nada interesante que hacer aquÃ­. Cierras la puerta al salir");
 									}
 									
 								}else {			
 									Gestora.mostrarTextoHistoriaLento("No la has abierto");
 								}
-							break;//Fin Revisar Puerta ExtraÃ±a
+							break;//Fin Revisar Puerta ExtraÃƒÂ±a
 							
 							case 3: //Opcion mirar mochila
 								usuario.mirarContenidoMochila();
@@ -747,46 +747,46 @@ public class Main {
 			Gestora.mostrarTextoHistoriaLento("Has abandonado el juego");
 		}else {
 			if(objetosMision == true) {
-				Gestora.mostrarTextoHistoriaLento("Has conseguido salir sano y salvo de la ciudad, pero en el coche comienza a reproducirse un mensaje a través de la radio");
-				historia = Gestora.obtenerTextoHistoria(9); //Se obtiene el texto de la historia número 9
-				Gestora.mostrarTextoHistoriaLento(historia); //Se muestra el texto de la historia número 9
-				Gestora.mostrarTextoHistoriaLento("¿Quieres rendirte y entregarte a Nova Corp? S/N");
+				Gestora.mostrarTextoHistoriaLento("Has conseguido salir sano y salvo de la ciudad, pero en el coche comienza a reproducirse un mensaje a travÃ©s de la radio");
+				historia = Gestora.obtenerTextoHistoria(9); //Se obtiene el texto de la historia nÃºmero 9
+				Gestora.mostrarTextoHistoriaLento(historia); //Se muestra el texto de la historia nÃºmero 9
+				Gestora.mostrarTextoHistoriaLento("Â¿Quieres rendirte y entregarte a Nova Corp? S/N");
 				respuesta = validacion.leerValidarRespuesta();
 				if(respuesta == 'S'){
-					historia = Gestora.obtenerTextoHistoria(10); //Se obtiene el texto de la historia número 10
-					Gestora.mostrarTextoHistoriaLento(historia); //Se muestra el texto de la historia número 10
+					historia = Gestora.obtenerTextoHistoria(10); //Se obtiene el texto de la historia nÃºmero 10
+					Gestora.mostrarTextoHistoriaLento(historia); //Se muestra el texto de la historia nÃºmero 10
 				}else {
-					historia = Gestora.obtenerTextoHistoria(11); //Se obtiene el texto de la historia número 11
-					Gestora.mostrarTextoHistoriaLento(historia); //Se muestra el texto de la historia número 11
+					historia = Gestora.obtenerTextoHistoria(11); //Se obtiene el texto de la historia nÃºmero 11
+					Gestora.mostrarTextoHistoriaLento(historia); //Se muestra el texto de la historia nÃºmero 11
 				}
 			}else {
 				if(usuario.getMovimientos() == 0) {
-					Gestora.mostrarTextoHistoriaLento("\nVaya te has quedado sin movimientos, te sientes muy cansado y sin fuerza para hacer un desplazamiento tan largo, no te queda energía y no puedes moverte, este es tu fin \n"
-							+ "has andado demasiado y tienes la boca muy seca, comienzas a alucinar y ves seres extrañs sufriendo y personas que te hacen daño \n"
+					Gestora.mostrarTextoHistoriaLento("\nVaya te has quedado sin movimientos, te sientes muy cansado y sin fuerza para hacer un desplazamiento tan largo, no te queda energÃ­a y no puedes moverte, este es tu fin \n"
+							+ "has andado demasiado y tienes la boca muy seca, comienzas a alucinar y ves seres extraÃ±s sufriendo y personas que te hacen daÃ±o \n"
 							+ "acto seguido, caes al suelo y poco a poco pierdes el conocimiento hasta que cierras los ojos y llega tu final.\n");
 					Gestora.mostrarFraseMuerte(pathFrases);
 				}else { //Si el usuario se queda sin vida
-					Gestora.mostrarTextoHistoriaLento("\nNo te queda vida, tu cuerpo no puede más, tus párpados pesan mucho y cierras los ojos, las heridas de tu cuerpo \n"
-							+ "sangran más y más hasta que finalmente tu corazón deja de latir y mueres, tu conciencia, tu alma, tu ser, deja este mundo, para jamás volver.\n");
+					Gestora.mostrarTextoHistoriaLento("\nNo te queda vida, tu cuerpo no puede mÃ¡s, tus pÃ¡rpados pesan mucho y cierras los ojos, las heridas de tu cuerpo \n"
+							+ "sangran mÃ¡s y mÃ¡s hasta que finalmente tu corazÃ³n deja de latir y mueres, tu conciencia, tu alma, tu ser, deja este mundo, para jamÃ¡s volver.\n");
 					Gestora.mostrarFraseMuerte(pathFrases);
 				}
 			}
 		}
 		if(objetosMision == false) {
-		Gestora.mostrarTextoHistoriaLento("¿Quieres conocer la solución del juego? S/N");
+		Gestora.mostrarTextoHistoriaLento("Â¿Quieres conocer la soluciÃ³n del juego? S/N");
 		respuesta = validacion.leerValidarRespuesta();
 		if(respuesta =='S') {
-		//Mostrar solución del juego
-		System.out.println("\nSolución del juego");
+		//Mostrar soluciÃ³n del juego
+		System.out.println("\nSoluciÃ³n del juego");
 		System.out.println("1.Visitar el garaje para registrar la caja de herramientas y coger el Spray");
 		System.out.println("2.Visitar cementerio, una vez dentro ir al cuartillo y coger la pala");
 		System.out.println("  Una vez se tiene la pala, registrar la tumba numero 3 y coger la llave");
-		System.out.println("3.Visitar la mansion e ir al jardín, una vez alli entrar al cuartillo y coger la regadera. Se interactua con la planta");
-		System.out.println("  Se derrota a la planta y se coge la válvula. Ir al sótano de la mansion y se investiga el grifo que esta goteando y se coloca la válvula");
-		System.out.println("  Una vez colocada se investiga la pared desgastada pues se abrio el laboratorio. Una vez dentro de este se comprueba la puerta oxidada, se entra y se coge la batería");
+		System.out.println("3.Visitar la mansion e ir al jardÃ­n, una vez alli entrar al cuartillo y coger la regadera. Se interactua con la planta");
+		System.out.println("  Se derrota a la planta y se coge la vÃ¡lvula. Ir al sÃ³tano de la mansion y se investiga el grifo que esta goteando y se coloca la vÃ¡lvula");
+		System.out.println("  Una vez colocada se investiga la pared desgastada pues se abrio el laboratorio. Una vez dentro de este se comprueba la puerta oxidada, se entra y se coge la baterÃ­a");
 		System.out.println("  Dentro del laboratorio aun se continua por el pasillo y se coge la llave del coche");
 		System.out.println("4.Visitar gasolinera y acceder al almacen, una vez dentro se registra la zona, se apartan las cajas y se activa la palanca");
-		System.out.println("  A continuación se revisar la puerta extraña y se coge la gasolina");
+		System.out.println("  A continuaciÃ³n se revisar la puerta extraÃ±a y se coge la gasolina");
 		System.out.println("5.Volver al departemento, visitar de nuevo el garaje e investigar el coche y arrancarlo para poder escapar y fin del juego.");
 		}
 		teclado.close();
