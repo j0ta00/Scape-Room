@@ -465,7 +465,7 @@ public class Gestora {
 		break;
 		
 		case 8:
-			texto = "  Hola Tom las cosas se han puesto difíciles por aquí así que \n"
+			texto = " Hola Tom las cosas se han puesto difíciles por aquí así que \n"
 					+ "he decidido marcharme, los rumores son ciertos no estaban locos es verdad \n"
 					+ "hay seres infernales por las afueras de la ciudad y sobre todo cerca de esa vieja mansión, \n"
 					+ "antes de que esos seres lleguen a la ciudad deberías abandonarla, utiliza los surtidores \n"
