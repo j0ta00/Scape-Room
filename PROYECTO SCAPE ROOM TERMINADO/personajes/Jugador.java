@@ -63,13 +63,13 @@ public class Jugador extends Personaje {
 		 */
 		public void mirarContenidoMochila() {
 			
-			Gestora.mostrarTextoHistoriaLento("Contenido de la mochila ---> ");
+			Gestora.mostrarTextoLento("Contenido de la mochila ---> ");
 			
 			for(int i = 0; i < mochila.size(); i++) {
 				if(mochila.get(i) != null) {
-					Gestora.mostrarTextoHistoriaLento("  ["+ i+"] "+ mochila.get(i).toString());
+					Gestora.mostrarTextoLento("  ["+ i+"] "+ mochila.get(i).toString());
 				}else {
-					Gestora.mostrarTextoHistoriaLento("  ["+ i+"]"+ " Espacio libre");
+					Gestora.mostrarTextoLento("  ["+ i+"]"+ " Espacio libre");
 				}
 			}	
 			System.out.println();

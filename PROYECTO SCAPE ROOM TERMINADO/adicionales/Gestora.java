@@ -121,7 +121,7 @@ public class Gestora {
 				frase = br.readLine();
 			}
 			
-			mostrarTextoHistoriaLento(frase);
+			mostrarTextoLento(frase);
 			
 		}catch(IOException e){
 			e.printStackTrace();
@@ -376,7 +376,7 @@ public class Gestora {
 		
 		switch(parte) {
 		case 1: 
-			texto ="Sientes mucho frío, comienzas a abrir los ojos y te encuentras en una habitación muy ordenada\n"
+			texto = "Sientes mucho frío, comienzas a abrir los ojos y te encuentras en una habitación muy ordenada\n"
 					+ "no es más que un departamento común, tiene unas grandes ventanas, a través de ellas ves la ciudad, completamente \n"
 					+ "desolada, en ruinas y todo parece vacío, decenas de cadáveres se amontonan en las calles y extrañas figuras reptan \n"
 					+ "y se mueven sinuosamente, algunos parecen humanos pero están en condiciones deplorables, de repente a tu cabeza llegan \n"
@@ -386,7 +386,7 @@ public class Gestora {
 		break;
 		
 		case 2:
-			texto = "Parece que hay una nota, dice lo siguiente: \n"
+			texto = "La nota, dice lo siguiente: \n"
 					+"Alfred, muchas gracias por hacerme este favor, se que Emily falleció hace muchos años y nunca es agradable \n"
 					+ "tener que pertubar el lugar de descanso pero no se me ocurre otro lugar donde pueda esconder ese objeto sin que sea encontrado por ellos \n"
 					+ "tu también trabajaste en la mansión y sabes para que sirve esa llave, sin ella no podrán entrar ahí dentro donde he guardado el otro objeto \n"
@@ -535,20 +535,21 @@ public class Gestora {
 	 * 
 	 * Postcondiciones: Este metodo se trata de un procedimiento ya que no devuelve ningun tipo de dato, solo muestra un texo de manrea mas lenta a lo normal
 	 */
-	public static void mostrarTextoHistoriaLento(String texto) {
+	public static void mostrarTextoLento(String texto) {
 
         char[] caracteresTexto = {' '};
         caracteresTexto = texto.toCharArray();// El texo se convierte a array de caracteres
-        System.out.print(" ");
+        System.out.println();
 
         for (int i = 0 ; i < caracteresTexto.length ; i++) {
         	
             System.out.print(caracteresTexto[i]);
             try {
-				Thread.sleep(20); //Tiempo de espera entre un caracter y otro es de 20 milisengudos.
+				Thread.sleep(1); //Tiempo de espera entre un caracter y otro es de 40 milisengudos.
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			} 
         }
+        System.out.println();
     }
 }
