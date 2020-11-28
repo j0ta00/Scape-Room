@@ -66,21 +66,21 @@ public class Gestora {
 			bw = new BufferedWriter(new FileWriter(path));
 			
 			//Se escriben las frases en el fichero
-			bw.write("ìLas guerras seguir·n mientras el color de la piel siga siendo m·s importante que el de los ojos.î-Bob Mareley-\n");
-			bw.write("ìDar el ejemplo no es la principal manera de influir sobre los dem·s; es la ˙nica manera.î-Albert Einstein-\n");
-			bw.write("ìEl dinero no puede comprar la vida.î -⁄ltimas palabras de Bob Marley a su hijo-\n");
-			bw.write("ìNing˙n hombre es lo bastante bueno para gobernar a otros sin su consentimiento.î-Abraham Lincoln-\n");
-			bw.write("ìEl sabio no dice nunca todo lo que piensa, pero siempre piensa todo lo que dice.î-AristÛteles-\n");
-			bw.write("ìLo que importa verdaderamente en la vida no son los objetivos que nos marcamos, sino los caminos que seguimos para lograrlo.î-Peter Bamm-\n");
-			bw.write("ìEl mundo es bello, pero tiene un defecto llamado hombre.î-Friedrich Nietzsche-\n");
-			bw.write("ìDe humanos es errar y de necios permanecer en el error.î-Marco Tulio CicerÛn-\n");
-			bw.write("ìHace falta toda una vida para aprender a vivir.î-SÈneca-\n");
-			bw.write("ìPodr·n cortar todas las flores, pero no podr·n detener la primavera.î-Pablo Neruda-\n");
-			bw.write("ìLas ˙ltimas palabras son para los tontos que no han dicho suficiente.î-⁄ltimas palabras de Karl Marx-\n");
-			bw.write("ìNo es que me aterrorizara contemplar cosas horribles, sino que me aterraba la idea de no ver nada.î-Edgar Allan Poe-\n");
-			bw.write("ìLas religiones, como las luciÈrnagas, necesitan de oscuridad para brillar.î-Arthur Schopenhauer-\n");
-			bw.write("ìLa peor lucha es la que no se haceî-Karl Marx-\n");
-			bw.write("ìEl corazÛn tiene razones que la razÛn ignoraî-Blaise Pascal-");
+			bw.write("‚ÄúLas guerras seguir√°n mientras el color de la piel siga siendo m√°s importante que el de los ojos.‚Äù-Bob Mareley-\n");
+			bw.write("‚ÄúDar el ejemplo no es la principal manera de influir sobre los dem√°s; es la √∫nica manera.‚Äù-Albert Einstein-\n");
+			bw.write("‚ÄúEl dinero no puede comprar la vida.‚Äù -√öltimas palabras de Bob Marley a su hijo-\n");
+			bw.write("‚ÄúNing√∫n hombre es lo bastante bueno para gobernar a otros sin su consentimiento.‚Äù-Abraham Lincoln-\n");
+			bw.write("‚ÄúEl sabio no dice nunca todo lo que piensa, pero siempre piensa todo lo que dice.‚Äù-Arist√≥teles-\n");
+			bw.write("‚ÄúLo que importa verdaderamente en la vida no son los objetivos que nos marcamos, sino los caminos que seguimos para lograrlo.‚Äù-Peter Bamm-\n");
+			bw.write("‚ÄúEl mundo es bello, pero tiene un defecto llamado hombre.‚Äù-Friedrich Nietzsche-\n");
+			bw.write("‚ÄúDe humanos es errar y de necios permanecer en el error.‚Äù-Marco Tulio Cicer√≥n-\n");
+			bw.write("‚ÄúHace falta toda una vida para aprender a vivir.‚Äù-S√©neca-\n");
+			bw.write("‚ÄúPodr√°n cortar todas las flores, pero no podr√°n detener la primavera.‚Äù-Pablo Neruda-\n");
+			bw.write("‚ÄúLas √∫ltimas palabras son para los tontos que no han dicho suficiente.‚Äù-√öltimas palabras de Karl Marx-\n");
+			bw.write("‚ÄúNo es que me aterrorizara contemplar cosas horribles, sino que me aterraba la idea de no ver nada.‚Äù-Edgar Allan Poe-\n");
+			bw.write("‚ÄúLas religiones, como las luci√©rnagas, necesitan de oscuridad para brillar.‚Äù-Arthur Schopenhauer-\n");
+			bw.write("‚ÄúLa peor lucha es la que no se hace‚Äù-Karl Marx-\n");
+			bw.write("‚ÄúEl coraz√≥n tiene razones que la raz√≥n ignora‚Äù-Blaise Pascal-");
 			
 		}catch(IOException e) {
 			e.printStackTrace();
@@ -137,7 +137,7 @@ public class Gestora {
 	/*
 	 * Prototipo: public static void crearGuardarObjetos(String path)
 	 * 
-	 * Comentario: Este mÈtodo se encarga de crear y guardar en un fichero una serie de objetos de tipo Objeto.
+	 * Comentario: Este m√©todo se encarga de crear y guardar en un fichero una serie de objetos de tipo Objeto.
 	 * 
 	 * Entradas: String path
 	 * 
@@ -145,7 +145,7 @@ public class Gestora {
 	 * 
 	 * Precondiciones: Path es la ruta del fichero donde se crearan los objetos por lo que debera de estar bien especificada
 	 * 
-	 * Postcondiciones: Este mÈtodo se trata de un procedimiento, no devolver· ning˙n tipo de dato,
+	 * Postcondiciones: Este m√©todo se trata de un procedimiento, no devolver√° ning√∫n tipo de dato,
 	 * 					solo creara una serie de objetos de tipo Objeto y los escribira en un fichero
 	 * 
 	 */
@@ -157,19 +157,19 @@ public class Gestora {
 			oos = new ObjectOutputStream(new FileOutputStream(path));
 
 			//Creacion de los objetos, que van ha salir en el juego
-			oos.writeObject(new Objeto("Pala", 15, "Quiz·s puedas desenterrar algo con ella o defenderte"));
+			oos.writeObject(new Objeto("Pala", 15, "Quiz√°s puedas desenterrar algo con ella o defenderte"));
 			oos.writeObject(new Objeto("Gasolina", 0, "Igual puede servir como combustible"));
 			oos.writeObject(new Objeto("Llave coche", 0, "Vinculado con Audi R8"));
-			oos.writeObject(new Objeto("BaterÌa", 0, "Tiene el tamaÒo perfecto para encajar en un automÛvil"));
+			oos.writeObject(new Objeto("Bater√≠a", 0, "Tiene el tama√±o perfecto para encajar en un autom√≥vil"));
 			oos.writeObject(new Objeto("Pistola", 50, "Ideal para defenderte en medio de un apocalipsis"));
 			oos.writeObject(new Objeto("Hacha", 30, "Te permitira cotar y despedazar"));
-			oos.writeObject(new Objeto("Regadera", 0, "A˙n contiene agua"));
-			oos.writeObject(new Objeto("DÛlares", 0, "La moneda de cambio mas popular, aunque no te servir· de mucho en un apocalipsis"));
-			oos.writeObject(new Objeto("Llave vieja", 0, "Est· vieja pero todavÌa funciona"));
-			oos.writeObject(new Objeto("Zapato usado", 0, "No huele muy bien pero... øDÛnde esta el otro?"));
+			oos.writeObject(new Objeto("Regadera", 0, "A√∫n contiene agua"));
+			oos.writeObject(new Objeto("D√≥lares", 0, "La moneda de cambio mas popular, aunque no te servir√° de mucho en un apocalipsis"));
+			oos.writeObject(new Objeto("Llave vieja", 0, "Est√° vieja pero todav√≠a funciona"));
+			oos.writeObject(new Objeto("Zapato usado", 0, "No huele muy bien pero... ¬øD√≥nde esta el otro?"));
 			oos.writeObject(new Objeto("Taza", 1, "Perfecta para hacerte un ColaCao"));
 			oos.writeObject(new Objeto("Spray de aceite", 0, "Te permite engrasar cosas para que tengan un correcto funcionamiento"));
-			oos.writeObject(new Objeto("V·lvula", 0, "Se trata de una gran v·lvula muy vieja, quiz·s a˙n funcione"));
+			oos.writeObject(new Objeto("V√°lvula", 0, "Se trata de una gran v√°lvula muy vieja, quiz√°s a√∫n funcione"));
 		}catch(IOException i) {
 			i.printStackTrace();
 		}finally {
@@ -185,7 +185,7 @@ public class Gestora {
 	/*
 	 * Prototipo: public static ArrayList<Objeto> obtenerObjetos(String path)
 	 * 
-	 * Comentario: Este mÈtodo se encarga de buscar y coger todos objeto de tipo Objeto de un fichero y almacenarlos en un ArrayList.
+	 * Comentario: Este m√©todo se encarga de buscar y coger todos objeto de tipo Objeto de un fichero y almacenarlos en un ArrayList.
 	 * 			   (Se carga un fichero de Objeto en memoria)
 	 * 
 	 * Entradas: String path
@@ -194,7 +194,7 @@ public class Gestora {
 	 * 
 	 * Precondiciones: Path es la ruta del fichero donde estan los objetos por lo que debera de estar bien especificada
 	 * 
-	 * Postcondiciones: Este mÈtodo se trata de una funcion por lo que devolvera un tipo de dato, en este caso un ArrayList<Objeto>
+	 * Postcondiciones: Este m√©todo se trata de una funcion por lo que devolvera un tipo de dato, en este caso un ArrayList<Objeto>
 	 * 					que contendra todos los objetos de tipo Objeto que hay en un fichero
 	 *  
 	 */
@@ -277,7 +277,7 @@ public class Gestora {
 		Validaciones validacion = new Validaciones();
 	
 		System.out.println("Has encontrado el siguiente objeto: "+objeto.getNombre());
-		System.out.println("øQuieres cogerlo?");
+		System.out.println("¬øQuieres cogerlo?");
 		respuesta = validacion.leerValidarRespuesta();
 		
 		if(respuesta == 'S') {
@@ -286,7 +286,7 @@ public class Gestora {
 	
 			} else {
 				System.out.println("Tienes el inventario lleno");
-				System.out.println("øQuieres tirar algun objeto? Introduce 'S' para tirarlo o 'N' para no hacerlo");
+				System.out.println("¬øQuieres tirar algun objeto? Introduce 'S' para tirarlo o 'N' para no hacerlo");
 				respuesta = validacion.leerValidarRespuesta();
 				
 				if (respuesta == 'S') {
@@ -327,17 +327,17 @@ public class Gestora {
 		char respuesta = ' ';
 		do {
 			//LeerValidar respuesta(En este caso sera la forma de atacar al enemigo)
-			System.out.println("Quieres usar un objeto de tu mochila para atacar al enemigo(S), si dices que no prepara tus puÒos(N)");
+			System.out.println("Quieres usar un objeto de tu mochila para atacar al enemigo(S), si dices que no prepara tus pu√±os(N)");
 			respuesta = validacion.leerValidarRespuesta();
 			
 			if(respuesta == 'S') {
 				System.out.println("Miras rapido el contenido de tu mochila a ver si tienes algo util");
 				usuario.mirarContenidoMochila(); //Mostrar contenido de la mochila del usuairo
 				posicionMochila = validacion.obtenerPosicionMochila();//Se selecciona el lugar en la mochila donde esta el objeto que quiere usar
-				ataqueUsuario = usuario.realizarAtaque(posicionMochila);//Usuario realiza un ataque en funcion del objeto que ha seleccionado, si no hay nada en esa posicion(null) se tendra en cuenta y se atacara solo con el daÒo base
+				ataqueUsuario = usuario.realizarAtaque(posicionMochila);//Usuario realiza un ataque en funcion del objeto que ha seleccionado, si no hay nada en esa posicion(null) se tendra en cuenta y se atacara solo con el da√±o base
 				
 			}else {
-				ataqueUsuario = usuario.realizarAtaque();//Ataque sin usar ningun objeto, solo con su daÒo base
+				ataqueUsuario = usuario.realizarAtaque();//Ataque sin usar ningun objeto, solo con su da√±o base
 			}
 			
 			//Resultado ataque usuario
@@ -376,143 +376,143 @@ public class Gestora {
 		
 		switch(parte) {
 		case 1: 
-			texto = "Sientes mucho frÌo, comienzas a abrir los ojos y te encuentras en una habitaciÛn muy ordenada\n"
-					+ "no es m·s que un departamento com˙n, tiene unas grandes ventanas, a travÈs de ellas ves la ciudad, completamente \n"
-					+ "desolada, en ruinas y todo parece vacÌo, decenas de cad·veres se amontonan en las calles y extraÒas figuras reptan \n"
-					+ "y se mueven sinuosamente, algunos parecen humanos pero est·n en condiciones deplorables, de repente a tu cabeza llegan \n"
-					+ "varias preguntas la primera de todas quien eres y que haces aquÌ, no recuerdas nada apenas vislumbras lejanos recuerdos \n"
-					+ "lo ˙nico que queda en tu memoria es tu nombre y la sensaciÛn de que sabes que hay algo que hacer y que debes escapar de esta ciudad...\n"
-					+ "°Que comience el espect·culo!\n";
+			texto = "Sientes mucho fr√≠o, comienzas a abrir los ojos y te encuentras en una habitaci√≥n muy ordenada\n"
+					+ "no es m√°s que un departamento com√∫n, tiene unas grandes ventanas, a trav√©s de ellas ves la ciudad, completamente \n"
+					+ "desolada, en ruinas y todo parece vac√≠o, decenas de cad√°veres se amontonan en las calles y extra√±as figuras reptan \n"
+					+ "y se mueven sinuosamente, algunos parecen humanos pero est√°n en condiciones deplorables, de repente a tu cabeza llegan \n"
+					+ "varias preguntas la primera de todas quien eres y que haces aqu√≠, no recuerdas nada apenas vislumbras lejanos recuerdos \n"
+					+ "lo √∫nico que queda en tu memoria es tu nombre y la sensaci√≥n de que sabes que hay algo que hacer y que debes escapar de esta ciudad...\n"
+					+ "¬°Que comience el espect√°culo!\n";
 		break;
 		
 		case 2:
 			texto = "La nota, dice lo siguiente: \n"
-					+"Alfred, muchas gracias por hacerme este favor, se que Emily falleciÛ hace muchos aÒos y nunca es agradable \n"
+					+"Alfred, muchas gracias por hacerme este favor, se que Emily falleci√≥ hace muchos a√±os y nunca es agradable \n"
 					+ "tener que pertubar el lugar de descanso pero no se me ocurre otro lugar donde pueda esconder ese objeto sin que sea encontrado por ellos \n"
-					+ "tu tambiÈn trabajaste en la mansiÛn y sabes para que sirve esa llave, sin ella no podr·n entrar ahÌ dentro donde he guardado el otro objeto \n"
-					+ "que les impedir·n bajar ahÌ abajo, nadie podr· encontrarlos, contacto contigo vÌa carta por que no se sÌ me est·n espiando y quiz·s \n"
-					+ "escuchan las llamadas de mi telÈfono, se que si Emily siguiera viva ella misma aceptarÌa esto, la extraÒo mucho y aunque no este aquÌ \n"
-					+ "me ayudar· a su maner·, se que todo esto es mi culpa pero no podÌa dejar que esas criaturas sufrier·n, parecÌan humanos y senti·n el dolor \n"
-					+ "como nosotros, como iba a saber que Nova Corp no querÌa llevarselos si no sembrar el caos en la ciudad, ahora tengo que huir de ellos \n"
-					+ "y de mis propios compaÒeros de trabajo, si el seÒor Mason se enterar· tambiÈn enviarÌa sicarios a por mi, estoy en una situaciÛn horrible \n"
-					+ "y personas inocentes morir·n por mi culpa, no espero su perdÛn solamente espero que entiendan que yo solo querÌa salvar la vida de esas criaturas \n"
-					+ "bueno Alfred esta ser· probablemente mi ultima carta antes de que me asesinen, espero que en el laboratorio no hayan descubierto ya que he liberado \n"
-					+ "los especÌmenes si no allÌ encontrarÈ mi final, bueno muchas gracias por hacerme este gran favor esperemos que nadie se quede con las muestras del laboratorio \n"
-					+ "y todas las criaturas no hagan daÒo a la gente...\n"
+					+ "tu tambi√©n trabajaste en la mansi√≥n y sabes para que sirve esa llave, sin ella no podr√°n entrar ah√≠ dentro donde he guardado el otro objeto \n"
+					+ "que les impedir√°n bajar ah√≠ abajo, nadie podr√° encontrarlos, contacto contigo v√≠a carta por que no se s√≠ me est√°n espiando y quiz√°s \n"
+					+ "escuchan las llamadas de mi tel√©fono, se que si Emily siguiera viva ella misma aceptar√≠a esto, la extra√±o mucho y aunque no este aqu√≠ \n"
+					+ "me ayudar√° a su maner√°, se que todo esto es mi culpa pero no pod√≠a dejar que esas criaturas sufrier√°n, parec√≠an humanos y senti√°n el dolor \n"
+					+ "como nosotros, como iba a saber que Nova Corp no quer√≠a llevarselos si no sembrar el caos en la ciudad, ahora tengo que huir de ellos \n"
+					+ "y de mis propios compa√±eros de trabajo, si el se√±or Mason se enterar√° tambi√©n enviar√≠a sicarios a por mi, estoy en una situaci√≥n horrible \n"
+					+ "y personas inocentes morir√°n por mi culpa, no espero su perd√≥n solamente espero que entiendan que yo solo quer√≠a salvar la vida de esas criaturas \n"
+					+ "bueno Alfred esta ser√° probablemente mi ultima carta antes de que me asesinen, espero que en el laboratorio no hayan descubierto ya que he liberado \n"
+					+ "los espec√≠menes si no all√≠ encontrar√© mi final, bueno muchas gracias por hacerme este gran favor esperemos que nadie se quede con las muestras del laboratorio \n"
+					+ "y todas las criaturas no hagan da√±o a la gente...\n"
 					+ "El resto de la nota esta arrancada y no puede leerse\n";
 		break;
 		
 		case 3:
-			texto = "El libro tiene una p·gina marcada, la pagina habla sobre jardinerÌa pero dentro parece haber una nota \n"
-					+"La nota dice lo siguiente: Las pruebas con el espÈcimen vegetal ya comienza a dar sus frutos seÒor Mason, \n"
+			texto = "El libro tiene una p√°gina marcada, la pagina habla sobre jardiner√≠a pero dentro parece haber una nota \n"
+					+"La nota dice lo siguiente: Las pruebas con el esp√©cimen vegetal ya comienza a dar sus frutos se√±or Mason, \n"
 					+ "me pongo en contacto con usted por correspondencia debido a que tenemos sospechas de que Nova Corp tiene un infiltrado \n"
-					+ "en nuestras filas y se encuentra en nuestro propio laboratorio por lo que no es seguro usar la intranet de la compaÒia \n"
-					+ "no se preocupe pondremos fin a esto enseguida y todo seguir· seg˙n lo acordado, saludos cordiales \n"
+					+ "en nuestras filas y se encuentra en nuestro propio laboratorio por lo que no es seguro usar la intranet de la compa√±ia \n"
+					+ "no se preocupe pondremos fin a esto enseguida y todo seguir√° seg√∫n lo acordado, saludos cordiales \n"
 					+ "Firmado Doctor Alex Morgan\n";
 		break;
 		
 		case 4:
-			texto = "Has entrado dentro de la habitaciÛn y aquello parece una sala de tortura \n"
-					+ "hay grandes manchas de sangre seca en el suelo, las paredes son de un marrÛn ennegrecido \n"
+			texto = "Has entrado dentro de la habitaci√≥n y aquello parece una sala de tortura \n"
+					+ "hay grandes manchas de sangre seca en el suelo, las paredes son de un marr√≥n ennegrecido \n"
 					+ "huele a muerto y apenas se ve bien ni con la luz encendida, es un escenario muy macabro \n"
-					+ "tambiÈn hay diversos instrumentos de tortura como herramientas, cuchillos y un enorme arsenal \n"
-					+ "de numerosos y horribles utensilios, de entre estos destaca una gran baterÌa con dos cables conectados \n"
-					+ "y unas enormes pinzas, por alguna extaÒa y escalofriante razÛn esa sala te resulta familiar y te provoca un \n"
+					+ "tambi√©n hay diversos instrumentos de tortura como herramientas, cuchillos y un enorme arsenal \n"
+					+ "de numerosos y horribles utensilios, de entre estos destaca una gran bater√≠a con dos cables conectados \n"
+					+ "y unas enormes pinzas, por alguna exta√±a y escalofriante raz√≥n esa sala te resulta familiar y te provoca un \n"
 					+ "enorme pavor en el cuerpo...\n";
 		break;
 		
 		case 5:
 			texto = "		-Resultados tests 28-10-2012: \n"
-					+ "El individuo C-238 responde adecuadamente a los estÌmulos es altamente resistente a \n"
-					+ "todo tipo de daÒos, a su vez es inmune a la infecciÛn del resto de especÌmenes como el B-126 o el \n"
+					+ "El individuo C-238 responde adecuadamente a los est√≠mulos es altamente resistente a \n"
+					+ "todo tipo de da√±os, a su vez es inmune a la infecci√≥n del resto de espec√≠menes como el B-126 o el \n"
 					+ "B-220 si bien estos pueden herirle de gravedad o matarle no pueden hacer que este forme parte de la simbiosis \n"
-					+ "por lo cual es inmune al virus que infecta a los otros especÌmenes, continuaremos las pruebas pero \n"
+					+ "por lo cual es inmune al virus que infecta a los otros espec√≠menes, continuaremos las pruebas pero \n"
 					+ "podemos estar ante uno de los mayores avances en el proyecto.\n"
 					+ "		-Resultados tests 15-11-2012: \n"
-					+ "Una vez m·s el prototipo C-238 nos sorprende, no solo demuestra una resistencia y fuerza muy superior si no \n"
-					+ "que adem·s es m·s inteligente que la media humana, se situa entorno a unos 175 CI es decir solo el 0,001% \n"
-					+ "de la poblaciÛn actual cuenta con un CI similar, a su vez destaca en la comprensiÛn del lenguaje apenas se encuentra \n"
+					+ "Una vez m√°s el prototipo C-238 nos sorprende, no solo demuestra una resistencia y fuerza muy superior si no \n"
+					+ "que adem√°s es m√°s inteligente que la media humana, se situa entorno a unos 175 CI es decir solo el 0,001% \n"
+					+ "de la poblaci√≥n actual cuenta con un CI similar, a su vez destaca en la comprensi√≥n del lenguaje apenas se encuentra \n"
 					+ "en estado larvario y ya es capaz de mantener conversaciones, siguiendo el protocolo nosotros no respondemos nada a sus cuestiones \n"
-					+ "a su vez su desarrollo motor es muy superior tambiÈn al del ser humano muy pronto alcanzar· la etapa de la niÒez \n"
+					+ "a su vez su desarrollo motor es muy superior tambi√©n al del ser humano muy pronto alcanzar√° la etapa de la ni√±ez \n"
 					+ "		-Resultados tests 05-03-2013: \n"
-					+ "Tras varios meses poniendo a prueba al espÈcimen C-238 recomendamos su aislamiento debido a que no se puede asegurar \n"
-					+ "su integridad o la de sus congÈneres, C-238 ha desarrollado unas habilidades sagaces es capaz de resolver enormes \n"
-					+ "ecuaciones integrales mientras se divierte viendo la televisiÛn, ha aprendido a hablar numerosas lenguas sin haberlas escuchado previamente \n"
-					+ "hablamos de habilidades casi omnipotentes debido a esto comenzamos con terapias de electrochoque y seg˙n la tomografÌa axial computarizada craneal \n"
+					+ "Tras varios meses poniendo a prueba al esp√©cimen C-238 recomendamos su aislamiento debido a que no se puede asegurar \n"
+					+ "su integridad o la de sus cong√©neres, C-238 ha desarrollado unas habilidades sagaces es capaz de resolver enormes \n"
+					+ "ecuaciones integrales mientras se divierte viendo la televisi√≥n, ha aprendido a hablar numerosas lenguas sin haberlas escuchado previamente \n"
+					+ "hablamos de habilidades casi omnipotentes debido a esto comenzamos con terapias de electrochoque y seg√∫n la tomograf√≠a axial computarizada craneal \n"
 					+ "el individuo presenta enormes lesiones en la zona craneal que le provocan perdidas de memoria a corto y largo plazo, a su vez varios tumores \n"
 					+ "se desarrollan en distintas zonas de su cuerpo parece que no respondio bien a las terapias de choque, pensabamos que iba a ser \n"
-					+ "la evoluciÛn del ser humano pero parece que a˙n debemos seguir trabajando en ello.\n"
-					+ "El resto de notas estan rotas o son ilegibles, por alguna extraÒa razÛn comienza a dolerte mucho la cabeza...\n";
+					+ "la evoluci√≥n del ser humano pero parece que a√∫n debemos seguir trabajando en ello.\n"
+					+ "El resto de notas estan rotas o son ilegibles, por alguna extra√±a raz√≥n comienza a dolerte mucho la cabeza...\n";
 		break;
 		
 		case 6:
 			texto = "	-Resultados tests 19-08-2013: \n"
-					+ "El espÈcimen C-238 falleciÛ desgraciadamente, pero tuvimos suerte y pudimos conservar muestras de su ADN \n"
-					+ "gracias a esto hemos desarrollado a C-306 una mejor versiÛn m·s estable, responde mejor a los estÌmulos, \n"
-					+ "es mucho m·s sensato y de una inteligencia y habilidad muy similar, no cuenta con habilidades sensoriales o telep·ticas \n"
-					+ "esta versiÛn es idÈntico a un ser humano en apariencia de hecho es exactamente igual que este fÌsicamente hablando pero tan capaz como C-238 \n"
-					+ "solo que este usa armas/herramientas para la resoluciÛn de enigmas(sin rasgos de semi omnipotencia), este es el avance que buscabamos,  \n"
-					+ "la humanidad evolucionar· al final y nos haremos de oro, con esto Nova Corp no tendr· nada que hacer y el ejercito usar· nuestros experimentos, nos espera un futuro prometedor...\n";
+					+ "El esp√©cimen C-238 falleci√≥ desgraciadamente, pero tuvimos suerte y pudimos conservar muestras de su ADN \n"
+					+ "gracias a esto hemos desarrollado a C-306 una mejor versi√≥n m√°s estable, responde mejor a los est√≠mulos, \n"
+					+ "es mucho m√°s sensato y de una inteligencia y habilidad muy similar, no cuenta con habilidades sensoriales o telep√°ticas \n"
+					+ "esta versi√≥n es id√©ntico a un ser humano en apariencia de hecho es exactamente igual que este f√≠sicamente hablando pero tan capaz como C-238 \n"
+					+ "solo que este usa armas/herramientas para la resoluci√≥n de enigmas(sin rasgos de semi omnipotencia), este es el avance que buscabamos,  \n"
+					+ "la humanidad evolucionar√° al final y nos haremos de oro, con esto Nova Corp no tendr√° nada que hacer y el ejercito usar√° nuestros experimentos, nos espera un futuro prometedor...\n";
 		break;
 		
 		case 7:
-			texto = "Lo sentimos seÒor Mason todo ha salido mal, ese traidor se aliÛ con Nova Corp y \n"
-					+ "ha conseguido liberar varios especÌmenes por quÈ seg˙n Èl estaban sufriendo y no era Ètico \n"
-					+ "que sabr· ese pat·n viudo lo que es Ètico o no, no se preocupe he puesto fin a su vida y capturaremos \n"
-					+ "a los especÌmenes antes de que hagan destrozos por la ciudad o sean capturados por Nova Corp, tenemos \n"
-					+ "la ayuda de la policÌa local, no saben los detalles pero por una cuantiosa suma nos ayudar·n, resolveremos est_ \n"
+			texto = "Lo sentimos se√±or Mason todo ha salido mal, ese traidor se ali√≥ con Nova Corp y \n"
+					+ "ha conseguido liberar varios espec√≠menes por qu√© seg√∫n √©l estaban sufriendo y no era √©tico \n"
+					+ "que sabr√° ese pat√°n viudo lo que es √©tico o no, no se preocupe he puesto fin a su vida y capturaremos \n"
+					+ "a los espec√≠menes antes de que hagan destrozos por la ciudad o sean capturados por Nova Corp, tenemos \n"
+					+ "la ayuda de la polic√≠a local, no saben los detalles pero por una cuantiosa suma nos ayudar√°n, resolveremos est_ \n"
 					+"El e-mail esta sin terminar y todo esta rodeado de sangre por lo que no tuvo un buen final...\n";	
 		break;
 		
 		case 8:
-			texto = " Hola Tom las cosas se han puesto difÌciles por aquÌ asÌ que \n"
+			texto = " Hola Tom las cosas se han puesto dif√≠ciles por aqu√≠ as√≠ que \n"
 					+ "he decidido marcharme, los rumores son ciertos no estaban locos es verdad \n"
-					+ "hay seres infernales por las afueras de la ciudad y sobre todo cerca de esa vieja mansiÛn, \n"
-					+ "antes de que esos seres lleguen a la ciudad deberÌas abandonarla, utiliza los surtidores \n"
-					+ "y huye cuanto antes, pero si llegas tarde te dejarÈ combustible suficiente como para abandonarla, \n"
-					+ "lo guardarÈ en el armario de la limpieza en el almacen de la gasolinera, recuerda que debes \n"
-					+ "desactivar la electricidad si no quieres achicharrarte, tambiÈn te dejo algo \n"
+					+ "hay seres infernales por las afueras de la ciudad y sobre todo cerca de esa vieja mansi√≥n, \n"
+					+ "antes de que esos seres lleguen a la ciudad deber√≠as abandonarla, utiliza los surtidores \n"
+					+ "y huye cuanto antes, pero si llegas tarde te dejar√© combustible suficiente como para abandonarla, \n"
+					+ "lo guardar√© en el armario de la limpieza en el almacen de la gasolinera, recuerda que debes \n"
+					+ "desactivar la electricidad si no quieres achicharrarte, tambi√©n te dejo algo \n"
 					+ "de efectivo en la caja por si necesitas comprar algo durante el viaje, te esperamos en la casa \n"
 					+ "de mama, espero que esta carta te llegue a tiempo pues debido a que las carreteras estan cortadas \n"
-					+ "no puedo hacertela llegar, adem·s ni el internet ni la lÌnea funcionan esto es muy extraÒo la polÌcia o \n"
-					+ "incluso el gobierno debe estar detr·s de esto,bueno mucha suerte espero que llegues sano y salvo y volvamos a vernos \n"
-					+ "Con cariÒo tu hermano John\n";
+					+ "no puedo hacertela llegar, adem√°s ni el internet ni la l√≠nea funcionan esto es muy extra√±o la pol√≠cia o \n"
+					+ "incluso el gobierno debe estar detr√°s de esto,bueno mucha suerte espero que llegues sano y salvo y volvamos a vernos \n"
+					+ "Con cari√±o tu hermano John\n";
 		break;
 		
 		case 9: 
 			texto = "Bien hecho monstruo, gracias a ti hemos conseguido averiguar donde estaba el laboratorio, hemos entrado y \n"
-					+ "conseguido las muestras a su vez hemos comprobado tu eficacia, desde luego que no eres una humano normal, eres mucho m·s \n"
-					+ "inteligente y capaz, adem·s de tus habilidades para el combate usando armas y herramientas sin haber sido instruido en su uso \n"
-					+ "son mejores que las de un veterano de guerra, pero a˙n asÌ en ning˙n momento sospechaste que tu huida y todo habÌa sido preparado \n"
-					+ "para que nos condujeras hacia las muestras, a pesar de ser tan inteligente...JAJAJAJAJA!! no dejas de ser un in˙til engendro, adem·s \n"
-					+ "nos libraste de ese extraÒo ser casi invencible del que nos habÌa hablado nuestro ''infiltrado'' aunque el era casi tan tonto como t˙ \n"
-					+ "y penso que os liberariamos y asÌ fue el mismo te libero a ti y a especÌmenes agresivos que acabaron con la ciudad, quiz·s tu eras el ˙nico \n"
-					+ "que a pesar de las torturas seguÌa cuerdo o que no era un experimento fallido casi zombie,no se como te sentir·s tras saber todo esto, solamente decirte \n"
-					+ "que gracias a ti Nova Corp ser· multimillonaria, nuestro principal competidor en la carrera biolÛgica ha desaparecido, Mason se ir· a la bancarrota \n"
-					+ "te venderemos a ti y al resto de especÌmenes que desarrollemos al gobierno y ellos se encargar·n de vosotros para lo que decidan, asÌ que gracias por \n"
-					+ "todo y que sepas que el coche tiene un localizador y aunque salgas de Èl estamos justo detr·s de ti y delante asÌ que mejor rindete y vuelve a ser una \n"
+					+ "conseguido las muestras a su vez hemos comprobado tu eficacia, desde luego que no eres una humano normal, eres mucho m√°s \n"
+					+ "inteligente y capaz, adem√°s de tus habilidades para el combate usando armas y herramientas sin haber sido instruido en su uso \n"
+					+ "son mejores que las de un veterano de guerra, pero a√∫n as√≠ en ning√∫n momento sospechaste que tu huida y todo hab√≠a sido preparado \n"
+					+ "para que nos condujeras hacia las muestras, a pesar de ser tan inteligente...JAJAJAJAJA!! no dejas de ser un in√∫til engendro, adem√°s \n"
+					+ "nos libraste de ese extra√±o ser casi invencible del que nos hab√≠a hablado nuestro ''infiltrado'' aunque el era casi tan tonto como t√∫ \n"
+					+ "y penso que os liberariamos y as√≠ fue el mismo te libero a ti y a espec√≠menes agresivos que acabaron con la ciudad, quiz√°s tu eras el √∫nico \n"
+					+ "que a pesar de las torturas segu√≠a cuerdo o que no era un experimento fallido casi zombie,no se como te sentir√°s tras saber todo esto, solamente decirte \n"
+					+ "que gracias a ti Nova Corp ser√° multimillonaria, nuestro principal competidor en la carrera biol√≥gica ha desaparecido, Mason se ir√° a la bancarrota \n"
+					+ "te venderemos a ti y al resto de espec√≠menes que desarrollemos al gobierno y ellos se encargar√°n de vosotros para lo que decidan, as√≠ que gracias por \n"
+					+ "todo y que sepas que el coche tiene un localizador y aunque salgas de √©l estamos justo detr√°s de ti y delante as√≠ que mejor rindete y vuelve a ser una \n"
 					+ "rata de laboratorio \n";
 		break;
 		
 		case 10: 
-			texto = "Has parado el coche en seco y has salido de Èl, apenas 1 minuto despuÈs varios coches de color negro y con las ventanas tintadas se acercan a ti. \n"
-					+ " Una vez los coches est·n en tu posiciÛn varios agentes de Nova Corp se bajan y proceden a arrestarte, tu mientras con la cabeza agachada obedeces a sus ordenes, \n"
-					+ " ese ha sido el final de tu historia, tu libertad se acabo por quÈ no eres humano como ellos, no eres un ser creado por la naturaleza, no eres m·s que los designios de una \n"
-					+ "raza que decidiÛ jugar a ser Dios, este dia ha sido el primer y ˙ltimo en el que has visto el sol y desde luego, no ha sido un dÌa f·cil... \n"
-					+ "Quien con monstruos lucha cuide de no convertirse a su vez en monstruo. Cuando miras largo tiempo a un abismo, tambiÈn Èste mira dentro de ti. \n"
+			texto = "Has parado el coche en seco y has salido de √©l, apenas 1 minuto despu√©s varios coches de color negro y con las ventanas tintadas se acercan a ti. \n"
+					+ " Una vez los coches est√°n en tu posici√≥n varios agentes de Nova Corp se bajan y proceden a arrestarte, tu mientras con la cabeza agachada obedeces a sus ordenes, \n"
+					+ " ese ha sido el final de tu historia, tu libertad se acabo por qu√© no eres humano como ellos, no eres un ser creado por la naturaleza, no eres m√°s que los designios de una \n"
+					+ "raza que decidi√≥ jugar a ser Dios, este dia ha sido el primer y √∫ltimo en el que has visto el sol y desde luego, no ha sido un d√≠a f√°cil... \n"
+					+ "Quien con monstruos lucha cuide de no convertirse a su vez en monstruo. Cuando miras largo tiempo a un abismo, tambi√©n √©ste mira dentro de ti. \n"
 					+ "Friedrich Nietzsche \n"
 					+ "FIN \n";
 		break;
 		
 		case 11:
 			texto = "Has seguido tu camino pero varios coches bloquean el paso, son coches de color negro y con las ventanas tintadas, antes de que puedas hacer nada \n"
-					+ "comienzan a abrir fuego contra tu coche, de repente una lluvia de balas comienza a caer por la parte trasera del automÛvil, sin poder reaccionar has sido \n"
+					+ "comienzan a abrir fuego contra tu coche, de repente una lluvia de balas comienza a caer por la parte trasera del autom√≥vil, sin poder reaccionar has sido \n"
 					+ "alcanzado por una infinidad de balas y comienzas a desangrarte, tus parpados pesan mucho y cierras los ojos, pero no sientes tristeza, has muerto luchando \n"
-					+ "al contrario sientes felicidad encontrar·s la paz que no has encontrado en este mundo por algo que tu no elegiste ser ni hacer, este es el final de tu historia, \n"
-					+ "varios agentes de Nova Corp se acercan para comprobar como el cuerpo del espÈcimen yace impertÈrrito sobre el coche, acto seguido este explota debido a la leve llama \n"
-					+ "que asomaba en su capo, provocando la muerte de todos los agentes de la zona, parece que el karma a veces si act˙a, la carretera quedo en silencio, tu conciencia mientras \n"
-					+ "vuela en un mar de calma antes de que todo se vuelva m·s y m·s oscuro, hasta que dejas de sentir y se acabÛ,has dejado este mundo... \n"
-					+ "Quien con monstruos lucha cuide de no convertirse a su vez en monstruo. Cuando miras largo tiempo a un abismo, tambiÈn Èste mira dentro de ti. \n"
+					+ "al contrario sientes felicidad encontrar√°s la paz que no has encontrado en este mundo por algo que tu no elegiste ser ni hacer, este es el final de tu historia, \n"
+					+ "varios agentes de Nova Corp se acercan para comprobar como el cuerpo del esp√©cimen yace impert√©rrito sobre el coche, acto seguido este explota debido a la leve llama \n"
+					+ "que asomaba en su capo, provocando la muerte de todos los agentes de la zona, parece que el karma a veces si act√∫a, la carretera quedo en silencio, tu conciencia mientras \n"
+					+ "vuela en un mar de calma antes de que todo se vuelva m√°s y m√°s oscuro, hasta que dejas de sentir y se acab√≥,has dejado este mundo... \n"
+					+ "Quien con monstruos lucha cuide de no convertirse a su vez en monstruo. Cuando miras largo tiempo a un abismo, tambi√©n √©ste mira dentro de ti. \n"
 					+ "Friedrich Nietzsche \n"
 					+ "FIN \n";
 		break;
@@ -545,7 +545,7 @@ public class Gestora {
         	
             System.out.print(caracteresTexto[i]);
             try {
-				Thread.sleep(1); //Tiempo de espera entre un caracter y otro es de 40 milisengudos.
+				Thread.sleep(40); //Tiempo de espera entre un caracter y otro es de 40 milisengudos.
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			} 
