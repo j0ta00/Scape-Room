@@ -1,3 +1,12 @@
+/*
+ * 
+ * Comentarios: -Durante el juego los objetos si se tiran vuelven a reaparecer en su lugar de origen. Es decir si el usuario tiene la mochila 
+ * 				 llena y decide equiparse otro objeto tirando antes uno, ese objeto que tira vuelve al sitio de donde se obtuvo, de tal manera 
+ * 				 que si por error o no, se tira un objeto necesario para la mision se pueda volver a recuperar y completar la mision.
+ * 				-Durante el juego muchos objetos no son necesarios, son adicionales y no hace falta interactuar con ellos para completar
+ * 				 la mision. Asi que el usuario debera de tener en cuenta que objeto coger y cuales no puesto que su mochila tiene un limite
+ * 
+ */
 package principal;
 
 import java.util.ArrayList;
@@ -193,7 +202,7 @@ public class Main {
 					break;//Fin Opcion Registrar tumbas
 			
 					case 2: //Opcion registrar casetilla				
-						System.out.print("Visializas una casetilla al final del cementerio, ves que la puerta esta abierta y entras, vez que hay una caja en la cual:");
+						System.out.print("Visializas una casetilla al final del cementerio, ves que la puerta esta abierta y entras, ves que hay una caja en la cual:");
 						objetoZona = Gestora.obtenerObjeto(objetos, "Pala");
 						
 						if(!objetoZona.getEquipado()) {
@@ -752,6 +761,19 @@ public class Main {
 				}
 			}
 		}
+		//Mostrar solucion del juego
+		System.out.println("\nSolucion del juego");
+		System.out.println("1.Visitar el garaje para registrar la caja de herramientas y coger el Spray");
+		System.out.println("2.Visitar cementerio, una vez dentro ir al cuartillo y coger la pala");
+		System.out.println("  Una vez se tiene la pala, registrar la tumba numero 3 y coger la llave");
+		System.out.println("3.Visitar la mansion e ir al jardin, una vez alli entrar al cuartillo y coger la regadera. Se interactua con la planta");
+		System.out.println("  Se derrota a la planta y se coge la valvula. Ir al sotano de la mansion y se investiga el grifo que esta goteando y se coloca la valvula");
+		System.out.println("  Una vez colocada se investiga la pared desgastada pues se abrio el laboratorio. Una vez dentro de este se comprueba la puerta oxidada, se entra y se coge la bateria");
+		System.out.println("  Dentro del laboratorio aun se continua por el pasillo y se coge la llave del coche");
+		System.out.println("4.Visitar gasolinera y acceder al almacen, una vez dentro se registra la zona, se apartan las cajas y se activa la palanca");
+		System.out.println("  Acontinuacion se revisar la puerta extraña y se coge la gasolina");
+		System.out.println("5.Volver al departemento, visitar de nuevo el garaje e investigar el coche y fin.");
+		
 		teclado.close();
 	}
 }

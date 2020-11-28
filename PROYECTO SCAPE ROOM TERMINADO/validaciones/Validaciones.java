@@ -334,7 +334,7 @@ public class Validaciones {
 		System.out.println("5)Entrar en oficina");
 		System.out.println("6)Mirar contenido mochila");
 		System.out.println("7)Ver tu estado");
-		opcion = leerValidarOpcion(0,6);
+		opcion = leerValidarOpcion(0,7);
 
 		return opcion;
 	}
