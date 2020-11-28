@@ -2,6 +2,7 @@ package personajes;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import adicionales.Gestora;
 import objetos.Objeto;
 
 public class Jugador extends Personaje {
@@ -62,13 +63,13 @@ public class Jugador extends Personaje {
 		 */
 		public void mirarContenidoMochila() {
 			
-			System.out.print("Contenido de la mochila ---> ");
+			Gestora.mostrarTextoHistoriaLento("Contenido de la mochila ---> ");
 			
 			for(int i = 0; i < mochila.size(); i++) {
 				if(mochila.get(i) != null) {
-					System.out.print("  ["+ i+"] "+ mochila.get(i).toString());
+					Gestora.mostrarTextoHistoriaLento("  ["+ i+"] "+ mochila.get(i).toString());
 				}else {
-					System.out.print("  ["+ i+"]"+ " Espacio libre");
+					Gestora.mostrarTextoHistoriaLento("  ["+ i+"]"+ " Espacio libre");
 				}
 			}	
 			System.out.println();

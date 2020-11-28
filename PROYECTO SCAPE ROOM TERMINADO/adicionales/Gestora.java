@@ -121,7 +121,7 @@ public class Gestora {
 				frase = br.readLine();
 			}
 			
-			System.out.println(frase);
+			mostrarTextoHistoriaLento(frase);
 			
 		}catch(IOException e){
 			e.printStackTrace();
@@ -137,7 +137,7 @@ public class Gestora {
 	/*
 	 * Prototipo: public static void crearGuardarObjetos(String path)
 	 * 
-	 * Comentario: Este metodo se encarga de crear y guardar en un fichero una serie de objetos de tipo Objeto.
+	 * Comentario: Este método se encarga de crear y guardar en un fichero una serie de objetos de tipo Objeto.
 	 * 
 	 * Entradas: String path
 	 * 
@@ -145,7 +145,7 @@ public class Gestora {
 	 * 
 	 * Precondiciones: Path es la ruta del fichero donde se crearan los objetos por lo que debera de estar bien especificada
 	 * 
-	 * Postcondiciones: Este metodo se trata de un procedimiento, no devolvera ningun tipo de dato,
+	 * Postcondiciones: Este método se trata de un procedimiento, no devolverá ningún tipo de dato,
 	 * 					solo creara una serie de objetos de tipo Objeto y los escribira en un fichero
 	 * 
 	 */
@@ -157,19 +157,19 @@ public class Gestora {
 			oos = new ObjectOutputStream(new FileOutputStream(path));
 
 			//Creacion de los objetos, que van ha salir en el juego
-			oos.writeObject(new Objeto("Pala", 15, "Quizas puedas desenterrar algo con ella o defenderte"));
+			oos.writeObject(new Objeto("Pala", 15, "Quizás puedas desenterrar algo con ella o defenderte"));
 			oos.writeObject(new Objeto("Gasolina", 0, "Igual puede servir como combustible"));
 			oos.writeObject(new Objeto("Llave coche", 0, "Vinculado con Audi R8"));
-			oos.writeObject(new Objeto("Bateria", 0, "Tiene el tamaño perfecto para encajar en un automovil"));
+			oos.writeObject(new Objeto("Batería", 0, "Tiene el tamaño perfecto para encajar en un automóvil"));
 			oos.writeObject(new Objeto("Pistola", 50, "Ideal para defenderte en medio de un apocalipsis"));
 			oos.writeObject(new Objeto("Hacha", 30, "Te permitira cotar y despedazar"));
-			oos.writeObject(new Objeto("Regadera", 0, "Aun contiene agua"));
-			oos.writeObject(new Objeto("Dolares", 0, "La moneda de cambio mas popular, aunque no te serviara de mucho en un apocalipsis"));
-			oos.writeObject(new Objeto("Llave vieja", 0, "Esta vieja pero todavia funciona"));
-			oos.writeObject(new Objeto("Zapato usado", 0, "No huele muy bien pero... ¿Donde esta el otro?"));
+			oos.writeObject(new Objeto("Regadera", 0, "Aún contiene agua"));
+			oos.writeObject(new Objeto("Dólares", 0, "La moneda de cambio mas popular, aunque no te servirá de mucho en un apocalipsis"));
+			oos.writeObject(new Objeto("Llave vieja", 0, "Está vieja pero todavía funciona"));
+			oos.writeObject(new Objeto("Zapato usado", 0, "No huele muy bien pero... ¿Dónde esta el otro?"));
 			oos.writeObject(new Objeto("Taza", 1, "Perfecta para hacerte un ColaCao"));
 			oos.writeObject(new Objeto("Spray de aceite", 0, "Te permite engrasar cosas para que tengan un correcto funcionamiento"));
-			oos.writeObject(new Objeto("Valvula", 0, "Se trata de una gran válvula muy vieja, quizás aún funcione"));
+			oos.writeObject(new Objeto("Válvula", 0, "Se trata de una gran válvula muy vieja, quizás aún funcione"));
 		}catch(IOException i) {
 			i.printStackTrace();
 		}finally {
@@ -185,7 +185,7 @@ public class Gestora {
 	/*
 	 * Prototipo: public static ArrayList<Objeto> obtenerObjetos(String path)
 	 * 
-	 * Comentario: Este metodo se encarga de buscar y coger todos objeto de tipo Objeto de un fichero y almacenarlos en un ArrayList.
+	 * Comentario: Este método se encarga de buscar y coger todos objeto de tipo Objeto de un fichero y almacenarlos en un ArrayList.
 	 * 			   (Se carga un fichero de Objeto en memoria)
 	 * 
 	 * Entradas: String path
@@ -194,7 +194,7 @@ public class Gestora {
 	 * 
 	 * Precondiciones: Path es la ruta del fichero donde estan los objetos por lo que debera de estar bien especificada
 	 * 
-	 * Postcondiciones: Este metodo se trata de una funcion por lo que devolvera un tipo de dato, en este caso un ArrayList<Objeto>
+	 * Postcondiciones: Este método se trata de una funcion por lo que devolvera un tipo de dato, en este caso un ArrayList<Objeto>
 	 * 					que contendra todos los objetos de tipo Objeto que hay en un fichero
 	 *  
 	 */
@@ -207,7 +207,7 @@ public class Gestora {
 		try {
 			ois = new ObjectInputStream(new FileInputStream(path));
 			
-			while( (objeto = (Objeto)ois.readObject() ) != null ) { //Mientras no se ha fin de fichero
+			while( (objeto = (Objeto)ois.readObject() ) != null ) { //Mientras no sea fin de fichero
 				solicitados.add(objeto); //Se guarda el objeto en el ArrayList solicitados
 			}
 	
@@ -255,7 +255,7 @@ public class Gestora {
 	}
 
 	/*
-	 * Prototipo: public static void iteracionUsuarioConObjeto(Objeto objeto, Jugador usuario)
+	 * Prototipo: public static void interaccionUsuarioConObjeto(Objeto objeto, Jugador usuario)
 	 * 
 	 * Comentario: Este metodo se encarga de preguntar al usuario si desea coger un objeto y si es asi se guardara en el inventario y si 
      * 			   si este esta lleno se podra tirar otro objeto para hacer sitio al nuevo objeto
@@ -271,7 +271,7 @@ public class Gestora {
 	 * Postcondiciones:Este metodo se trata de un procedimiento, en el cual se guardara un objeto en la mochila del usuario si este lo desea.
 	 * 
 	 */
-	public static void iteracionUsuarioConObjeto(Objeto objeto, Jugador usuario) {
+	public static void interaccionUsuarioConObjeto(Objeto objeto, Jugador usuario) {
 		char respuesta = ' ';
 		int posicionMochila = 0;
 		Validaciones validacion = new Validaciones();
@@ -376,7 +376,7 @@ public class Gestora {
 		
 		switch(parte) {
 		case 1: 
-			texto = "Sientes mucho frío, comienzas a abrir los ojos y te encuentras en una habitación muy ordenada \n"
+			texto ="Sientes mucho frío, comienzas a abrir los ojos y te encuentras en una habitación muy ordenada\n"
 					+ "no es más que un departamento común, tiene unas grandes ventanas, a través de ellas ves la ciudad, completamente \n"
 					+ "desolada, en ruinas y todo parece vacío, decenas de cadáveres se amontonan en las calles y extrañas figuras reptan \n"
 					+ "y se mueven sinuosamente, algunos parecen humanos pero están en condiciones deplorables, de repente a tu cabeza llegan \n"
@@ -399,7 +399,7 @@ public class Gestora {
 					+ "bueno Alfred esta será probablemente mi ultima carta antes de que me asesinen, espero que en el laboratorio no hayan descubierto ya que he liberado \n"
 					+ "los especímenes si no allí encontraré mi final, bueno muchas gracias por hacerme este gran favor esperemos que nadie se quede con las muestras del laboratorio \n"
 					+ "y todas las criaturas no hagan daño a la gente...\n"
-					+ "El resto de la nota esta arrancado y no puede leerse\n";
+					+ "El resto de la nota esta arrancada y no puede leerse\n";
 		break;
 		
 		case 3:
